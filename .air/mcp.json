@@ -1,0 +1,11 @@
+{
+    "mcpServers": {
+        "Apple Script": {
+            "args": [
+                "@peakmojo\/applescript-mcp"
+            ],
+            "command": "npx",
+            "description": "A Model Context Protocol (MCP) server that lets you run AppleScript code to interact with Mac. This MCP is intentionally designed to be simple, straightforward, intuitive, and require minimal setup."
+        }
+    }
+}

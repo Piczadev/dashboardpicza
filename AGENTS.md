@@ -1,0 +1,43 @@
+This repository represents the `PiczaDev` brand system and related assets.
+Default output should feel like infrastructure for the decentralized future: technical, intentional, and culturally aware.
+- Builder of intelligent systems for the decentralized future.
+- High-performance Web3 systems + AI automation, built like infrastructure, presented like culture.
+- Use dark, high-contrast, cyber-minimal aesthetics.
+- Keep color usage to roughly `90%` black / `10%` accent color.
+- Preferred accents: `#9945FF`, `#14F195`, `#00C2FF`.
+- Base backgrounds: `#000000`, `#0B0B0F`.
+- Primary text: `#FFFFFF`; secondary text: `#A1A1AA`.
+- Titles: `Space Grotesk`, `Sora`, or `Inter` in bold.
+- Technical accents: `JetBrains Mono` or `IBM Plex Mono`.
+- Titles should stay clean; technical detail layers should use monospace.
+Use one of these three systems unless the user asks otherwise:
+- Big title.
+- Minimal supporting icons.
+- One strong focal element.
+- Background grid.
+- Floating UI, icon, or chart elements.
+- Identity centered and clearly framed.
+- Clean structured base.
+- One chaotic or playful element only.
+- Meme or anime elements must be framed with overlays, borders, blur, or UI treatment.
+- No random visual decisions.
+- Meme energy is contrast, not the main identity.
+- Every meaningful asset should signal at least two of: `AI`, `Web3`, `Systems`, `Automation`.
+- Avoid generic corporate visuals, playful startup palettes, and stock business imagery.
+- Blockchain nodes and network diagrams.
+- Neural-network or AI patterning.
+- Terminal overlays, logs, status panels, and grid systems.
+- Minimal geometric marks and logo compositions.
+- "Dev OS" framing such as `PiczaOS`, system modules, status widgets, or fake telemetry.
+- Elite engineering.
+- High-performance systems.
+- Hacker / builder culture.
+- Clean, aggressive, and deliberate rather than loud or messy.
+- Reuse a fixed visual system; do not invent a new style per task.
+- Preserve consistency across banners, posts, thumbnails, and landing pages.
+- When introducing personality, add it as a controlled layer on top of the system.
+- Prefer assets that can be reused as templates instead of one-off compositions.
+- If working on UI, fake dashboards, metrics, logs, and infrastructure language are encouraged when they support clarity.
+- Output should feel premium, technical, and modular.
+- Design work should be ready to extend into a Canva brand kit, banner system, or creator dashboard.
+- If a task is ambiguous, default toward the current banner style as the base system.

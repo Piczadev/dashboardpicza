@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Yahir Rivera | PiczaDev</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "secondary-container": "#7000ff",
+                        "inverse-on-surface": "#565554",
+                        "surface": "#0e0e0e",
+                        "surface-container-lowest": "#000000",
+                        "primary-dim": "#00c0ea",
+                        "on-primary-fixed": "#002a35",
+                        "on-surface-variant": "#adaaaa",
+                        "primary-fixed-dim": "#00c0ea",
+                        "surface-tint": "#69daff",
+                        "surface-container-high": "#201f1f",
+                        "surface-container": "#1a1919",
+                        "error-dim": "#d7383b",
+                        "tertiary-fixed-dim": "#ff6ad8",
+                        "primary-container": "#00cffc",
+                        "on-secondary": "#290067",
+                        "surface-container-low": "#131313",
+                        "tertiary-fixed": "#ff87db",
+                        "outline": "#777575",
+                        "on-secondary-container": "#f8f1ff",
+                        "on-secondary-fixed-variant": "#6300e2",
+                        "surface-variant": "#262626",
+                        "surface-bright": "#2c2c2c",
+                        "on-tertiary-fixed": "#34002a",
+                        "on-tertiary": "#430036",
+                        "tertiary-container": "#fe00d5",
+                        "on-primary-fixed-variant": "#004a5c",
+                        "primary": "#69daff",
+                        "secondary-fixed-dim": "#ceb9ff",
+                        "surface-dim": "#0e0e0e",
+                        "secondary-fixed": "#dac9ff",
+                        "on-primary": "#004a5d",
+                        "outline-variant": "#494847",
+                        "inverse-surface": "#fcf8f8",
+                        "on-error-container": "#ffa8a3",
+                        "secondary": "#ac89ff",
+                        "error-container": "#9f0519",
+                        "error": "#ff716c",
+                        "surface-container-highest": "#262626",
+                        "tertiary": "#ff5dd7",
+                        "on-secondary-fixed": "#41009a",
+                        "on-surface": "#ffffff",
+                        "secondary-dim": "#874cff",
+                        "on-tertiary-fixed-variant": "#6f005c",
+                        "tertiary-dim": "#ff5dd7",
+                        "primary-fixed": "#00cffc",
+                        "on-error": "#490006",
+                        "background": "#0e0e0e",
+                        "on-primary-container": "#004050",
+                        "on-background": "#ffffff",
+                        "inverse-primary": "#006880",
+                        "on-tertiary-container": "#0e000a"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0e0e0e;
+            overflow-x: hidden;
+        }
+        .glass-pane {
+            background: rgba(26, 25, 25, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .crystal-sphere {
+            background: radial-gradient(circle at 30% 30%, rgba(105, 218, 255, 0.2) 0%, rgba(172, 137, 255, 0.1) 50%, transparent 100%);
+            box-shadow: inset 0 0 100px rgba(255, 255, 255, 0.05), 0 0 150px rgba(105, 218, 255, 0.1);
+        }
+        .aura-glow-primary {
+            filter: drop-shadow(0 0 40px rgba(105, 218, 255, 0.15));
+        }
+        .text-gradient-primary {
+            background: linear-gradient(to right, #69daff, #ac89ff, #ff5dd7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .ghost-border {
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="text-on-background selection:bg-primary/30">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-12 py-6 max-w-[1920px] mx-auto bg-black/40 backdrop-blur-2xl border-b border-white/10 shadow-[0_0_40px_rgba(105,218,255,0.06)]">
+<div class="text-2xl font-black tracking-tighter bg-gradient-to-r from-sky-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+            PiczaDev
+        </div>
+<div class="hidden md:flex items-center space-x-12">
+<a class="text-sky-400 border-b-2 border-sky-400 pb-1 text-[11px] tracking-[0.05em] uppercase font-bold" href="#">Ecosystem</a>
+<a class="text-white/60 hover:text-white transition-colors text-[11px] tracking-[0.05em] uppercase font-bold" href="#">Artifacts</a>
+<a class="text-white/60 hover:text-white transition-colors text-[11px] tracking-[0.05em] uppercase font-bold" href="#">Vault</a>
+<a class="text-white/60 hover:text-white transition-colors text-[11px] tracking-[0.05em] uppercase font-bold" href="#">Governance</a>
+</div>
+<div class="flex items-center space-x-6">
+<button class="p-2 text-white/60 hover:text-white hover:bg-white/5 transition-all duration-300 rounded-full">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</button>
+<button class="p-2 text-white/60 hover:text-white hover:bg-white/5 transition-all duration-300 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="bg-gradient-to-r from-primary to-secondary-dim text-on-primary-container px-6 py-2.5 rounded-full font-bold text-sm hover:scale-95 transition-all active:scale-90 shadow-[0_0_20px_rgba(105,218,255,0.3)]">
+                Connect Wallet
+            </button>
+</div>
+</nav>
+<!-- Hero Section -->
+<main class="relative min-h-screen flex flex-col items-center justify-center pt-24 px-6 overflow-hidden">
+<!-- Background Light Leaks -->
+<div class="absolute top-[-10%] left-[-5%] w-[600px] h-[600px] bg-primary/5 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-5%] w-[800px] h-[800px] bg-secondary/5 blur-[150px] rounded-full"></div>
+<!-- Focal Point: Crystal Sphere -->
+<div class="relative w-full max-w-6xl mx-auto flex flex-col items-center text-center">
+<div class="absolute -z-10 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full crystal-sphere backdrop-blur-3xl animate-pulse duration-[8000ms]"></div>
+<!-- Avatar with Crystal Effect -->
+<div class="relative mb-12 aura-glow-primary">
+<div class="w-32 h-32 rounded-full p-[1px] bg-gradient-to-tr from-primary/50 to-secondary/50">
+<div class="w-full h-full rounded-full overflow-hidden border-2 border-white/5 backdrop-blur-xl">
+<img alt="Yahir Rivera Avatar" class="w-full h-full object-cover grayscale contrast-125 opacity-80" data-alt="Portrait of a young professional man in high-contrast black and white" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDgTrr0qw_kHSa4bhjGnQKMeHKH6aZgregNjw97sdsg7pcyK5yQWiIWoborSCKe-9KvLt-ChvJ1caDibrtY5v2W8E71QrSSCT_14SibUPz529PTeDafA7qcWX0U0sr2nuGCGiJNqT6BTeo5_LfMPmUMh-IhWz6Wgz7gGIz0I_0d56hsxMzFA7fB7ApFEpM0m5s3OYZgEgyMZ6hHTpYeitDMmfuhrPQyu6XksuLFzyo_8ywjmXn14Fcm6GCgnjFCL2OrmB66ZIzUGE"/>
+</div>
+</div>
+<!-- Prismatic highlight -->
+<div class="absolute -top-2 -right-2 w-8 h-8 bg-white/20 blur-md rounded-full"></div>
+</div>
+<!-- Headlines -->
+<div class="space-y-4 mb-10">
+<span class="text-[11px] tracking-[0.4em] uppercase font-medium text-primary/80 mb-4 block">Executive Portfolio</span>
+<h1 class="text-7xl md:text-9xl font-extrabold tracking-tighter text-white leading-tight">
+                    Yahir Rivera
+                </h1>
+<h2 class="text-xl md:text-2xl font-light tracking-wide text-white/60 font-body">
+                    CEO de <span class="text-white font-semibold">PizzaLabs</span> — Arquitecto Web3 &amp; IA
+                </h2>
+</div>
+<!-- CTA Cluster -->
+<div class="flex flex-wrap items-center justify-center gap-6">
+<button class="px-10 py-4 rounded-full bg-gradient-to-r from-primary to-primary-dim text-on-primary-container font-bold tracking-tight shadow-xl shadow-primary/10 hover:shadow-primary/25 transition-all active:scale-95">
+                    Launch Artifact
+                </button>
+<button class="px-10 py-4 rounded-full glass-pane ghost-border text-white font-medium hover:bg-white/10 transition-all active:scale-95">
+                    View Protocol
+                </button>
+</div>
+</div>
+</main>
+<!-- High-End Bento Grid Section -->
+<section class="max-w-7xl mx-auto px-12 py-32">
+<div class="grid grid-cols-12 gap-6 h-[700px]">
+<!-- Large Focus Card -->
+<div class="col-span-8 glass-pane ghost-border rounded-3xl p-12 flex flex-col justify-end relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-12 opacity-20 group-hover:opacity-40 transition-opacity">
+<span class="material-symbols-outlined text-[120px]" data-icon="hub">hub</span>
+</div>
+<div class="relative z-10 max-w-lg">
+<label class="text-[11px] tracking-widest text-primary font-bold uppercase mb-4 block">Vision Statement</label>
+<h3 class="text-4xl font-bold text-white mb-6 leading-tight">Diseñando el tejido de la descentralización.</h3>
+<p class="text-white/50 text-lg font-light leading-relaxed">
+                        Liderando la convergencia entre inteligencia artificial distribuida y protocolos de liquidez cristalina para la próxima generación de PizzaLabs.
+                    </p>
+</div>
+</div>
+<!-- Metric Card -->
+<div class="col-span-4 glass-pane ghost-border rounded-3xl p-8 flex flex-col justify-between hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-secondary text-4xl" data-icon="token">token</span>
+<div>
+<div class="text-5xl font-black text-white mb-1">14+</div>
+<div class="text-[11px] tracking-widest text-white/40 uppercase font-bold">Artifacts Deployed</div>
+</div>
+</div>
+<!-- Interactive Sub-Card 1 -->
+<div class="col-span-4 glass-pane ghost-border rounded-3xl p-8 flex flex-col justify-between hover:bg-white/5 transition-colors">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-tertiary text-4xl" data-icon="auto_awesome">auto_awesome</span>
+<span class="material-symbols-outlined text-white/20" data-icon="north_east">north_east</span>
+</div>
+<div>
+<h4 class="text-xl font-bold text-white mb-2">IA Agents</h4>
+<p class="text-white/40 text-sm">Autonomous neural networks for governance optimization.</p>
+</div>
+</div>
+<!-- Interactive Sub-Card 2 -->
+<div class="col-span-4 glass-pane ghost-border rounded-3xl p-8 flex flex-col justify-between bg-gradient-to-br from-surface-container-high to-surface-container hover:shadow-2xl hover:shadow-primary/5 transition-all">
+<div class="flex justify-between items-start">
+<span class="material-symbols-outlined text-primary text-4xl" data-icon="database">database</span>
+</div>
+<div>
+<h4 class="text-xl font-bold text-white mb-2">Vault Protocol</h4>
+<p class="text-white/40 text-sm">Secure-by-design architectural frameworks.</p>
+</div>
+</div>
+<!-- Social/Connect Card -->
+<div class="col-span-4 glass-pane ghost-border rounded-3xl p-8 flex flex-col items-center justify-center text-center">
+<div class="flex -space-x-4 mb-6">
+<div class="w-12 h-12 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-white/60 text-xl" data-icon="link">link</span>
+</div>
+<div class="w-12 h-12 rounded-full border-2 border-surface bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-xl" data-icon="share">share</span>
+</div>
+</div>
+<h4 class="text-white font-bold mb-2">Join the Labs</h4>
+<button class="text-[11px] tracking-widest text-primary uppercase font-bold hover:underline">Connect Socially</button>
+</div>
+</div>
+</section>
+<!-- Experience Timeline (High Contrast Editorial) -->
+<section class="max-w-7xl mx-auto px-12 py-32 border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-start gap-20">
+<div class="md:w-1/3 sticky top-32">
+<h2 class="text-5xl font-extrabold text-white tracking-tighter mb-8">Career<br/>Refractions</h2>
+<p class="text-white/40 leading-relaxed font-light">
+                    Un viaje lineal a través de ecosistemas disruptivos, desde el código base hasta la dirección estratégica.
+                </p>
+</div>
+<div class="md:w-2/3 space-y-24">
+<div class="group relative pl-12 border-l-2 border-white/5 hover:border-primary transition-colors">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-surface border-2 border-white/10 group-hover:bg-primary transition-colors"></div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-[11px] tracking-[0.2em] text-primary font-bold">2021 — PRESENT</span>
+<span class="px-3 py-1 rounded-full glass-pane ghost-border text-[10px] text-white/60 uppercase">Active</span>
+</div>
+<h4 class="text-3xl font-bold text-white mb-2">CEO &amp; Founder</h4>
+<p class="text-xl text-white/80 mb-4">PizzaLabs Architecture</p>
+<p class="text-white/40 font-light leading-relaxed">
+                        Definiendo el estándar de aplicaciones descentralizadas de alto rendimiento, escalando infraestructuras para +100k usuarios concurrentes en redes L2.
+                    </p>
+</div>
+<div class="group relative pl-12 border-l-2 border-white/5 hover:border-secondary transition-colors opacity-60 hover:opacity-100">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-surface border-2 border-white/10 group-hover:bg-secondary transition-colors"></div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-[11px] tracking-[0.2em] text-white/40 font-bold">2019 — 2021</span>
+</div>
+<h4 class="text-3xl font-bold text-white mb-2">Lead AI Engineer</h4>
+<p class="text-xl text-white/80 mb-4">Nexus Core</p>
+<p class="text-white/40 font-light leading-relaxed">
+                        Desarrollo de redes neuronales aplicadas al análisis predictivo de mercados on-chain y automatización de procesos mediante agentes autónomos.
+                    </p>
+</div>
+<div class="group relative pl-12 border-l-2 border-white/5 hover:border-tertiary transition-colors opacity-40 hover:opacity-100">
+<div class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-surface border-2 border-white/10 group-hover:bg-tertiary transition-colors"></div>
+<div class="flex justify-between items-center mb-4">
+<span class="text-[11px] tracking-[0.2em] text-white/40 font-bold">2017 — 2019</span>
+</div>
+<h4 class="text-3xl font-bold text-white mb-2">Senior Web3 Architect</h4>
+<p class="text-xl text-white/80 mb-4">BlockSphere Systems</p>
+<p class="text-white/40 font-light leading-relaxed">
+                        Implementación de contratos inteligentes de alta seguridad y puentes cross-chain para protocolos DeFi de primer nivel.
+                    </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full flex flex-col items-center gap-6 px-12 py-12 border-t border-white/5 bg-black/60 backdrop-blur-xl">
+<div class="w-full max-w-7xl flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="text-lg font-bold text-white/80 tracking-tighter">
+                PiczaDev
+            </div>
+<div class="flex gap-10">
+<a class="font-plus-jakarta text-[11px] tracking-widest uppercase text-white/40 hover:text-sky-300 transition-colors" href="#">Documentation</a>
+<a class="font-plus-jakarta text-[11px] tracking-widest uppercase text-white/40 hover:text-sky-300 transition-colors" href="#">Security</a>
+<a class="font-plus-jakarta text-[11px] tracking-widest uppercase text-white/40 hover:text-sky-300 transition-colors" href="#">Terms</a>
+<a class="font-plus-jakarta text-[11px] tracking-widest uppercase text-white/40 hover:text-sky-300 transition-colors" href="#">Privacy</a>
+</div>
+<div class="flex gap-4">
+<button class="w-10 h-10 rounded-full glass-pane ghost-border flex items-center justify-center text-white/40 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="language">language</span>
+</button>
+<button class="w-10 h-10 rounded-full glass-pane ghost-border flex items-center justify-center text-white/40 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-xl" data-icon="groups">groups</span>
+</button>
+</div>
+</div>
+<div class="mt-8 font-plus-jakarta text-[11px] tracking-widest uppercase text-white/20">
+            © 2024 PiczaDev. The Fluid Crystal Protocol.
+        </div>
+</footer>
+</body></html>
