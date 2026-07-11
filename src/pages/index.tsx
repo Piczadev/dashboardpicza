@@ -16,6 +16,10 @@ export default function Home({ allPosts }: HomeProps) {
       <Head>
         <title>PiczaDev | Digital Alchemist & Web3 Architect</title>
         <meta name="description" content="Software Developer and Digital Strategist specializing in Blockchain Architecture (Solana/TON) and Applied AI Engineering." />
+        <meta
+          name="talentapp:project_verification"
+          content="1106ca638b22aaf2ac2ffa9b4ae78d01270153c58b62d8df620e1747535e4f261baba9d1380819c014e05ca2b063eb735a985f14ea1206cb7de6bab1d54e57d4"
+        />
       </Head>
       <Layout>
         <Hero />
