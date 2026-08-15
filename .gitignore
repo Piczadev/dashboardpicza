@@ -6,3 +6,5 @@ build/
 *.env*
 .DS_Store
 .mcp.json
+.vercel
+.env*

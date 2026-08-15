@@ -129,10 +129,7 @@ async function upsertSubscriber(
       beehiiv_subscription_id: beehiivSubscription.id ?? null,
       beehiiv_status: beehiivSubscription.status ?? "active",
       subscribed_at: new Date().toISOString(),
-      metadata: {
-        provider: "beehiiv",
-        email,
-      },
+      metadata: { provider: "beehiiv", source: "website" },
     },
     {
       onConflict: "email",

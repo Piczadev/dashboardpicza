@@ -1,4 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
+
+export const config = { api: { bodyParser: { sizeLimit: "1kb" } } };
 import {
   NewsletterConfigError,
   NewsletterSyncError,
@@ -11,7 +13,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
 
   try {
-    const { email } = req.body;
+    const { email } = typeof req.body === "object" && req.body !== null ? req.body : {};
 
     if (typeof email !== "string" || !/\S+@\S+\.\S+/.test(email)) {
       return res.status(400).json({ error: "Valid email is required" });
@@ -25,9 +27,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     });
   } catch (error) {
     if (error instanceof NewsletterConfigError) {
-      return res.status(503).json({
-        error: `Newsletter setup incomplete: ${error.missingKeys.join(", ")}`,
-      });
+      console.error("[Newsletter API] Missing server configuration", error.missingKeys);
+      return res.status(503).json({ error: "Newsletter service is temporarily unavailable." });
     }
 
     if (error instanceof NewsletterSyncError) {

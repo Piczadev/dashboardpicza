@@ -1,13 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="GBrowserService"><![CDATA[{}]]></component>
   <component name="GHAISettings"><![CDATA[{}]]></component>
   <component name="GitLabMergeRequestsSettings"><![CDATA[{}]]></component>
-  <component name="JunieProject"><![CDATA[{}]]></component>
+  <component name="JunieProject">{}</component>
   <component name="KubernetesApiPersistence">{}</component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{}]]></component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>

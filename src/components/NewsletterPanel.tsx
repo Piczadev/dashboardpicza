@@ -44,11 +44,11 @@ export function NewsletterPanel() {
                 <h3 className="font-sans font-bold text-lg text-white">Crystal Transmissions</h3>
               </div>
               <p className="font-sans text-sm text-gray-400 mb-8 leading-relaxed">
-                Subscribe to receive weekly insights on fluid aesthetics, artifact engineering, and ecosystem governance updates.
+                Occasional technical notes for builders; every email includes an unsubscribe link.
               </p>
               <GlassForm />
               <p className="text-center text-xs font-mono text-gray-600 mt-4">
-                Zero tracking. Zero telemetry. Pure encryption.
+                No unnecessary tracking. Unsubscribe at any time.
               </p>
             </GlassCard>
           </div>
@@ -60,10 +60,10 @@ export function NewsletterPanel() {
                 <div className="w-10 h-10 rounded-xl bg-accent-cyan/10 flex items-center justify-center">
                   <span className="text-accent-cyan text-lg">⟐</span>
                 </div>
-                <h3 className="font-sans font-bold text-lg text-white">Sync Nodes</h3>
+                <h3 className="font-sans font-bold text-lg text-white">Connect</h3>
               </div>
               <p className="font-sans text-sm text-gray-400 mb-8 leading-relaxed">
-                Connect with the collective across the multiversal social fabric.
+                For engineering contracts, research conversations, and ecosystem collaborations.
               </p>
               <div className="grid grid-cols-2 gap-4">
                 {SOCIALS.map((social) => (

@@ -42,11 +42,11 @@ export function Hero() {
 
         {/* ── CTAs ── */}
         <div className="flex flex-col sm:flex-row items-center gap-4 mb-20 animate-fade-in-up animate-delay-200">
-          <GlassButton variant="primary" className="text-sm px-8 py-3.5">
-            Launch Artifact
+          <GlassButton variant="primary" className="text-sm px-8 py-3.5" onClick={() => document.getElementById("vault")?.scrollIntoView({ behavior: "smooth" })}>
+            View selected work
           </GlassButton>
-          <GlassButton variant="secondary" className="text-sm px-8 py-3.5">
-            View Protocol
+          <GlassButton variant="secondary" className="text-sm px-8 py-3.5" onClick={() => document.getElementById("conexion")?.scrollIntoView({ behavior: "smooth" })}>
+            Start a conversation
           </GlassButton>
         </div>
 

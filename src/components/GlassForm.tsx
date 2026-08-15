@@ -39,14 +39,14 @@ export function GlassForm() {
       onSubmit={handleSubmit}
     >
       <label className="font-mono text-[10px] uppercase tracking-[0.2em] text-gray-500 ml-1">
-        Neural Email Address
+        Email address
       </label>
       <div className="relative">
         <input
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="identity@protocol.xyz"
+          placeholder="you@example.com"
           className="w-full bg-surface-container-lowest/60 text-white placeholder-gray-600 px-5 py-4 rounded-xl focus:outline-none transition-all duration-300 border border-white/[0.06] focus:border-accent-violet/30 focus:shadow-[inset_0_0_12px_rgba(139,92,246,0.08),0_0_20px_-4px_rgba(139,92,246,0.2)] backdrop-blur-md font-mono text-sm"
           disabled={status === "loading" || status === "success"}
           required
@@ -65,7 +65,7 @@ export function GlassForm() {
         className="w-full py-3.5 text-xs uppercase tracking-[0.15em]"
         disabled={status === "loading" || status === "success"}
       >
-        {status === "loading" ? "Syncing..." : status === "success" ? "Synced" : "Initialize Subscription"}
+        {status === "loading" ? "Subscribing..." : status === "success" ? "Subscribed" : "Subscribe"}
       </GlassButton>
     </form>
   );
