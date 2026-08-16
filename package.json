@@ -17,6 +17,7 @@
     "@supabase/supabase-js": "^2.101.1",
     "@tailwindcss/postcss": "^4.2.2",
     "@tailwindcss/typography": "^0.5.19",
+    "@vercel/analytics": "^2.0.1",
     "gray-matter": "^4.0.3",
     "next": "^16.2.0",
     "next-mdx-remote": "^6.0.0",
