@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LiquidBlog | PiczaDev</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#f3f3f3",
+                        "on-secondary-fixed": "#1c1b1b",
+                        "on-primary-fixed-variant": "#1835ba",
+                        "inverse-surface": "#2f3131",
+                        "on-secondary-container": "#636262",
+                        "on-primary-fixed": "#00105c",
+                        "background": "#f9f9f9",
+                        "secondary-fixed-dim": "#c8c6c5",
+                        "inverse-primary": "#bac3ff",
+                        "on-background": "#1a1c1c",
+                        "primary": "#354ecf",
+                        "primary-container": "#5168e9",
+                        "surface-variant": "#e2e2e2",
+                        "on-surface-variant": "#444654",
+                        "on-tertiary-fixed": "#00105c",
+                        "secondary-container": "#e2dfde",
+                        "secondary-fixed": "#e5e2e1",
+                        "tertiary": "#354ecf",
+                        "surface-tint": "#3850d2",
+                        "tertiary-container": "#5168e9",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#dadada",
+                        "error-container": "#ffdad6",
+                        "surface": "#f9f9f9",
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#fffbff",
+                        "on-primary": "#ffffff",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f9f9f9",
+                        "on-tertiary-fixed-variant": "#1835ba",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f1f1f1",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e2e2e2",
+                        "secondary": "#5f5e5e",
+                        "on-tertiary-container": "#fffbff",
+                        "surface-container-high": "#e8e8e8",
+                        "surface-container": "#eeeeee",
+                        "primary-fixed": "#dee0ff",
+                        "tertiary-fixed-dim": "#bac3ff",
+                        "on-error-container": "#93000a",
+                        "primary-fixed-dim": "#bac3ff",
+                        "outline": "#757686",
+                        "on-surface": "#1a1c1c",
+                        "tertiary-fixed": "#dee0ff",
+                        "on-secondary-fixed-variant": "#474646",
+                        "outline-variant": "#c5c5d6"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .neon-glow {
+            text-shadow: 0 0 10px rgba(99, 102, 241, 0.8), 0 0 20px rgba(99, 102, 241, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-slate-950 font-body text-on-surface antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-slate-950/70 backdrop-blur-xl border-b border-white/10 shadow-2xl shadow-indigo-500/10">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-black bg-clip-text text-transparent bg-gradient-to-r from-indigo-500 to-cyan-400 font-['Plus_Jakarta_Sans'] tracking-tight">LiquidBlog</span>
+<nav class="hidden md:flex gap-6">
+<a class="text-indigo-400 border-b-2 border-indigo-500 pb-1 font-['Plus_Jakarta_Sans'] font-bold tracking-tight" href="#">Explore</a>
+<a class="text-slate-400 hover:text-slate-200 transition-colors font-['Plus_Jakarta_Sans'] font-bold tracking-tight" href="#">Market</a>
+<a class="text-slate-400 hover:text-slate-200 transition-colors font-['Plus_Jakarta_Sans'] font-bold tracking-tight" href="#">Governance</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="hover:bg-white/5 rounded-lg transition-all p-2 text-indigo-400 active:scale-95 duration-200">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+</button>
+<button class="hover:bg-white/5 rounded-lg transition-all p-2 text-indigo-400 active:scale-95 duration-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-7xl mx-auto">
+<!-- Hero Branding -->
+<div class="mb-16">
+<h1 class="text-6xl font-black text-white font-headline tracking-tighter mb-4">PiczaDev <span class="text-indigo-500">Curations</span></h1>
+<p class="text-slate-400 text-lg max-w-2xl">High-fidelity Web3 insights, digital artifacts, and refracted narratives from the bleeding edge of the metaverse.</p>
+</div>
+<!-- Featured Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-12">
+<!-- Large Primary Card -->
+<div class="md:col-span-8 group cursor-pointer active:scale-[0.98] transition-all duration-300">
+<div class="glass-card relative h-[500px] rounded-3xl overflow-hidden flex flex-col justify-end p-10 group-hover:shadow-[0_0_50px_rgba(99,102,241,0.2)]">
+<img alt="Abstract digital asset" class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-60 group-hover:scale-110 transition-transform duration-700" data-alt="Abstract vibrant 3D fractal of a digital asset" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbAcemAioE69lMi2BE_ob_ZC-NdWm9czOaHZ7B_K2nVyYfyaEbOjFtiBuhHRJmoYmvkNQK8Lrp0k9uFbKlGDievtFXItJglGpAJ48Xpont_1KzUAvnxnH5c6H2_YXRsQ8Iz3r6420i_2EE2_0OSk_TdbmqUWOe0OkJcbL2n7oxR6NSavCVnFacfpnJxDkUPo4C7SECJp5ORiCvC4_L2qCu683E60a2LpZYjVlvQuBruGRm1uacG4mxHyP4dyQMYwIlmGnZu0VsGLQ"/>
+<div class="relative z-10">
+<div class="inline-flex items-center px-4 py-2 rounded-full bg-indigo-500/20 border border-indigo-400/30 text-indigo-300 font-bold tracking-widest text-sm mb-6 neon-glow">
+                            142 Txns
+                        </div>
+<h2 class="text-5xl font-extrabold text-white font-headline leading-tight mb-4 max-w-xl">The Liquidity Paradox: Navigating Zero-Knowledge Proofs in 2024</h2>
+<div class="flex items-center gap-4 text-slate-400">
+<span class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">schedule</span> 12 Min Read</span>
+<span class="w-1 h-1 bg-slate-700 rounded-full"></span>
+<span>By PiczaDev Editorial</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Cards Column -->
+<div class="md:col-span-4 flex flex-col gap-8">
+<div class="glass-card flex-1 rounded-3xl p-8 relative overflow-hidden group cursor-pointer">
+<div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/20 blur-[60px]"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-cyan-500/20 border border-cyan-400/30 text-cyan-300 font-bold text-xs uppercase tracking-widest neon-glow w-fit">
+                            85 Min Read
+                        </div>
+<div>
+<h3 class="text-2xl font-bold text-white font-headline mt-6 mb-2">Refracted Borders: The Art of Generative NFTs</h3>
+<p class="text-slate-400 text-sm line-clamp-2">Exploring the intersections of mathematics and digital expressionism.</p>
+</div>
+</div>
+</div>
+<div class="glass-card flex-1 rounded-3xl p-8 relative overflow-hidden group cursor-pointer border-indigo-500/30">
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-purple-500/20 blur-[60px]"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-300 font-bold text-xs uppercase tracking-widest neon-glow w-fit">
+                            New Mint
+                        </div>
+<div>
+<h3 class="text-2xl font-bold text-white font-headline mt-6 mb-2">Liquid Governance Strategies</h3>
+<p class="text-slate-400 text-sm">How DAOs are evolving beyond simple token voting structures.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Gallery Feed -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Article Card 1 -->
+<div class="group cursor-pointer">
+<div class="glass-card rounded-[2rem] overflow-hidden mb-6 transition-all duration-500 group-hover:border-indigo-500/50">
+<div class="relative h-64">
+<img alt="Crypto hardware" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern translucent crypto hardware wallet visualization" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBs_Nq-fPBC4AX6EZKRBi0TW4kE2TtyGStW6hPXtsrmG_2BmYL8MvxsYdZC32FJ5ozoAVVT2DUrgVDXW_BaPlzj1tS6zTXFpS7xiFqt223oA6JQ_7Qq84rcS1gAmg_6Ele4KjOps7Dkm-Lff42I3mGR1Ofur6hutjgPJRqVWGQMQnAsCXE_zvllu5fufP97_fV4Nc1JQLjWt_DJTLvxM6WFq14OhyC0BGhfyYopVcl64YBr4-4RHryprhSxraZ3GCCrX1EIKcg4Oto"/>
+<div class="absolute top-4 left-4 inline-flex items-center px-3 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/10 text-indigo-400 font-black text-xs neon-glow">
+                            4.2k Views
+                        </div>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-3 font-headline leading-snug">The Architecture of Decentralized Identity</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">Identity is no longer a static file; it's a dynamic stream of verifiable credentials.</p>
+<div class="flex items-center justify-between text-xs text-slate-500 uppercase tracking-widest font-bold">
+<span>Artifact #8291</span>
+<span class="text-indigo-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">Read <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Article Card 2 -->
+<div class="group cursor-pointer">
+<div class="glass-card rounded-[2rem] overflow-hidden mb-6 transition-all duration-500 group-hover:border-cyan-500/50">
+<div class="relative h-64">
+<img alt="Digital landscape" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Futuristic digital landscape with glowing purple peaks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYYpKy0EwEbM4ISknKVB-o_tkHQEMKkgEbHLxQTRDVRIoBoUO8ZEZLP2N9-_QOuKXp2yjxBZZMxiXm7XavU07JVNwhcQweXNBzr2gVN25M8PRTjaFJwUyQOVbLPHha-MTCKZnRHf8uxxexygEkRJcyn1_qJNvLHXFiFs3nNYr0UwDsTjoVAKkn-LR9ZmdqizMw466FE2OoVTB3u0vS-Qw0KlkkJi9rJrHvfV5VN0CFFvEXeJaKN66jBWvsDwQFNZUa9fje5gUI0vw"/>
+<div class="absolute top-4 left-4 inline-flex items-center px-3 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/10 text-cyan-400 font-black text-xs neon-glow">
+                            12.8 ETH
+                        </div>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-3 font-headline leading-snug">Metaverse Real Estate: Beyond the Hype</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">Understanding the fundamental value of spatial digital assets in open protocols.</p>
+<div class="flex items-center justify-between text-xs text-slate-500 uppercase tracking-widest font-bold">
+<span>Artifact #7732</span>
+<span class="text-cyan-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">Read <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- Article Card 3 -->
+<div class="group cursor-pointer">
+<div class="glass-card rounded-[2rem] overflow-hidden mb-6 transition-all duration-500 group-hover:border-purple-500/50">
+<div class="relative h-64">
+<img alt="Cyberpunk art" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Cyberpunk character portrait with neon lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuUPvrdlW96DCpyQyv8H1P29mjw7D5CsPa836_zuaSpqdjgfbnO-Yaf7az365CdffBQoPpUjb-tXUOsx_Ig0JUqCfgfyVgDDNmr0-3HyeABsW9_fH17h7J0DAKpbD1XHUTGBNnkbko0VfZPY72v0vcqq7p5UOtm7B_TIrQ--He0me6SwxutHIQ0AcTg5mQSUprjBQv-RieknJ6f_oNF5HDlrXb3q5UlIXcVn-ifvXECpOAmzUGydDtiPVCR2fPR2OyCdUoWCnX-9Y"/>
+<div class="absolute top-4 left-4 inline-flex items-center px-3 py-1.5 rounded-xl bg-slate-900/80 backdrop-blur-md border border-white/10 text-purple-400 font-black text-xs neon-glow">
+                            Top Story
+                        </div>
+</div>
+<div class="p-8">
+<h4 class="text-xl font-bold text-white mb-3 font-headline leading-snug">Interoperable Avatars and Social Layer 2s</h4>
+<p class="text-slate-400 text-sm mb-6 leading-relaxed">The future of social interaction is modular, sovereign, and incredibly fast.</p>
+<div class="flex items-center justify-between text-xs text-slate-500 uppercase tracking-widest font-bold">
+<span>Artifact #1042</span>
+<span class="text-purple-400 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">Read <span class="material-symbols-outlined text-sm">arrow_forward</span></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Hidden on desktop, shown on mobile) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 pb-6 pt-3 bg-slate-950/80 backdrop-blur-2xl border-t border-white/10 shadow-[0_-10px_40px_rgba(0,0,0,0.5)]">
+<a class="flex flex-col items-center justify-center bg-indigo-500/20 text-indigo-300 rounded-2xl px-5 py-2 shadow-[0_0_15px_rgba(99,102,241,0.3)]" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[10px] font-medium uppercase tracking-widest mt-1">Feed</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-70 hover:text-indigo-300 transition-all" href="#">
+<span class="material-symbols-outlined">toll</span>
+<span class="text-[10px] font-medium uppercase tracking-widest mt-1">Assets</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-70 hover:text-indigo-300 transition-all" href="#">
+<span class="material-symbols-outlined">add_box</span>
+<span class="text-[10px] font-medium uppercase tracking-widest mt-1">Mint</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 opacity-70 hover:text-indigo-300 transition-all" href="#">
+<span class="material-symbols-outlined">account_circle</span>
+<span class="text-[10px] font-medium uppercase tracking-widest mt-1">Profile</span>
+</a>
+</nav>
+</body></html>

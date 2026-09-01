@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-highest": "#262626",
+              "on-background": "#ffffff",
+              "on-tertiary-fixed": "#34002a",
+              "tertiary-fixed": "#ff87db",
+              "tertiary-dim": "#ff5dd7",
+              "on-secondary": "#290067",
+              "surface-dim": "#0e0e0e",
+              "primary": "#69daff",
+              "on-surface-variant": "#adaaaa",
+              "on-primary-fixed-variant": "#004a5c",
+              "primary-fixed-dim": "#00c0ea",
+              "error-container": "#9f0519",
+              "surface-variant": "#262626",
+              "on-primary-container": "#004050",
+              "on-secondary-container": "#f8f1ff",
+              "surface-tint": "#69daff",
+              "on-tertiary-container": "#0e000a",
+              "secondary-fixed-dim": "#ceb9ff",
+              "on-secondary-fixed-variant": "#6300e2",
+              "tertiary": "#ff5dd7",
+              "surface": "#0e0e0e",
+              "on-tertiary-fixed-variant": "#6f005c",
+              "inverse-primary": "#006880",
+              "error-dim": "#d7383b",
+              "on-error": "#490006",
+              "surface-container-lowest": "#000000",
+              "surface-container": "#1a1919",
+              "tertiary-container": "#fe00d5",
+              "primary-dim": "#00c0ea",
+              "on-surface": "#ffffff",
+              "surface-container-high": "#201f1f",
+              "on-tertiary": "#430036",
+              "secondary-fixed": "#dac9ff",
+              "outline": "#777575",
+              "surface-container-low": "#131313",
+              "primary-container": "#00cffc",
+              "secondary": "#ac89ff",
+              "tertiary-fixed-dim": "#ff6ad8",
+              "error": "#ff716c",
+              "outline-variant": "#494847",
+              "on-secondary-fixed": "#41009a",
+              "secondary-container": "#7000ff",
+              "on-primary-fixed": "#002a35",
+              "on-error-container": "#ffa8a3",
+              "secondary-dim": "#874cff",
+              "inverse-surface": "#fcf8f8",
+              "background": "#0e0e0e",
+              "on-primary": "#004a5d",
+              "inverse-on-surface": "#565554",
+              "surface-bright": "#2c2c2c",
+              "primary-fixed": "#00cffc"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+        background-color: #0e0e0e;
+        color: #ffffff;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(40px);
+        border: 0.5px solid rgba(255, 255, 255, 0.1);
+        box-shadow: inset 10px 10px 50px rgba(255, 255, 255, 0.05), 0 0 80px rgba(105, 218, 255, 0.05);
+      }
+      .aura-glow {
+        filter: blur(120px);
+        opacity: 0.15;
+        z-index: -1;
+      }
+      .text-gradient-primary {
+        background: linear-gradient(to right, #69daff, #ac89ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .btn-gradient {
+        background: linear-gradient(135deg, #69daff 0%, #7000ff 100%);
+        box-shadow: 0 0 20px rgba(105, 218, 255, 0.3);
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+      }
+      .active-nav-link {
+        color: #69daff;
+        border-bottom: 2px solid #69daff;
+        padding-bottom: 4px;
+      }
+    </style>
+</head>
+<body class="bg-background min-h-screen selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full bg-neutral-950/40 backdrop-blur-3xl border-b border-white/10 z-50 flex justify-between items-center px-8 h-20 shadow-[0_0_80px_rgba(105,218,255,0.15)]">
+<div class="flex items-center gap-4">
+<div class="text-2xl font-extrabold tracking-tighter text-white bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500">
+                PiczaDev
+            </div>
+</div>
+<div class="hidden md:flex items-center gap-12 font-['Plus_Jakarta_Sans'] tracking-tight">
+<a class="text-neutral-400 hover:text-white transition-colors hover:scale-105 duration-300" href="#">Explore</a>
+<a class="text-neutral-400 hover:text-white transition-colors hover:scale-105 duration-300" href="#">Editions</a>
+<a class="text-neutral-400 hover:text-white transition-colors hover:scale-105 duration-300" href="#">Archive</a>
+<a class="text-cyan-400 border-b-2 border-cyan-400 pb-1 hover:scale-105 transition-transform duration-300" href="#">Membership</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-neutral-400 hover:text-white material-symbols-outlined">search</button>
+<div class="w-10 h-10 rounded-full border border-white/20 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="User profile avatar close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmZe8KmInsamySAHyxloDVjgDOyVNxboVc7ex4wmn2jgRkoBwMgCQZabQQ0A7eUZxyXx08DAP8oGQ03Y93pV2EWicgaSXnvAhVnw6uDg3_00ma8RkLveON6_IEQznqkpByLZuYNWY5dCF6eGEcW56acsTWlttGVBaYsF_sO5TdoVL6pAwpwXV1uVFbtzYqJ2myKVVLD1u9j9UOfJPQT2aYGGBXcPE_TtcgCnKXY0Pmw5UAWKT9XHzF_iaEXngwbyo6PxwoGnBea40"/>
+</div>
+<button class="hidden md:block px-6 py-2 rounded-full bg-primary text-on-primary font-bold text-sm tracking-tight hover:scale-105 transition-transform duration-300 active:scale-95">Subscribe</button>
+</div>
+</nav>
+<!-- Background Auras -->
+<div class="fixed inset-0 overflow-hidden pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary aura-glow rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary aura-glow rounded-full"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="relative pt-32 pb-24 px-8 max-w-7xl mx-auto min-h-screen">
+<!-- Header Section -->
+<header class="mb-16">
+<div class="flex items-center gap-4 mb-4">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary py-1 px-3 bg-primary/10 rounded-full border border-primary/20">Frequency Control</span>
+<div class="h-px flex-1 bg-gradient-to-r from-white/10 to-transparent"></div>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 text-white leading-tight">
+                Digital <span class="text-gradient-primary">Synchronization</span>
+</h1>
+<p class="text-slate-400 text-xl max-w-2xl font-light leading-relaxed">
+                Connect your nodes to the central relay. Receive high-frequency transmissions on architecture, design systems, and the future of web ecosystems.
+            </p>
+</header>
+<!-- Two-Column Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Side: Subscription Card -->
+<div class="lg:col-span-7 h-full">
+<div class="glass-card rounded-lg p-10 md:p-14 h-full flex flex-col justify-center relative overflow-hidden group">
+<!-- Subtle refractive highlight -->
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary/30 to-transparent"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-primary text-4xl mb-6" style="font-variation-settings: 'FILL' 1;">rss_feed</span>
+<h2 class="text-3xl md:text-4xl font-bold mb-6 text-white tracking-tight">Sync Your Frequency</h2>
+<p class="text-slate-400 mb-10 text-lg leading-relaxed">
+                            Join the Liquid Crystal network. Get exclusive early access to new nodes, component drops, and editorial insights delivered straight to your terminal.
+                        </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<div class="relative flex-1 group">
+<input class="w-full bg-white/5 border border-white/10 rounded-full py-5 px-8 text-white placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-transparent transition-all backdrop-blur-md" placeholder="Enter your node address (email)..." type="email"/>
+</div>
+<button class="btn-gradient px-10 py-5 rounded-full text-white font-bold tracking-tight hover:scale-105 transition-all active:scale-95 flex items-center justify-center gap-2">
+                                Suscribirse
+                                <span class="material-symbols-outlined text-xl">sensors</span>
+</button>
+</div>
+<p class="mt-6 text-[10px] uppercase tracking-widest text-neutral-500 font-bold">
+                            Encryption Active • No Spam Policy • Zero Data Leakage
+                        </p>
+</div>
+<!-- Decorative refractive element -->
+<div class="absolute -right-20 -bottom-20 w-64 h-64 bg-primary/10 rounded-full blur-[80px] group-hover:bg-primary/20 transition-all duration-700"></div>
+</div>
+</div>
+<!-- Right Side: Social Nodes Grid -->
+<div class="lg:col-span-5">
+<div class="grid grid-cols-2 gap-4">
+<div class="col-span-2 mb-2">
+<h3 class="text-[11px] font-black uppercase tracking-[0.25em] text-secondary">Active Nodes</h3>
+</div>
+<!-- Discord Node -->
+<a class="glass-card rounded-lg p-6 flex flex-col justify-between aspect-square group hover:scale-[1.02] transition-all duration-300" href="#">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-2xl bg-indigo-500/20 flex items-center justify-center border border-indigo-500/30 group-hover:border-indigo-500/60 transition-colors">
+<span class="material-symbols-outlined text-indigo-400" style="font-variation-settings: 'FILL' 1;">forum</span>
+</div>
+<span class="material-symbols-outlined text-neutral-600 group-hover:text-white transition-colors">arrow_outward</span>
+</div>
+<div>
+<div class="text-white font-bold text-lg">Discord</div>
+<div class="text-neutral-500 text-sm">Community Relay</div>
+</div>
+</a>
+<!-- Twitter X Node -->
+<a class="glass-card rounded-lg p-6 flex flex-col justify-between aspect-square group hover:scale-[1.02] transition-all duration-300" href="#">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center border border-white/20 group-hover:border-white/40 transition-colors">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<span class="material-symbols-outlined text-neutral-600 group-hover:text-white transition-colors">arrow_outward</span>
+</div>
+<div>
+<div class="text-white font-bold text-lg">Twitter X</div>
+<div class="text-neutral-500 text-sm">Broadcast Stream</div>
+</div>
+</a>
+<!-- GitHub Node -->
+<a class="glass-card rounded-lg p-6 flex flex-col justify-between aspect-square group hover:scale-[1.02] transition-all duration-300" href="#">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-2xl bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30 group-hover:border-emerald-500/60 transition-colors">
+<span class="material-symbols-outlined text-emerald-400" style="font-variation-settings: 'FILL' 1;">terminal</span>
+</div>
+<span class="material-symbols-outlined text-neutral-600 group-hover:text-white transition-colors">arrow_outward</span>
+</div>
+<div>
+<div class="text-white font-bold text-lg">GitHub</div>
+<div class="text-neutral-500 text-sm">Source Repository</div>
+</div>
+</a>
+<!-- Warpcast Node -->
+<a class="glass-card rounded-lg p-6 flex flex-col justify-between aspect-square group hover:scale-[1.02] transition-all duration-300" href="#">
+<div class="flex justify-between items-start">
+<div class="w-12 h-12 rounded-2xl bg-violet-500/20 flex items-center justify-center border border-violet-500/30 group-hover:border-violet-500/60 transition-colors">
+<span class="material-symbols-outlined text-violet-400" style="font-variation-settings: 'FILL' 1;">animation</span>
+</div>
+<span class="material-symbols-outlined text-neutral-600 group-hover:text-white transition-colors">arrow_outward</span>
+</div>
+<div>
+<div class="text-white font-bold text-lg">Warpcast</div>
+<div class="text-neutral-500 text-sm">On-chain Signal</div>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Featured Section Below -->
+<section class="mt-24">
+<div class="glass-card rounded-lg p-8 md:p-12 overflow-hidden relative border-white/5">
+<div class="flex flex-col md:flex-row items-center gap-12 relative z-10">
+<div class="w-full md:w-1/3">
+<div class="aspect-square rounded-lg overflow-hidden border border-white/10 rotate-3 hover:rotate-0 transition-transform duration-500 shadow-2xl">
+<img class="w-full h-full object-cover" data-alt="Abstract vibrant liquid glass art background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB4TMqdK50QXZVmmwyDBjuOGoj2_eLRbmleB9LiaQ_Jw2cqiFQPqN2hFXoka6LCOsgpbFZiVM4ra0A_F7jqedvtXCKewdTbcZ6cufyOvfqo0XRFlTdjHOawIM4qMOacu1ZKxky4ZVV_zURQ396pi_NpWc43NYHEtOaDgp1tPn4qL1F_V2PM1ZqbJjKXalF1V_vuiK0G3G6dLnrthfSH-TM5RGpvcznIwFKbpTO-Wbp4pSXO9TmaMpWpQn17LUVhnnCxLFDKxrjOqFw"/>
+</div>
+</div>
+<div class="w-full md:w-2/3">
+<h3 class="text-3xl font-bold text-white mb-4">Node 082: Refractive Interfaces</h3>
+<p class="text-slate-400 text-lg mb-8 max-w-xl">
+                            Our latest edition deep dives into the physics of glassmorphism and how light interaction defines modern premium software. Available for Membership nodes only.
+                        </p>
+<a class="inline-flex items-center gap-2 text-primary font-bold uppercase tracking-widest text-xs hover:gap-4 transition-all" href="#">
+                            Access Transmission
+                            <span class="material-symbols-outlined">east</span>
+</a>
+</div>
+</div>
+<!-- Backdrop Decoration -->
+<div class="absolute top-0 right-0 w-[500px] h-full bg-gradient-to-l from-violet-500/5 to-transparent pointer-events-none"></div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 border-t border-white/5 w-full py-12 px-8">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col gap-2">
+<div class="text-lg font-black text-white">PiczaDev</div>
+<p class="text-[11px] font-bold uppercase tracking-[0.1em] text-neutral-500 font-['Plus_Jakarta_Sans']">© 2024 Liquid Crystal. Forged in Light.</p>
+</div>
+<div class="flex items-center gap-8">
+<a class="text-[11px] font-bold uppercase tracking-[0.1em] text-neutral-500 hover:text-cyan-300 transition-all opacity-80 hover:opacity-100 font-['Plus_Jakarta_Sans']" href="#">Privacy</a>
+<a class="text-[11px] font-bold uppercase tracking-[0.1em] text-neutral-500 hover:text-cyan-300 transition-all opacity-80 hover:opacity-100 font-['Plus_Jakarta_Sans']" href="#">Terms</a>
+<a class="text-[11px] font-bold uppercase tracking-[0.1em] text-neutral-500 hover:text-cyan-300 transition-all opacity-80 hover:opacity-100 font-['Plus_Jakarta_Sans']" href="#">Nodes</a>
+<a class="text-[11px] font-bold uppercase tracking-[0.1em] text-neutral-500 hover:text-cyan-300 transition-all opacity-80 hover:opacity-100 font-['Plus_Jakarta_Sans']" href="#">Support</a>
+</div>
+<div class="flex gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-neutral-400 text-xl">share</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full border border-white/10 hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined text-neutral-400 text-xl">dark_mode</span>
+</button>
+</div>
+</div>
+</footer>
+</body></html>

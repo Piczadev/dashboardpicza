@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Artifacts Vault | Liquid Obsidian</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"surface-bright": "#2c2c2c", "tertiary-container": "#fe00d5", "error-dim": "#d7383b", "primary-fixed-dim": "#00c0ea", "on-tertiary-fixed-variant": "#6f005c", "on-primary-fixed-variant": "#004a5c", tertiary: "#ff5dd7", "on-surface-variant": "#adaaaa", "on-secondary": "#290067", "surface-container-low": "#131313", "secondary-container": "#7000ff", "on-tertiary-fixed": "#34002a", "on-secondary-fixed": "#41009a", "inverse-surface": "#fcf8f8", "primary-fixed": "#00cffc", secondary: "#ac89ff", "on-background": "#ffffff", "secondary-dim": "#874cff", "tertiary-fixed-dim": "#ff6ad8", "on-tertiary-container": "#0e000a", "inverse-on-surface": "#565554", "on-primary-container": "#004050", "tertiary-fixed": "#ff87db", "on-primary": "#004a5d", "surface-variant": "#262626", "outline-variant": "#494847", "surface-container-high": "#201f1f", "tertiary-dim": "#ff5dd7", surface: "#0e0e0e", "secondary-fixed": "#dac9ff", background: "#0e0e0e", "surface-tint": "#69daff", "on-primary-fixed": "#002a35", "surface-dim": "#0e0e0e", "on-tertiary": "#430036", "primary-container": "#00cffc", "surface-container-lowest": "#000000", "primary-dim": "#00c0ea", "error-container": "#9f0519", "on-secondary-container": "#f8f1ff", "surface-container": "#1a1919", "on-error": "#490006", "on-error-container": "#ffa8a3", "on-surface": "#ffffff", primary: "#69daff", outline: "#777575", "secondary-fixed-dim": "#ceb9ff", "surface-container-highest": "#262626", "inverse-primary": "#006880", "on-secondary-fixed-variant": "#6300e2", error: "#ff716c"}, fontFamily: {headline: ["Plus Jakarta Sans"], body: ["Plus Jakarta Sans"], label: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"]}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}, fontSize: {}}}};</script>
+<style>
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(26, 25, 25, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .glass-card:hover {
+            border-color: rgba(105, 218, 255, 0.3);
+            box-shadow: 0 0 40px -10px rgba(105, 218, 255, 0.15);
+            transform: translateY(-4px);
+        }
+        .aura-glow {
+            filter: blur(60px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #69daff, #ac89ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background selection:bg-primary/30">
+<!-- Ambient Background Elements -->
+<div class="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] aura-glow bg-primary rounded-full"></div>
+<div class="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] aura-glow bg-secondary rounded-full"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/10 shadow-[0_0_50px_-12px_rgba(105,218,255,0.15)]">
+<div class="flex justify-between items-center px-8 py-4 w-full max-w-[1440px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 font-headline">
+                Liquid Obsidian
+            </div>
+<div class="hidden md:flex items-center space-x-8 font-plus-jakarta text-sm tracking-wider uppercase">
+<a class="text-white/60 hover:text-white transition-colors hover:bg-white/5 px-3 py-1 rounded-full transition-all duration-300" href="#">Ecosystem</a>
+<a class="text-cyan-400 font-bold border-b border-cyan-400/50 px-3 py-1 rounded-full transition-all duration-300" href="#">Marketplace</a>
+<a class="text-white/60 hover:text-white transition-colors hover:bg-white/5 px-3 py-1 rounded-full transition-all duration-300" href="#">Gallery</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-white/60 hover:text-cyan-400 transition-colors">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="bg-primary hover:bg-primary-dim text-on-primary-container px-6 py-2 rounded-full font-bold text-sm tracking-wide transition-all active:scale-95 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="account_balance_wallet">account_balance_wallet</span>
+                    Connect Wallet
+                </button>
+</div>
+</div>
+</nav>
+<main class="relative pt-32 pb-24 px-6 md:px-12 max-w-[1440px] mx-auto min-h-screen">
+<!-- Header Section -->
+<header class="mb-16">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+<div>
+<span class="text-primary font-label text-[10px] tracking-[0.2em] uppercase mb-4 block">Digital Collectibles Archive</span>
+<h1 class="text-5xl md:text-7xl font-bold font-headline tracking-tighter text-white mb-4">Artifacts Vault</h1>
+<p class="text-on-surface-variant max-w-xl text-lg leading-relaxed">
+                        A curated selection of hyper-luminous digital assets. Engineered for the next evolution of the decentralized web.
+                    </p>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low p-1.5 rounded-full border border-white/5 backdrop-blur-md">
+<button class="px-5 py-2 rounded-full bg-surface-container-highest text-primary text-xs font-bold tracking-wider uppercase">All Artifacts</button>
+<button class="px-5 py-2 rounded-full text-white/40 hover:text-white text-xs font-bold tracking-wider uppercase transition-colors">Solana</button>
+<button class="px-5 py-2 rounded-full text-white/40 hover:text-white text-xs font-bold tracking-wider uppercase transition-colors">Ethereum</button>
+<button class="px-5 py-2 rounded-full text-white/40 hover:text-white text-xs font-bold tracking-wider uppercase transition-colors">Base</button>
+</div>
+</div>
+</header>
+<!-- Bento Grid / NFT Gallery -->
+<div class="grid grid-cols-1 md:grid-cols-6 gap-8">
+<!-- Featured Large Card 1 -->
+<div class="md:col-span-4 glass-card rounded-3xl overflow-hidden group">
+<div class="relative aspect-[16/9] md:aspect-auto md:h-[500px]">
+<img alt="Featured Artifact" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Futuristic neon crystalline digital structure with glowing core" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDChI-iC7RbgBqjgj2FMTEkxwDXrQ7ZicC02FxzvvErFqUDqCgNXkts52QX5UDVRAoXIIEvXchxfp3mElhvj3mWRkWNy2DkCy3dKMcyuQV-S54N60_JDqE3xEyJwODAtLWkgm554gTY6RIdVww2w4TCVLw0dBeiWAc_5LkuKHM9Cq2PsOICkq8tV6L9sN4mgQCcf-ZdRRnSmtWrdWvJRI2uXhwlpwN0Cu8k_tbx6PSADLFYmXJoijhQrvqOIQM-GF2hTUdDJHSwAGQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-8 w-full flex justify-between items-end">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="bg-primary/20 text-primary text-[10px] px-2 py-0.5 rounded uppercase font-bold tracking-widest border border-primary/20">Ultra Rare</span>
+<span class="text-white/40 text-[10px] uppercase font-bold tracking-widest flex items-center gap-1">
+<span class="material-symbols-outlined text-[12px]" data-icon="token">token</span> Ethereum
+                                </span>
+</div>
+<h3 class="text-3xl font-bold font-headline mb-2">Obsidian Monolith #001</h3>
+<p class="text-white/60 font-label text-sm">Created by PiczaDev</p>
+</div>
+<div class="flex gap-4">
+<button class="bg-white text-black px-8 py-3 rounded-full font-bold text-sm transition-all hover:bg-primary active:scale-95">Bid Now</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Side Card 1 -->
+<div class="md:col-span-2 glass-card rounded-3xl overflow-hidden group">
+<div class="relative h-full flex flex-col">
+<div class="aspect-square overflow-hidden">
+<img alt="NFT Artifact" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Abstract purple liquid metal sphere with sharp reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6cpnN-67-Y2UzrxDqzoTUrWsedm9KqO3FUHwzdA-7JSurRL4qBEkKWoicaAlHiDa3lcXWb6AEWSJ3s1g4sm4jqw7DRbfvppW6Oo4IBXCfUJFexEwdEdDNVBBkEkJW8WLMqsaL3g7eoKCKp2eTn8jMByWp5TK3rS1X4eNEbhMlZsRNHu6MlixDqozdct1OMfDYVpKHjj6Ad9yf1CJcRVcpZG7wsoc2r_pCgw2xIcPFHXwNlhHqhuJgGf0ZZ0exnxuQ0CY6RtCivMg"/>
+</div>
+<div class="p-6 flex-grow flex flex-col justify-between">
+<div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-xl font-bold font-headline">Liquid Core VI</h3>
+<span class="text-primary text-xs font-bold">1.4 ETH</span>
+</div>
+<p class="text-on-surface-variant text-sm line-clamp-2">The sixth iteration of the liquid core series exploring high-pressure digital fluids.</p>
+</div>
+<button class="w-full mt-6 py-3 border border-white/10 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-white/5 transition-colors">View Details</button>
+</div>
+</div>
+</div>
+<!-- Standard Grid Items -->
+<!-- Card 2 -->
+<div class="md:col-span-2 glass-card rounded-3xl overflow-hidden group">
+<div class="relative aspect-square overflow-hidden">
+<img alt="Prism Artifact" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Prismatic light refraction through glass blocks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXR4g0MTbPJ9qIX9Yupmy8IuTAlXTc4bO-EP7uS1p5xL94KVoMWYbicVas-ahezmg5e1ikORLW14EK4ny7mDeXtGy1CO6ubTIKCxhiZYpg3E_BewUP8X4n1pasIpf1Nux29BOPN6Z3ctOgUKjEzp3rlzJnHg8gFzKJZmbw7WBuF70v_iSo1PN1JRHmr2k1JA_K6oznU9dzeZibJ0Ptgdb5QfVTtvI-_-zcpLIYclV2aLKgXAyMX5pjnN5jnSzsKIM-xjjkJVej_34"/>
+<div class="absolute top-4 right-4 bg-black/40 backdrop-blur-md px-3 py-1 rounded-full border border-white/10">
+<span class="text-[10px] font-bold text-white/80">BASE</span>
+</div>
+</div>
+<div class="p-6">
+<div class="flex justify-between mb-4">
+<h3 class="font-bold">Prism Refraction</h3>
+<span class="material-symbols-outlined text-white/40" data-icon="favorite">favorite</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-white/40 text-[10px] uppercase font-bold tracking-widest">Floor: 0.25 ETH</span>
+<button class="text-primary text-xs font-bold underline underline-offset-4 hover:text-white transition-colors">Quick Bid</button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="md:col-span-2 glass-card rounded-3xl overflow-hidden group">
+<div class="relative aspect-square overflow-hidden">
+<img alt="Cyber Artifact" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="3D digital render of glowing cyan data threads" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlj_3iQn13UwDxtaHne0hDSNt5NPV81KqhLhiOrXDbi2_kofQzdKVdyLpTwj551i5Dv5OpqLvCPDfaVv-lb-E0sK9WlIR72K-YYeiCUqm3IDAI9CI7Y23D_mVEZ0yWDBXeq19ObP44zjC2ELU6qIwA2Nxdu8omsQpNXBAJoWOVVMMU7joS9js8eI7vtBqipeF4dhDPrZ_hYfJLlX4GNy81cUMg3tBkK0UNFih_qoN_pDxRKTrykDRFDtbXikqZOERrCD34fU_0hII"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between mb-4">
+<h3 class="font-bold">Neural Pathway</h3>
+<span class="material-symbols-outlined text-white/40" data-icon="share">share</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-white/40 text-[10px] uppercase font-bold tracking-widest">Floor: 450 SOL</span>
+<button class="text-primary text-xs font-bold underline underline-offset-4 hover:text-white transition-colors">Quick Bid</button>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="md:col-span-2 glass-card rounded-3xl overflow-hidden group">
+<div class="relative aspect-square overflow-hidden">
+<img alt="Geometric Artifact" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Geometric glass abstract art with sharp edges and purple light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAiUKwe63PnuR5GO2gjqZaHe2ftXtaxBQdw5Q77_ZJ1K2LhR5fZkPjCgdgSqE3myQP85pLjIWHeVkukQ2azp1UypZT92XUB3KSBWcJ6BHBWo5_ssYeRqUFL2qoFW7w-h_Xm0FFIDSdkGHa967yWZfqHFeJva3bly9nTbCiRgL1_RWU80GfabUWzNntbgbcYni9AHNtJ4-xArqvy9u0V_WSmbBT8ENcdPf0AatL-xnOwOkeEoEN6dtHhrR3Us-z-SvdfCpI3OIp3tQ"/>
+</div>
+<div class="p-6">
+<div class="flex justify-between mb-4">
+<h3 class="font-bold">Glass Geometry</h3>
+<span class="material-symbols-outlined text-white/40" data-icon="more_horiz">more_horiz</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-white/40 text-[10px] uppercase font-bold tracking-widest">Floor: 2.1 ETH</span>
+<button class="text-primary text-xs font-bold underline underline-offset-4 hover:text-white transition-colors">Quick Bid</button>
+</div>
+</div>
+</div>
+<!-- Another Featured Style -->
+<div class="md:col-span-3 glass-card rounded-3xl p-8 flex flex-col md:flex-row gap-8 items-center">
+<div class="w-full md:w-1/2 aspect-square rounded-2xl overflow-hidden border border-white/10">
+<img alt="Artifact Detail" class="w-full h-full object-cover" data-alt="Digital art featuring a robotic hand made of glass and chrome" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdQ-ytrF7zLjIKrlGX2GEEAERX_BfYiWD0lUJ7iG6Q33L6SfMytN0CAODVFgFD6Wmf2eWVHMOIRJwmqko8oGi4Aoy0E3GRWAxDFK14ylfiKLJBHsQkiQmCBPw8DVpm77kffnKuEG4fOwZbwHoCz9kqjhg8E3Hw6MzfqqXOx9z30TT6K4d1vylono-TTevqMQ6t_cRPU7Um9CUPbqW98-ZVXMEV-wMxj1L_N16oi3xY5jj7QKtwsDTdGkX4N1PVuJ7SKxeCE6RHMws"/>
+</div>
+<div class="w-full md:w-1/2">
+<span class="text-secondary font-label text-[10px] tracking-[0.2em] uppercase mb-2 block">Premium Drop</span>
+<h3 class="text-2xl font-bold font-headline mb-4 uppercase italic">Chrome Catalyst</h3>
+<p class="text-on-surface-variant text-sm mb-6 leading-relaxed">The pinnacle of digital sculpture. A limited edition piece showcasing the synergy between human form and obsidian mechanics.</p>
+<div class="space-y-4">
+<div class="flex justify-between border-b border-white/5 pb-2">
+<span class="text-white/40 text-[10px] uppercase font-bold">Rarity</span>
+<span class="text-white text-[10px] font-bold">Legendary</span>
+</div>
+<div class="flex justify-between border-b border-white/5 pb-2">
+<span class="text-white/40 text-[10px] uppercase font-bold">Artist</span>
+<span class="text-white text-[10px] font-bold">PiczaDev x Liquid</span>
+</div>
+</div>
+<button class="w-full mt-8 py-3 bg-secondary-container text-white rounded-full text-xs font-black uppercase tracking-widest shadow-lg shadow-secondary/20 transition-all hover:scale-[1.02]">Reserve Artifact</button>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="md:col-span-3 glass-card rounded-3xl overflow-hidden group">
+<div class="relative h-full flex flex-col md:flex-row">
+<div class="md:w-1/2 aspect-square md:aspect-auto overflow-hidden">
+<img alt="Iridescent Artifact" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="Abstract smooth wavy surface with turquoise iridescent colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZRqVIZjkfNdMIoLeL0XKuXYYCCeMtJEv_PPovUTULBqdTuxf9-d9ckVpNliAF9f2DfU2JqFY8jYcSLJOcLx3-8LngvSzevhpITURXtIm3FRQE-yOexjvX8BFZ3NhA9J9GhxbWjuu8kFtgrqxNQjr5JCmE-fe4ZiSu6EWA48DRa60hEg4DZUZ81GkDvGfNdtkxdcGIpjdAOm1PKxfS_VOO2moJfZvmx277gT2crxccA59z9BlPIA05Y4xSuyl87Kqe4vumXqyA6Fw"/>
+</div>
+<div class="p-8 md:w-1/2 flex flex-col justify-center">
+<h3 class="text-xl font-bold font-headline mb-4 uppercase">Iridescent Flow</h3>
+<p class="text-white/40 text-xs mb-6 uppercase tracking-widest leading-loose">Visualizing the silent movement of data across the obsidian network.</p>
+<div class="flex gap-4">
+<span class="text-2xl font-black text-primary">0.8</span>
+<span class="text-xs font-bold text-white/20 self-end mb-1 uppercase">ETH</span>
+</div>
+<button class="mt-6 py-2 px-6 border border-primary/40 text-primary rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-primary/10 transition-colors self-start">Collect</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination/Load More -->
+<div class="mt-20 flex justify-center">
+<button class="group flex items-center gap-4 text-white/40 hover:text-white transition-colors">
+<span class="h-[1px] w-12 bg-white/10 group-hover:w-24 group-hover:bg-primary transition-all"></span>
+<span class="font-label text-xs uppercase tracking-[0.4em] font-bold">Load More Artifacts</span>
+<span class="h-[1px] w-12 bg-white/10 group-hover:w-24 group-hover:bg-primary transition-all"></span>
+</button>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-white/5 bg-black/60 backdrop-blur-md">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 w-full max-w-[1440px] mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-black text-white/80 font-headline mb-2 uppercase tracking-tight">Liquid Obsidian</div>
+<p class="font-plus-jakarta text-[10px] tracking-[0.05em] uppercase text-white/40">© 2024 Liquid Obsidian. All rights reserved.</p>
+</div>
+<div class="flex gap-12 font-plus-jakarta text-[10px] tracking-[0.05em] uppercase text-white/40">
+<div class="flex flex-col gap-2">
+<span class="text-white mb-2">Platform</span>
+<a class="hover:text-cyan-400 transition-colors" href="#">Marketplace</a>
+<a class="hover:text-cyan-400 transition-colors" href="#">Ecosystem</a>
+<a class="hover:text-cyan-400 transition-colors" href="#">Documentation</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-white mb-2">Legal</span>
+<a class="hover:text-cyan-400 transition-colors" href="#">Terms</a>
+<a class="hover:text-cyan-400 transition-colors" href="#">Privacy</a>
+</div>
+<div class="flex flex-col gap-2">
+<span class="text-white mb-2">Community</span>
+<a class="hover:text-cyan-400 transition-colors" href="#">Twitter</a>
+<a class="hover:text-cyan-400 transition-colors" href="#">Discord</a>
+</div>
+</div>
+<div class="mt-8 md:mt-0 flex items-center gap-4">
+<span class="text-[10px] text-white/20 uppercase font-bold tracking-widest">Powered By</span>
+<div class="text-white/60 font-bold tracking-tighter text-sm uppercase">PiczaDev</div>
+</div>
+</div>
+</footer>
+</body></html>

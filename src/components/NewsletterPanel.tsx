@@ -1,94 +1,295 @@
 import React from "react";
-import { GlassCard } from "./GlassCard";
+import { SpotlightCard } from "./ui/SpotlightCard";
 import { GlassForm } from "./GlassForm";
 
-const SOCIALS = [
-  { name: "Discord", icon: "💬", href: "https://discord.com", color: "group-hover:bg-[#5865F2] group-hover:text-white" },
-  { name: "Twitter X", icon: "𝕏", href: "https://twitter.com/piczadev", color: "group-hover:bg-white group-hover:text-black" },
-  { name: "GitHub", icon: "<>", href: "https://github.com/piczadev", color: "group-hover:bg-white group-hover:text-black" },
-  { name: "WarpCast", icon: "⌘", href: "https://warpcast.com", color: "group-hover:bg-accent-violet group-hover:text-white" },
+interface SocialNode {
+  name: string;
+  handle: string;
+  category: "Professional & Web3" | "Content & Writing" | "Streaming & Media";
+  icon: string;
+  href: string;
+  color: string;
+}
+
+const ALL_NODES: SocialNode[] = [
+  // Professional & Web3
+  {
+    name: "LinkedIn",
+    handle: "in/yahir-pizzadev",
+    category: "Professional & Web3",
+    icon: "💼",
+    href: "https://www.linkedin.com/in/yahir-pizzadev",
+    color: "group-hover:text-blue-400 group-hover:border-blue-400/40",
+  },
+  {
+    name: "GitHub",
+    handle: "github.com/Piczadev",
+    category: "Professional & Web3",
+    icon: "⌨️",
+    href: "https://github.com/Piczadev",
+    color: "group-hover:text-white group-hover:border-white/40",
+  },
+  {
+    name: "Portrait Portfolio",
+    handle: "portrait.so/piczadev",
+    category: "Professional & Web3",
+    icon: "🌐",
+    href: "https://portrait.so/piczadev",
+    color: "group-hover:text-cyan-400 group-hover:border-cyan-400/40",
+  },
+  {
+    name: "Telegram Direct",
+    handle: "t.me/piczadev",
+    category: "Professional & Web3",
+    icon: "✈️",
+    href: "https://t.me/piczadev",
+    color: "group-hover:text-sky-400 group-hover:border-sky-400/40",
+  },
+  {
+    name: "ENS Protocol",
+    handle: "piczadev.eth",
+    category: "Professional & Web3",
+    icon: "⟠",
+    href: "https://app.ens.domains/piczadev.eth",
+    color: "group-hover:text-purple-400 group-hover:border-purple-400/40",
+  },
+  {
+    name: "Solana Protocol",
+    handle: "pizzalabs.sol.site",
+    category: "Professional & Web3",
+    icon: "◎",
+    href: "https://pizzalabs.sol.site",
+    color: "group-hover:text-emerald-400 group-hover:border-emerald-400/40",
+  },
+
+  // Content & Writing
+  {
+    name: "X / Twitter",
+    handle: "@Piczadev",
+    category: "Content & Writing",
+    icon: "𝕏",
+    href: "https://x.com/Piczadev",
+    color: "group-hover:text-zinc-200 group-hover:border-white/40",
+  },
+  {
+    name: "Substack",
+    handle: "@piczadev",
+    category: "Content & Writing",
+    icon: "📰",
+    href: "https://substack.com/@piczadev",
+    color: "group-hover:text-orange-400 group-hover:border-orange-400/40",
+  },
+  {
+    name: "Bluesky",
+    handle: "@piczadev.com",
+    category: "Content & Writing",
+    icon: "🦋",
+    href: "https://bsky.app/profile/piczadev.com",
+    color: "group-hover:text-sky-400 group-hover:border-sky-400/40",
+  },
+  {
+    name: "Typefully",
+    handle: "PiczaDev",
+    category: "Content & Writing",
+    icon: "✍️",
+    href: "https://typefully.com/PiczaDev",
+    color: "group-hover:text-cyan-300 group-hover:border-cyan-300/40",
+  },
+
+  // Streaming & Media
+  {
+    name: "YouTube",
+    handle: "@piczadev",
+    category: "Streaming & Media",
+    icon: "▶️",
+    href: "https://www.youtube.com/@piczadev",
+    color: "group-hover:text-red-400 group-hover:border-red-400/40",
+  },
+  {
+    name: "Twitch",
+    handle: "piczadev0",
+    category: "Streaming & Media",
+    icon: "👾",
+    href: "https://www.twitch.tv/piczadev0",
+    color: "group-hover:text-purple-400 group-hover:border-purple-400/40",
+  },
+  {
+    name: "Kick",
+    handle: "piczadev0",
+    category: "Streaming & Media",
+    icon: "🟢",
+    href: "https://kick.com/piczadev0",
+    color: "group-hover:text-emerald-400 group-hover:border-emerald-400/40",
+  },
+  {
+    name: "Instagram",
+    handle: "@yha.piczadev",
+    category: "Streaming & Media",
+    icon: "📸",
+    href: "https://www.instagram.com/yha.piczadev/",
+    color: "group-hover:text-pink-400 group-hover:border-pink-400/40",
+  },
+  {
+    name: "TikTok",
+    handle: "@piczadev",
+    category: "Streaming & Media",
+    icon: "🎵",
+    href: "https://www.tiktok.com/@piczadev",
+    color: "group-hover:text-cyan-300 group-hover:border-cyan-300/40",
+  },
+  {
+    name: "Facebook",
+    handle: "Piczadev0",
+    category: "Streaming & Media",
+    icon: "👥",
+    href: "https://www.facebook.com/Piczadev0",
+    color: "group-hover:text-blue-500 group-hover:border-blue-500/40",
+  },
 ];
 
 export function NewsletterPanel() {
+  const [selectedCategory, setSelectedCategory] = React.useState<string>("All");
+
+  const filteredNodes =
+    selectedCategory === "All"
+      ? ALL_NODES
+      : ALL_NODES.filter((node) => node.category === selectedCategory);
+
   return (
-    <section id="conexion" className="w-full py-28 px-6 lg:px-12 relative overflow-hidden">
-      {/* ── Background glows ── */}
-      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-accent-violet/[0.06] rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-accent-cyan/[0.05] rounded-full blur-[100px] pointer-events-none" />
+    <section id="transmissions" className="w-full py-24 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
+      {/* Background ambient lighting */}
+      <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-violet-600/10 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-1/4 w-[450px] h-[450px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* ── Section Header ── */}
-        <div className="text-center mb-16">
-          <span className="font-mono text-xs uppercase tracking-[0.3em] text-accent-cyan/60 block mb-4">
-            The Fluid Crystal Protocol
-          </span>
-          <h2 className="font-serif text-4xl md:text-6xl font-bold leading-tight">
-            Newsletter &{" "}
-            <span className="text-gradient italic">Connections</span>
+        {/* Section Header */}
+        <div className="text-center mb-16 max-w-2xl mx-auto">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] backdrop-blur-md mb-4">
+            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+            <span className="font-mono text-xs uppercase tracking-[0.25em] text-cyan-300">
+              Transmission Network & Direct Signals
+            </span>
+          </div>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
+            Transmissions & <span className="text-gradient">Nodes</span>
           </h2>
-          <p className="font-sans text-gray-500 mt-4 max-w-xl mx-auto text-sm">
-            Join our decentralized transmission network. Sync your identity and
-            receive the latest artifacts directly to your neural interface.
+          <p className="font-sans text-sm text-zinc-400 mt-3 leading-relaxed">
+            Subscribe to engineering notes, real-time trading architecture breakdowns, and sovereign AI telemetry. Open to technical leadership, pod management, and Web3 advisory.
           </p>
         </div>
 
-        {/* ── Two-column layout ── */}
-        <div className="flex flex-col lg:flex-row gap-8 items-stretch">
-          {/* Newsletter */}
-          <div className="w-full lg:w-1/2">
-            <GlassCard variant="elevated" className="p-8 md:p-10 h-full">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-accent-violet to-accent-cyan flex items-center justify-center">
-                  <span className="text-white text-lg">✦</span>
+        {/* Two-column layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+          {/* Newsletter Transmission Column */}
+          <SpotlightCard
+            className="p-8 md:p-10 flex flex-col justify-between"
+            glowColor="rgba(139, 92, 246, 0.15)"
+          >
+            <div>
+              <div className="flex items-center gap-3 mb-5">
+                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-cyan-400 flex items-center justify-center text-white text-base shadow-[0_0_15px_rgba(139,92,246,0.4)]">
+                  ✦
                 </div>
-                <h3 className="font-sans font-bold text-lg text-white">Crystal Transmissions</h3>
+                <div>
+                  <h3 className="font-serif text-xl font-bold text-white leading-tight">
+                    Direct Transmissions
+                  </h3>
+                  <span className="font-mono text-xs text-zinc-400">
+                    No spam · High signal-to-noise
+                  </span>
+                </div>
               </div>
-              <p className="font-sans text-sm text-gray-400 mb-8 leading-relaxed">
-                Occasional technical notes for builders; every email includes an unsubscribe link.
+              <p className="font-sans text-xs sm:text-sm text-zinc-400 mb-8 leading-relaxed">
+                Occasional technical notes for Web3 architects and AI engineers. Unsubscribe with a single click at any time.
               </p>
               <GlassForm />
-              <p className="text-center text-xs font-mono text-gray-600 mt-4">
-                No unnecessary tracking. Unsubscribe at any time.
-              </p>
-            </GlassCard>
-          </div>
+            </div>
+            <div className="mt-8 pt-4 border-t border-white/[0.06] text-center text-xs font-mono text-zinc-500">
+              Zero third-party trackers · Cryptographic privacy respected
+            </div>
+          </SpotlightCard>
 
-          {/* Connections */}
-          <div className="w-full lg:w-1/2">
-            <GlassCard variant="elevated" className="p-8 md:p-10 h-full">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-10 h-10 rounded-xl bg-accent-cyan/10 flex items-center justify-center">
-                  <span className="text-accent-cyan text-lg">⟐</span>
+          {/* Social Nodes Column */}
+          <SpotlightCard
+            className="p-8 md:p-10 flex flex-col justify-between"
+            glowColor="rgba(34, 211, 238, 0.15)"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-cyan-400/10 border border-cyan-400/20 flex items-center justify-center text-cyan-400 text-lg">
+                    ⟐
+                  </div>
+                  <div>
+                    <h3 className="font-serif text-xl font-bold text-white leading-tight">
+                      Verified Channels & Nodes
+                    </h3>
+                    <span className="font-mono text-xs text-zinc-400">
+                      16 Connected Web3 & Media Nodes
+                    </span>
+                  </div>
                 </div>
-                <h3 className="font-sans font-bold text-lg text-white">Connect</h3>
               </div>
-              <p className="font-sans text-sm text-gray-400 mb-8 leading-relaxed">
-                For engineering contracts, research conversations, and ecosystem collaborations.
-              </p>
-              <div className="grid grid-cols-2 gap-4">
-                {SOCIALS.map((social) => (
+
+              {/* Node Category Filters */}
+              <div className="flex items-center gap-1.5 flex-wrap mb-4 bg-zinc-900/60 p-1 rounded-xl border border-white/[0.06]">
+                {["All", "Professional & Web3", "Content & Writing", "Streaming & Media"].map((cat) => (
+                  <button
+                    key={cat}
+                    onClick={() => setSelectedCategory(cat)}
+                    className={`px-2.5 py-1 rounded-lg text-[10px] font-mono uppercase tracking-wider transition-all duration-200 ${
+                      selectedCategory === cat
+                        ? "bg-zinc-800 text-cyan-300 font-semibold border border-cyan-400/30"
+                        : "text-zinc-400 hover:text-white"
+                    }`}
+                  >
+                    {cat === "All" ? "All Nodes" : cat.split(" ")[0]}
+                  </button>
+                ))}
+              </div>
+
+              {/* Nodes Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[380px] overflow-y-auto pr-1">
+                {filteredNodes.map((social) => (
                   <a
                     key={social.name}
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block outline-none group"
+                    className="p-2.5 rounded-xl bg-zinc-900/70 border border-white/[0.06] hover:border-cyan-400/40 hover:bg-zinc-800/70 transition-all duration-200 flex items-center gap-2.5 group"
                   >
-                    <div className="glass-panel rounded-xl p-5 flex flex-col items-center justify-center gap-3 text-center transition-all duration-300 hover:scale-[1.03] hover:shadow-[0_0_24px_-4px_rgba(139,92,246,0.25)]">
-                      <div className={`w-11 h-11 rounded-full bg-surface-container-highest flex items-center justify-center text-gray-400 transition-all duration-300 ${social.color}`}>
-                        <span className="text-lg font-bold">{social.icon}</span>
-                      </div>
-                      <span className="font-mono uppercase tracking-[0.15em] text-[10px] text-gray-500 group-hover:text-white transition-colors">
+                    <div className={`w-7 h-7 rounded-lg bg-white/[0.04] border border-white/[0.08] flex items-center justify-center text-zinc-300 text-xs shrink-0 transition-colors ${social.color}`}>
+                      {social.icon}
+                    </div>
+                    <div className="flex flex-col min-w-0">
+                      <span className="font-serif font-semibold text-xs text-white group-hover:text-cyan-200 transition-colors truncate">
                         {social.name}
+                      </span>
+                      <span className="font-mono text-[10px] text-zinc-400 truncate">
+                        {social.handle}
                       </span>
                     </div>
                   </a>
                 ))}
               </div>
-            </GlassCard>
-          </div>
+            </div>
+            <div className="mt-4 pt-3 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-zinc-400">
+              <span>Identity: <span className="text-white font-semibold">Yahir Rivera</span></span>
+              <a
+                href="https://app.ens.domains/piczadev.eth"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-cyan-400 hover:underline"
+              >
+                piczadev.eth ↗
+              </a>
+            </div>
+          </SpotlightCard>
         </div>
       </div>
     </section>
   );
 }
+
+export default NewsletterPanel;
+

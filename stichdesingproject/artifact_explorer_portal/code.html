@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Artifact Explorer | PiczaDev Ecosystem</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-primary-fixed": "#002a35",
+                "tertiary-container": "#fe00d5",
+                "on-surface": "#ffffff",
+                "on-error-container": "#ffa8a3",
+                "surface-variant": "#262626",
+                "surface-container-low": "#131313",
+                "error-dim": "#d7383b",
+                "on-background": "#ffffff",
+                "secondary-fixed-dim": "#ceb9ff",
+                "surface-dim": "#0e0e0e",
+                "on-primary-container": "#004050",
+                "surface-container-lowest": "#000000",
+                "surface": "#0e0e0e",
+                "surface-container": "#1a1919",
+                "on-tertiary-container": "#0e000a",
+                "secondary-container": "#7000ff",
+                "inverse-surface": "#fcf8f8",
+                "primary-fixed-dim": "#00c0ea",
+                "error": "#ff716c",
+                "background": "#0e0e0e",
+                "on-primary-fixed-variant": "#004a5c",
+                "primary-dim": "#00c0ea",
+                "surface-tint": "#69daff",
+                "outline-variant": "#494847",
+                "on-tertiary-fixed": "#34002a",
+                "primary-fixed": "#00cffc",
+                "on-tertiary": "#430036",
+                "secondary-fixed": "#dac9ff",
+                "tertiary-fixed-dim": "#ff6ad8",
+                "surface-container-highest": "#262626",
+                "tertiary": "#ff5dd7",
+                "on-surface-variant": "#adaaaa",
+                "tertiary-dim": "#ff5dd7",
+                "on-primary": "#004a5d",
+                "tertiary-fixed": "#ff87db",
+                "secondary-dim": "#874cff",
+                "primary": "#69daff",
+                "on-secondary-fixed-variant": "#6300e2",
+                "primary-container": "#00cffc",
+                "inverse-primary": "#006880",
+                "outline": "#777575",
+                "on-secondary-fixed": "#41009a",
+                "on-secondary": "#290067",
+                "inverse-on-surface": "#565554",
+                "on-error": "#490006",
+                "surface-container-high": "#201f1f",
+                "surface-bright": "#2c2c2c",
+                "secondary": "#ac89ff",
+                "on-tertiary-fixed-variant": "#6f005c",
+                "on-secondary-container": "#f8f1ff",
+                "error-container": "#9f0519"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Plus Jakarta Sans"],
+                "label": ["Plus Jakarta Sans"]
+              },
+              borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset -10px -10px 50px rgba(0, 0, 0, 0.5), inset 10px 10px 50px rgba(255, 255, 255, 0.05);
+        }
+        .aura-glow {
+            filter: blur(120px);
+            opacity: 0.15;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #69daff, #ac89ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .artifact-gradient {
+            background: radial-gradient(circle at center, rgba(105, 218, 255, 0.2) 0%, transparent 70%);
+        }
+        .hover-aura:hover {
+            box-shadow: 0 0 80px rgba(105, 218, 255, 0.15);
+            transform: scale(1.02);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+    </style>
+</head>
+<body class="selection:bg-primary/30">
+<!-- Global Background Elements -->
+<div class="fixed inset-0 pointer-events-none overflow-hidden -z-10">
+<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary aura-glow rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary aura-glow rounded-full"></div>
+</div>
+<!-- TopNavBar Implementation -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-950/40 backdrop-blur-3xl border-b border-white/10 flex justify-between items-center px-8 py-4 w-full shadow-[0_0_80px_rgba(105,218,255,0.1)]">
+<div class="text-2xl font-black tracking-tighter text-white dark:text-white uppercase">ARTIFACT</div>
+<div class="hidden md:flex items-center space-x-8">
+<a class="text-white/60 font-medium hover:text-white transition-colors duration-200" href="#">Ecosystem</a>
+<a class="text-white/60 font-medium hover:text-white transition-colors duration-200" href="#">Marketplace</a>
+<a class="text-cyan-400 font-bold border-b-2 border-cyan-400 pb-1" href="#">Gallery</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="material-symbols-outlined text-white/60 hover:text-white transition-all duration-300 p-2 rounded-full hover:bg-white/5">account_balance_wallet</button>
+<button class="bg-primary hover:scale-105 active:scale-95 transition-transform duration-200 text-on-primary-fixed px-6 py-2 rounded-full font-bold text-sm">Connect Wallet</button>
+</div>
+</nav>
+<main class="pt-32 pb-24 px-6 md:px-12 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="relative mb-32 grid md:grid-cols-2 gap-12 items-center">
+<div class="order-2 md:order-1">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-4 block">Curated Artifacts</span>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6 leading-tight">
+                    The <span class="text-gradient">Prismatic</span> Collection
+                </h1>
+<p class="text-on-surface-variant text-lg md:text-xl font-light tracking-wide mb-10 max-w-lg">
+                    A digital sanctum where the PiczaDev ecosystem bridges computational geometry with liquid obsidian aesthetics.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-gradient-to-r from-primary to-secondary px-8 py-4 rounded-full font-bold shadow-[0_0_40px_rgba(105,218,255,0.3)] hover:scale-105 transition-transform">
+                        View Details
+                    </button>
+<button class="glass-card px-8 py-4 rounded-full font-bold text-white hover:bg-white/10 transition-colors">
+                        Explore Origin
+                    </button>
+</div>
+</div>
+<div class="order-1 md:order-2 relative aspect-square flex items-center justify-center">
+<div class="absolute inset-0 artifact-gradient rounded-full animate-pulse"></div>
+<!-- Translucent 3D-style Artifact -->
+<div class="relative w-full h-full glass-card rounded-xl overflow-hidden flex items-center justify-center rotate-3 hover:rotate-0 transition-transform duration-700">
+<img alt="Translucent Crystal Sphere" class="w-full h-full object-cover mix-blend-lighten scale-110" data-alt="Glowing obsidian crystal sphere with internal refractions" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSAZxLZYvXPql92L1UoDbMpb_2YQhAYrcjzEsZoCCI8CZUPzh7NRabQCN2Ewp7uRIy9YTjJmkMdTHJ8Jbt0CyAUz1dTxpZFSTGFOCTrUYGnkba7HkG1LoAY94kevr4u4I3DAp03--57GjcNarb0QwNmWWaxGWU0788j1v-PmBlXoFnuhKdUH41h1c_-Wu79d12ilPq-drV1IkSOfjk81bYFeTeHBsjtBrBJ-FSZMtSY1AovtB8GIp4PhFLvd16tQcryJEqaKrq7R0"/>
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-transparent"></div>
+</div>
+</div>
+</section>
+<!-- Filter Bar -->
+<div class="sticky top-24 z-40 mb-16">
+<div class="glass-card rounded-full px-6 py-3 flex items-center justify-between gap-4 max-w-3xl mx-auto overflow-x-auto no-scrollbar">
+<div class="flex items-center gap-2 md:gap-4 whitespace-nowrap">
+<button class="px-6 py-2 rounded-full bg-white/10 text-white text-sm font-semibold transition-all">All Artifacts</button>
+<button class="px-6 py-2 rounded-full text-white/50 hover:text-white text-sm font-semibold transition-all">Rare</button>
+<button class="px-6 py-2 rounded-full text-white/50 hover:text-white text-sm font-semibold transition-all">Common</button>
+<button class="px-6 py-2 rounded-full text-white/50 hover:text-white text-sm font-semibold transition-all">On-Chain</button>
+</div>
+<div class="h-6 w-[1px] bg-white/10 hidden md:block"></div>
+<button class="flex items-center gap-2 text-primary/80 hover:text-primary transition-colors pr-2">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+<span class="text-xs font-bold uppercase tracking-widest">Filter</span>
+</button>
+</div>
+</div>
+<!-- Artifact Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<div class="glass-card p-6 rounded-lg hover-aura group cursor-pointer">
+<div class="relative aspect-square rounded-lg overflow-hidden mb-6 bg-surface-container-low">
+<img alt="Monolith #001" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Dark obsidian geometric monolith with glowing cyan edges" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDMI28EjaXT-5wqyDYDI_wvWUD3STeRG-thKI-AX36GZDPbSADmmSei1FKEOlgtHrtR5ns6vtbN80VeUM5BCcLmrbCphJsE42jy69WN0EsfwlGCLomu9cceYQw9e_R-Ck1Yc71ypBQrvwCi3MQKYL3GI_QiCROpdK1h-A9c45xXwEFf8BGmEpSLaSZcQPQJb3YyQG8VVxTNq8Hq2RNXn1zYulttfrAEaIs5D78eh5JlUWGVMnvxv9rZkExgBj19lFN2z5jjHL6E3wQ"/>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-extrabold tracking-wider uppercase">Rare</span>
+</div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-xl font-bold tracking-tight mb-1">Monolith #001</h3>
+<p class="text-white/40 text-sm font-medium">PiczaDev Core Collection</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="flex items-center gap-2 bg-white/5 p-1.5 rounded-lg border border-white/10">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">diamond</span>
+<span class="text-xs font-bold text-primary">ETH</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="glass-card p-6 rounded-lg hover-aura group cursor-pointer">
+<div class="relative aspect-square rounded-lg overflow-hidden mb-6 bg-surface-container-low">
+<img alt="Vertex #042" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Intricate glass geometric shape with violet refractions" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDsxYxAeWtjHWWQCQUiOaYHp1C1n7kKA2zCP2D5WiqOHsx_x7pzFx4vHvtuxVbCVrYeY5E4OFlGQ58VEja4dQI6zsifzGFeAohtg0GFi4dFfXwQtIhG5n15dKsSrvtacU49iVxah5dTfHkMiiaZxq0cVHcZRUTvwGizYm0qxNfqe3Ws5NFeMN4BRon3aunaCyrmtsjwNi8Vk8orQoCrdigdyvkM0nzE5mPu9pq2WNkcpo9AwcvLDNtVEYF4Ylpe-2cvwIoqivtS520"/>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+<span class="text-[10px] font-extrabold tracking-wider uppercase text-neutral-400">Common</span>
+</div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-xl font-bold tracking-tight mb-1">Vertex #042</h3>
+<p class="text-white/40 text-sm font-medium">PiczaDev Core Collection</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="flex items-center gap-2 bg-white/5 p-1.5 rounded-lg border border-white/10">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">token</span>
+<span class="text-xs font-bold text-secondary">SOL</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="glass-card p-6 rounded-lg hover-aura group cursor-pointer">
+<div class="relative aspect-square rounded-lg overflow-hidden mb-6 bg-surface-container-low">
+<img alt="Void Core #09" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Abstract liquid chrome sphere on deep black background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdWqNE9co4oRKizBEPS2Sik4iOQMxaSTBJ8fybWqf6ViZqbmgqNxJnC_LrJmvKwOpVtRuuuqKqX-5XfZn7U14-ReIbJDtAizPJG6ulAxWEw-qD5xW7sYba70KEf_NJgi38JDEpWydO_eDJmcl6g_pubxSBX40u4LoiLWA_jE4Z2etM5iCJ_U23c-5QhQsR7UsWcKoIQ1eIh8s8YXWhn_4vqg-Wrx9yehcTpCHhW8GSO2ZU6HIItsPMKZJGKnKujmnDXCK4FiBWHig"/>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-[10px] font-extrabold tracking-wider uppercase text-tertiary">Legendary</span>
+</div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-xl font-bold tracking-tight mb-1">Void Core #09</h3>
+<p class="text-white/40 text-sm font-medium">Artifact Genesis</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="flex items-center gap-2 bg-white/5 p-1.5 rounded-lg border border-white/10">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">layers</span>
+<span class="text-xs font-bold text-tertiary">BASE</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="glass-card p-6 rounded-lg hover-aura group cursor-pointer">
+<div class="relative aspect-square rounded-lg overflow-hidden mb-6 bg-surface-container-low">
+<img alt="Flux #12" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Flowing iridescent liquid texture with dark shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDypp6RW5TjTJUbmmNmEHUpdbOXJod-QRdK61yae2CXtGvZThfGfHZDCPvcpKJEHvEXQeZKS_yP7Ni2PEIun3neTaivunEedvScc-0aQ_VExEIwJFmhCI3BG-y0BFyhifVvubnjRoInusQ6Z-AmBtCx3-rlufMMUGd694BV7tsO5v_2RSiPTm9nffqWFx8pFRuAAk8LDckJuP9OOLaxF_w_PTJKREbQWuQ3bMPrAn0Ddsi03r3fE4OCe3oAxn1fi2JsVH6XFO9NzMU"/>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-extrabold tracking-wider uppercase">Rare</span>
+</div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-xl font-bold tracking-tight mb-1">Flux #12</h3>
+<p class="text-white/40 text-sm font-medium">PiczaDev Core Collection</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="flex items-center gap-2 bg-white/5 p-1.5 rounded-lg border border-white/10">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">diamond</span>
+<span class="text-xs font-bold text-primary">ETH</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="glass-card p-6 rounded-lg hover-aura group cursor-pointer">
+<div class="relative aspect-square rounded-lg overflow-hidden mb-6 bg-surface-container-low">
+<img alt="Prism #003" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Sharp glass pyramid refracting colorful lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQJeS4CZbNECxVoIprrFpqrRyK5VRK1U6JO0UCqhl77YVSbI2mhR4sUy9X06gYBqxwyhSWvwSfi-nlrR9PzV7xvKyVvvH5oXrN9QEzavJ4KkLANZ-xPEeWKut3UOubp8CaaWfChKW_as7qpPlo6LHjQTCuBSpeYNZYvezdux_hjKNg_DKKqv_xIv82Ylvfgz_yrI__XK0qF27oSI7V8Gvcme_Cz636nCpd0Kw87-1KwzQE3yeTnA8_ndowS10TgdIHJBJdwiRi9h4"/>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="text-[10px] font-extrabold tracking-wider uppercase">Rare</span>
+</div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-xl font-bold tracking-tight mb-1">Prism #003</h3>
+<p class="text-white/40 text-sm font-medium">PiczaDev Core Collection</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="flex items-center gap-2 bg-white/5 p-1.5 rounded-lg border border-white/10">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">diamond</span>
+<span class="text-xs font-bold text-primary">ETH</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="glass-card p-6 rounded-lg hover-aura group cursor-pointer">
+<div class="relative aspect-square rounded-lg overflow-hidden mb-6 bg-surface-container-low">
+<img alt="Obsidian Edge #77" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Minimalist dark obsidian shard with neon blue lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDt_76A1IUW7D4SJT3niT5ZrPMrDJ8WXsAG7XSVtgaxz-6tPcwgFM74FNqeRXQHsjqQDksIcU6Ocz2-tQvJgUN-VkH4nqp-vUsRU92Ssfw68lwI5iQoQpgLBHkXfAnBmaouujUcowLcBz-R1_s2dwbx3z6ypgBFmsG3Vfw-CxeUJiwzFkdrq6mSkfYCHJMIoFg33jzHA49HkFzqV1LZn8LWoZjpi6yvPy1-BdYrMgkutMhfPGnfSHwFPrfbGK56wOBV1HJokxxDB8E"/>
+<div class="absolute top-4 right-4 bg-black/60 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+<span class="text-[10px] font-extrabold tracking-wider uppercase text-neutral-400">Common</span>
+</div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<h3 class="text-xl font-bold tracking-tight mb-1">Obsidian Edge #77</h3>
+<p class="text-white/40 text-sm font-medium">Ecosystem Artifacts</p>
+</div>
+<div class="flex flex-col items-end gap-2">
+<div class="flex items-center gap-2 bg-white/5 p-1.5 rounded-lg border border-white/10">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">token</span>
+<span class="text-xs font-bold text-secondary">SOL</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Load More -->
+<div class="mt-20 flex justify-center">
+<button class="group flex flex-col items-center gap-2">
+<span class="text-[10px] font-bold uppercase tracking-widest text-white/40 group-hover:text-primary transition-colors">Reveal More</span>
+<span class="material-symbols-outlined text-white/20 group-hover:text-primary animate-bounce">expand_more</span>
+</button>
+</div>
+</main>
+<!-- Footer Implementation -->
+<footer class="w-full py-16 bg-neutral-950 border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto">
+<div class="mb-8 md:mb-0">
+<div class="text-lg font-extrabold text-white/40 dark:text-white/40 mb-2">ARTIFACT PROTOCOL</div>
+<p class="font-['Plus_Jakarta_Sans'] text-sm tracking-wide text-neutral-400 dark:text-neutral-400">© 2024 Artifact Protocol. All rights reserved.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-neutral-500 hover:text-white transition-colors text-sm font-semibold hover:text-cyan-400 duration-200" href="#">Documentation</a>
+<a class="text-neutral-500 hover:text-white transition-colors text-sm font-semibold hover:text-cyan-400 duration-200" href="#">Whitepaper</a>
+<a class="text-neutral-500 hover:text-white transition-colors text-sm font-semibold hover:text-cyan-400 duration-200" href="#">Governance</a>
+<a class="text-neutral-500 hover:text-white transition-colors text-sm font-semibold hover:text-cyan-400 duration-200" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>

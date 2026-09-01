@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PICZADEV HUB | Farcaster Ecosystem</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "error": "#ff716c",
+                    "primary-dim": "#00c0ea",
+                    "on-background": "#ffffff",
+                    "surface-bright": "#2c2c2c",
+                    "on-error": "#490006",
+                    "error-container": "#9f0519",
+                    "on-secondary-container": "#f8f1ff",
+                    "surface-container": "#1a1919",
+                    "on-secondary-fixed": "#41009a",
+                    "inverse-on-surface": "#565554",
+                    "tertiary-container": "#fe00d5",
+                    "surface-dim": "#0e0e0e",
+                    "tertiary-fixed": "#ff87db",
+                    "on-secondary-fixed-variant": "#6300e2",
+                    "surface-container-highest": "#262626",
+                    "on-primary": "#004a5d",
+                    "on-tertiary": "#430036",
+                    "inverse-surface": "#fcf8f8",
+                    "outline": "#777575",
+                    "on-primary-fixed": "#002a35",
+                    "secondary-container": "#7000ff",
+                    "surface": "#0e0e0e",
+                    "secondary-dim": "#874cff",
+                    "on-tertiary-fixed-variant": "#6f005c",
+                    "outline-variant": "#494847",
+                    "on-primary-container": "#004050",
+                    "secondary": "#ac89ff",
+                    "background": "#0e0e0e",
+                    "surface-container-low": "#131313",
+                    "primary-fixed-dim": "#00c0ea",
+                    "surface-variant": "#262626",
+                    "surface-container-high": "#201f1f",
+                    "surface-container-lowest": "#000000",
+                    "primary": "#69daff",
+                    "secondary-fixed-dim": "#ceb9ff",
+                    "tertiary": "#ff5dd7",
+                    "on-error-container": "#ffa8a3",
+                    "surface-tint": "#69daff",
+                    "primary-container": "#00cffc",
+                    "on-surface": "#ffffff",
+                    "on-surface-variant": "#adaaaa",
+                    "on-tertiary-container": "#0e000a",
+                    "on-secondary": "#290067",
+                    "error-dim": "#d7383b",
+                    "on-primary-fixed-variant": "#004a5c",
+                    "tertiary-dim": "#ff5dd7",
+                    "secondary-fixed": "#dac9ff",
+                    "on-tertiary-fixed": "#34002a",
+                    "inverse-primary": "#006880",
+                    "primary-fixed": "#00cffc",
+                    "tertiary-fixed-dim": "#ff6ad8"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "fontFamily": {
+                    "headline": ["Plus Jakarta Sans"],
+                    "display": ["Plus Jakarta Sans"],
+                    "body": ["Plus Jakarta Sans"],
+                    "label": ["Plus Jakarta Sans"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0e0e0e;
+            color: #ffffff;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 10px 10px 50px rgba(255, 255, 255, 0.05), 0 0 80px rgba(105, 218, 255, 0.05);
+        }
+        .aura-glow {
+            filter: blur(120px);
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1 !important;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-32">
+<!-- Atmospheric Aura Backgrounds -->
+<div class="fixed top-[-10%] left-[-10%] w-[60%] h-[60%] bg-primary aura-glow rounded-full"></div>
+<div class="fixed bottom-[-10%] right-[-10%] w-[60%] h-[60%] bg-secondary aura-glow rounded-full"></div>
+<!-- TopAppBar (From JSON) -->
+<header class="fixed top-0 w-full z-50 bg-surface/40 backdrop-blur-3xl border-b border-white/10 shadow-[0_0_80px_rgba(105,218,255,0.15)] flex justify-between items-center px-6 py-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-2xl">hub</span>
+<h1 class="font-headline text-2xl font-extrabold tracking-tighter text-primary uppercase">PICZADEV HUB</h1>
+</div>
+<div class="active:scale-95 transition-all hover:scale-105 transition-transform duration-300">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="account_circle">account_circle</span>
+</div>
+</header>
+<main class="mt-24 px-6 max-w-2xl mx-auto space-y-8 relative z-10">
+<!-- Profile Section -->
+<section class="glass-card p-8 rounded-xl flex flex-col items-center text-center space-y-4">
+<div class="relative group">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary to-secondary rounded-full blur-xl opacity-40 group-hover:opacity-70 transition-opacity"></div>
+<div class="w-32 h-32 rounded-full border-2 border-white/20 p-1 relative z-10">
+<img alt="PiczaDev Profile" class="w-full h-full object-cover rounded-full" data-alt="A futuristic professional portrait of a tech visionary with sharp features, set against a dark obsidian background with glowing cyan and violet refracted lighting. The style is high-end editorial digital art with deep shadows and soft atmospheric glows, emphasizing a sophisticated Web3 aesthetic and premium Liquid Crystal textures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKTR_m6s4ZSzs62205qXkZZSRByocYcRvYQT455Z60rm3TGaR8I0Ezv0_s4qVQiUaXsR0aIicDRZGuIiIMlndlX0I4XG4cWcV5bSO1KE_PKScqARxDu3cZegZNhHfM-MUhPleALOqIDnKx3vpop_I1seVhYYzxh2T4tGRtr93jvnq103BDmvh3wvEK0KeoUME8O6vDrj6pUWRctAGCLGEKegPOami9O74eGM7ijLRB36U4z7iYYKqATrgHF4SXO9Dtxf6uhcVz758"/>
+</div>
+</div>
+<div class="space-y-1">
+<h2 class="text-3xl font-extrabold tracking-tight">PiczaDev</h2>
+<p class="text-on-surface-variant text-sm font-medium tracking-wide uppercase">@piczadev.eth</p>
+</div>
+<p class="text-on-surface-variant max-w-md leading-relaxed">
+                Architecting the next generation of Web3 interfaces. Obsessed with <span class="text-primary">Liquid Obsidian</span> design, AI agents, and modular Farcaster hubs.
+            </p>
+<div class="flex gap-8 py-2">
+<div class="text-center">
+<div class="text-xl font-bold">12.8k</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Followers</div>
+</div>
+<div class="text-center">
+<div class="text-xl font-bold">442</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Following</div>
+</div>
+<div class="text-center">
+<div class="text-xl font-bold">94</div>
+<div class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant">Power Badge</div>
+</div>
+</div>
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary-container px-8 py-3 rounded-full font-bold shadow-[0_0_20px_rgba(105,218,255,0.4)] active:scale-95 transition-all">
+                Follow
+            </button>
+</section>
+<!-- Feed Section -->
+<div class="flex items-center justify-between px-2">
+<h3 class="text-xl font-bold tracking-tight">Latest Casts</h3>
+<span class="material-symbols-outlined text-on-surface-variant">tune</span>
+</div>
+<!-- Cast 1 -->
+<article class="glass-card p-6 rounded-xl space-y-4 hover:scale-[1.02] transition-transform duration-500">
+<div class="flex items-start justify-between">
+<div class="flex gap-3">
+<img alt="Avatar" class="w-10 h-10 rounded-full" data-alt="A small, high-detail circular portrait of a tech-focused developer wearing futuristic glasses, surrounded by soft blue neon highlights and set against a dark, minimalist digital background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe1tDmoW1jktoyQ9z2BYy_0I1elMANh0jg8e-qu6NxiC61uNDU7cBEer50aJ2vwMPB-VG6WPfoHgH0cqdTrA3C4HZS9PhfvGzuqlgrfdhcnivdnUMKQcPXTlsXy413l5BY5ci7T0G4v5fXJKbhuOB7CFBYxOVKyh6CsOpASoIjb04oNmK9pW6hKzTZTNdjrzJUFRqm0B0aSQnGYeJAcRtWMsd76KLJyuurccgpXXGkv1p_HQD5TSD2XbBgzputUJ0MMaL0DWJSbmU"/>
+<div>
+<div class="font-bold text-sm">PiczaDev <span class="text-on-surface-variant font-normal">@piczadev · 2h</span></div>
+<div class="text-xs text-primary-dim font-bold tracking-widest uppercase">/liquid-design</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">more_horiz</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+                Just finalized the "Liquid Obsidian" component library. The key is using <span class="text-secondary font-bold">backdrop-blur-3xl</span> paired with subtle refractive borders. It's not just glass; it's depth. 🧊✨
+            </p>
+<div class="rounded-lg overflow-hidden border border-white/5 shadow-2xl">
+<img alt="Liquid Obsidian Visual" class="w-full aspect-video object-cover" data-alt="An abstract 3D render of flowing liquid glass with deep indigo and electric cyan highlights. The texture mimics dark obsidian but with internal refractions and light-emitting edges. The lighting is moody and cinematic, creating a sense of immense depth and premium digital craftsmanship in a dark-mode environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFzZmIPw2dNzxHVdX-MhnfcAFlzblbFkdSS0nmlrnOjCeG6iaAZ7_yBU9BzJbW7bifbx4pWTzEsLaK8wRDPeCf_cz9QHtsquk_3L4rBi_kF2Y2pyoteQTQCRpjbRPazqjfu--juPt-RVPh54Mfxrj-W6C9isrHGZbxoAVQPgbTJ9r3PUZhGqIvpTCO-MGetOkED-zL2Vzvr-JE4pJhmthu9w7ru58jE2211ZNwb83MldlupXMrGdbuhkynA3cDqF1gLlgsPlV-Xl8"/>
+</div>
+<div class="flex justify-between items-center pt-2 text-on-surface-variant">
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-1.5 hover:text-primary transition-colors group">
+<span class="material-symbols-outlined text-[20px] group-active:scale-125 transition-transform">chat_bubble</span>
+<span class="text-xs font-bold">24</span>
+</button>
+<button class="flex items-center gap-1.5 hover:text-green-400 transition-colors group">
+<span class="material-symbols-outlined text-[20px] group-active:scale-125 transition-transform">autorenew</span>
+<span class="text-xs font-bold">12</span>
+</button>
+<button class="flex items-center gap-1.5 hover:text-tertiary transition-colors group">
+<span class="material-symbols-outlined text-[20px] fill-icon group-active:scale-125 transition-transform" style="color: #ff5dd7;">favorite</span>
+<span class="text-xs font-bold" style="color: #ff5dd7;">156</span>
+</button>
+</div>
+<button class="hover:text-primary-dim transition-colors">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+</button>
+</div>
+</article>
+<!-- Cast 2 -->
+<article class="glass-card p-6 rounded-xl space-y-4 hover:scale-[1.02] transition-transform duration-500">
+<div class="flex items-start justify-between">
+<div class="flex gap-3">
+<img alt="Avatar" class="w-10 h-10 rounded-full" data-alt="A futuristic avatar of a developer, with clean lines and soft rim lighting. The style is consistent with a premium Web3 design system, featuring deep obsidian tones and vibrant cyan accents." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZGhIOv_YfJwkgvw6a1hAWHDdCbSBSXUVi_emjuxq_hvolNC9ValHTAiaaK005lAPveKuhnJmwsG2PoT5RPgUA7hhk6IN-tsp71DrV6R4sceBfZF3eMdJ5cpuEY5U975MpiUvQINONOnA4-WimXKBWEIzns1xaJ8GpKOquVuH_no9E02acI5z5cI7gmqctEqehC6f-BAhG9ZrV5mbSsFwOQJqV_HVlCNLglh45MDmzO4MpwmYev150Kty2GOGyrazUCZOtawYQG04"/>
+<div>
+<div class="font-bold text-sm">PiczaDev <span class="text-on-surface-variant font-normal">@piczadev · 5h</span></div>
+<div class="text-xs text-secondary-dim font-bold tracking-widest uppercase">/ai-agents</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant text-sm">more_horiz</span>
+</div>
+<p class="text-on-surface-variant leading-relaxed">
+                Why are we still building static dashboards? Integrating autonomous AI agents directly into the Farcaster feed to curate developer updates based on on-chain activity. The future of Hubs is intelligent. 🤖⚡️
+            </p>
+<div class="flex justify-between items-center pt-2 text-on-surface-variant">
+<div class="flex items-center gap-6">
+<button class="flex items-center gap-1.5 hover:text-primary transition-colors group">
+<span class="material-symbols-outlined text-[20px]">chat_bubble</span>
+<span class="text-xs font-bold">8</span>
+</button>
+<button class="flex items-center gap-1.5 hover:text-green-400 transition-colors group">
+<span class="material-symbols-outlined text-[20px]">autorenew</span>
+<span class="text-xs font-bold">42</span>
+</button>
+<button class="flex items-center gap-1.5 hover:text-tertiary transition-colors group">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+<span class="text-xs font-bold">89</span>
+</button>
+</div>
+<button class="hover:text-primary-dim transition-colors">
+<span class="material-symbols-outlined text-[20px]">ios_share</span>
+</button>
+</div>
+</article>
+</main>
+<!-- FAB for New Cast (Contextual) -->
+<button class="fixed bottom-28 right-6 w-14 h-14 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-[0_0_40px_rgba(105,218,255,0.4)] active:scale-90 transition-all z-40">
+<span class="material-symbols-outlined text-on-primary-container text-3xl font-bold">add</span>
+</button>
+<!-- BottomNavBar (From JSON) -->
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] rounded-full bg-surface-container-low/40 backdrop-blur-2xl border border-white/10 shadow-[inset_10px_10px_50px_rgba(255,255,255,0.1),0_0_80px_rgba(105,218,255,0.15)] flex justify-around items-center p-2 z-50">
+<!-- Grid View (Inactive) -->
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+</a>
+<!-- Dynamic Feed (Active - Profile/Hub matching) -->
+<a class="flex items-center justify-center bg-primary-container text-on-primary-container rounded-full w-12 h-12 shadow-[0_0_20px_rgba(0,192,234,0.4)] active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined fill-icon">dynamic_feed</span>
+</a>
+<!-- Notifications (Inactive) -->
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">notifications</span>
+</a>
+<!-- Settings (Inactive) -->
+<a class="flex items-center justify-center text-on-surface-variant w-12 h-12 hover:text-primary transition-colors active:scale-90 transition-all duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+</a>
+</nav>
+<script>
+        // Micro-interaction: Glow follow on move
+        document.addEventListener('mousemove', (e) => {
+            const cards = document.querySelectorAll('.glass-card');
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                if (x > 0 && x < rect.width && y > 0 && y < rect.height) {
+                    card.style.background = `radial-gradient(circle at ${x}px ${y}px, rgba(105, 218, 255, 0.08), rgba(255, 255, 255, 0.03))`;
+                } else {
+                    card.style.background = `rgba(255, 255, 255, 0.03)`;
+                }
+            });
+        });
+
+        // Simple Like interaction
+        document.querySelectorAll('button').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const icon = this.querySelector('.material-symbols-outlined');
+                if (icon && (icon.innerText === 'favorite' || icon.innerText === 'autorenew')) {
+                    this.classList.add('scale-125');
+                    setTimeout(() => this.classList.remove('scale-125'), 200);
+                }
+            });
+        });
+    </script>
+</body></html>

@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary": "#004a5d",
+              "surface-dim": "#0e0e0e",
+              "primary-container": "#00cffc",
+              "outline": "#777575",
+              "surface-container-highest": "#262626",
+              "on-secondary-container": "#f8f1ff",
+              "on-primary-fixed-variant": "#004a5c",
+              "surface": "#0e0e0e",
+              "surface-container-high": "#201f1f",
+              "secondary-fixed-dim": "#ceb9ff",
+              "secondary": "#ac89ff",
+              "on-primary-container": "#004050",
+              "primary-fixed-dim": "#00c0ea",
+              "inverse-surface": "#fcf8f8",
+              "tertiary-container": "#fe00d5",
+              "tertiary-dim": "#ff5dd7",
+              "primary-fixed": "#00cffc",
+              "secondary-container": "#7000ff",
+              "inverse-on-surface": "#565554",
+              "surface-tint": "#69daff",
+              "background": "#0e0e0e",
+              "surface-container-low": "#131313",
+              "on-tertiary-container": "#0e000a",
+              "secondary-dim": "#874cff",
+              "error": "#ff716c",
+              "on-surface-variant": "#adaaaa",
+              "tertiary-fixed": "#ff87db",
+              "on-tertiary-fixed-variant": "#6f005c",
+              "on-error": "#490006",
+              "on-secondary-fixed": "#41009a",
+              "on-tertiary-fixed": "#34002a",
+              "tertiary-fixed-dim": "#ff6ad8",
+              "primary-dim": "#00c0ea",
+              "on-error-container": "#ffa8a3",
+              "on-surface": "#ffffff",
+              "error-container": "#9f0519",
+              "inverse-primary": "#006880",
+              "surface-variant": "#262626",
+              "primary": "#69daff",
+              "outline-variant": "#494847",
+              "surface-bright": "#2c2c2c",
+              "on-primary-fixed": "#002a35",
+              "surface-container-lowest": "#000000",
+              "on-secondary": "#290067",
+              "on-secondary-fixed-variant": "#6300e2",
+              "tertiary": "#ff5dd7",
+              "secondary-fixed": "#dac9ff",
+              "error-dim": "#d7383b",
+              "surface-container": "#1a1919",
+              "on-background": "#ffffff",
+              "on-tertiary": "#430036"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0e0e0e; color: #ffffff; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+        }
+        .aura-primary {
+            background: radial-gradient(circle at center, rgba(105, 218, 255, 0.15) 0%, transparent 70%);
+        }
+        .text-gradient-primary {
+            background: linear-gradient(to right, #69daff, #ac89ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .refractive-border {
+            box-shadow: inset 10px 10px 50px rgba(255, 255, 255, 0.05), 0 0 40px rgba(105, 218, 255, 0.05);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="min-h-screen pb-32 overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full border-b border-white/10 z-50 bg-neutral-950/40 backdrop-blur-3xl flex items-center justify-between px-6 h-16 w-full shadow-[0_0_80px_rgba(105,218,255,0.15)] transition-colors duration-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-cyan-400" style="font-variation-settings: 'FILL' 1;">bubble_chart</span>
+<span class="text-xl font-extrabold bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent font-['Plus_Jakarta_Sans'] tracking-tighter">Liquid Crystal</span>
+</div>
+<div class="w-8 h-8 rounded-full bg-gradient-to-br from-cyan-500 to-violet-500 p-[1px] overflow-hidden">
+<img alt="Creator Profile" class="w-full h-full object-cover rounded-full" data-alt="Cyberpunk stylized user profile avatar portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDgqEgOesw7x2EnqhZMmoac9SgN6dKO6HO9foUXyQktS2j7U_ffe-vNEOPSuueQfQsmjtDC6Ex3WMFcoBlpfVGvlF_Yt5ezSXQUvjo2fwvZfGoNAyazZMdG736DnwsbPyGRj8HiugbGFNBt12oRHpSTeVU_UUyluOuKpBQxfeV1qJkPaAxjFz0xsdE7Ra6kcxZ7RIRHpgls79wAJd3ZHqjDQ3el1wGVhYNSjzYI6fFsGZjEBgqFa4qrCzi-hYDpm9ySJeP_zvOqIuk"/>
+</div>
+</header>
+<main class="relative pt-24 px-6 max-w-lg mx-auto">
+<!-- Background Auras -->
+<div class="fixed top-1/4 -left-20 w-80 h-80 aura-primary blur-[100px] pointer-events-none"></div>
+<div class="fixed bottom-1/4 -right-20 w-80 h-80 bg-secondary/10 blur-[100px] pointer-events-none"></div>
+<!-- Section: Newsletter Hero -->
+<section class="mb-10">
+<div class="text-center mb-8">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-400 mb-2 block">The Intelligence Node</span>
+<h1 class="text-4xl font-extrabold tracking-tight mb-4">Sync Your <span class="text-gradient-primary">Frequency</span></h1>
+<p class="text-on-surface-variant text-sm leading-relaxed">Access the decentralized data streams and encrypted insights from the Forge.</p>
+</div>
+<!-- Primary Subscription Card -->
+<div class="glass-card rounded-xl p-6 refractive-border relative overflow-hidden group">
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-cyan-400/10 blur-3xl group-hover:bg-cyan-400/20 transition-all duration-700"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center border border-white/5">
+<span class="material-symbols-outlined text-cyan-400" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div>
+<h2 class="font-bold text-lg leading-none">Crystal Transmissions</h2>
+<p class="text-[10px] text-on-surface-variant mt-1 font-bold uppercase tracking-wider">Weekly On-Chain Alpha</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="relative">
+<input class="w-full bg-surface-container-low border border-white/5 rounded-full py-3 px-5 text-sm focus:ring-1 focus:ring-cyan-400 outline-none transition-all placeholder:text-outline" placeholder="node@protocol.eth" type="email"/>
+</div>
+<button class="w-full py-3.5 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-bold text-sm shadow-[0_0_20px_rgba(105,218,255,0.4)] active:scale-95 transition-transform">
+                            Suscibirte
+                        </button>
+</div>
+<p class="text-[10px] text-center text-outline mt-4">By syncing, you agree to the Neural Terms of Service.</p>
+</div>
+</div>
+</section>
+<!-- Section: Social Grid -->
+<section class="mb-12">
+<div class="flex items-center justify-between mb-6">
+<h3 class="text-sm font-extrabold uppercase tracking-widest text-on-surface/60">Sync Nodes</h3>
+<div class="h-[1px] flex-1 bg-gradient-to-r from-white/10 to-transparent ml-4"></div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<!-- Node: Discord -->
+<div class="glass-card p-5 rounded-lg border border-white/5 hover:border-cyan-400/30 transition-all group active:scale-[0.98]">
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-indigo-500/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-indigo-400" style="font-variation-settings: 'FILL' 1;">groups</span>
+</div>
+<span class="text-[11px] font-bold uppercase tracking-wider mb-1">Discord</span>
+<span class="text-[9px] text-outline">12.4k Nodes</span>
+</div>
+</div>
+<!-- Node: Twitter -->
+<div class="glass-card p-5 rounded-lg border border-white/5 hover:border-cyan-400/30 transition-all group active:scale-[0.98]">
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-on-surface" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<span class="text-[11px] font-bold uppercase tracking-wider mb-1">Twitter X</span>
+<span class="text-[9px] text-outline">Latest Signals</span>
+</div>
+</div>
+<!-- Node: Github -->
+<div class="glass-card p-5 rounded-lg border border-white/5 hover:border-cyan-400/30 transition-all group active:scale-[0.98]">
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-emerald-500/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-emerald-400" style="font-variation-settings: 'FILL' 1;">code</span>
+</div>
+<span class="text-[11px] font-bold uppercase tracking-wider mb-1">Github</span>
+<span class="text-[9px] text-outline">Protocol v2.4</span>
+</div>
+</div>
+<!-- Node: Warpcast -->
+<div class="glass-card p-5 rounded-lg border border-white/5 hover:border-cyan-400/30 transition-all group active:scale-[0.98]">
+<div class="flex flex-col items-center text-center">
+<div class="w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-purple-400" style="font-variation-settings: 'FILL' 1;">hub</span>
+</div>
+<span class="text-[11px] font-bold uppercase tracking-wider mb-1">Warpcast</span>
+<span class="text-[9px] text-outline">Farcaster Hub</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Vibrant Section -->
+<section class="relative mb-12">
+<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/20 via-violet-600/10 to-transparent blur-[80px] -z-10"></div>
+<div class="glass-card p-6 rounded-xl border border-white/10 flex flex-col items-center text-center overflow-hidden">
+<div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-violet-500"></div>
+<span class="material-symbols-outlined text-4xl text-cyan-400 mb-4 animate-pulse">radar</span>
+<h4 class="text-xl font-bold mb-2">Network Status: <span class="text-emerald-400">Optimal</span></h4>
+<p class="text-xs text-on-surface-variant max-w-[200px] mb-6">Real-time sync established across all 12 global liquid shards.</p>
+<div class="flex gap-2">
+<div class="h-1 w-8 bg-cyan-400 rounded-full"></div>
+<div class="h-1 w-8 bg-cyan-400/30 rounded-full"></div>
+<div class="h-1 w-8 bg-cyan-400/30 rounded-full"></div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full pt-20 pb-24 bg-neutral-950 flex flex-col items-center gap-8 px-8 border-t border-white/5">
+<div class="text-cyan-400 font-black text-lg tracking-widest font-['Plus_Jakarta_Sans']">LIQUID CRYSTAL</div>
+<div class="flex gap-6">
+<a class="text-[11px] font-bold uppercase tracking-widest text-neutral-600 hover:text-violet-400 transition-all duration-300" href="#">Ecosystem</a>
+<a class="text-[11px] font-bold uppercase tracking-widest text-neutral-600 hover:text-violet-400 transition-all duration-300" href="#">Vault</a>
+<a class="text-[11px] font-bold uppercase tracking-widest text-neutral-600 hover:text-violet-400 transition-all duration-300" href="#">Protocol</a>
+</div>
+<div class="text-[11px] font-bold uppercase tracking-widest text-neutral-600">© 2024 LIQUID CRYSTAL FORGE</div>
+</footer>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-8 left-0 right-0 z-50 flex justify-around items-center px-4 py-2 bg-neutral-900/40 backdrop-blur-2xl w-[90%] max-w-md mx-auto rounded-full border border-white/10 shadow-[inset_10px_10px_50px_rgba(255,255,255,0.1)]">
+<a class="text-neutral-500 p-3 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">tactic</span>
+</a>
+<a class="text-neutral-500 p-3 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+</a>
+<a class="bg-gradient-to-br from-cyan-400/20 to-violet-500/20 text-cyan-300 rounded-full p-3 shadow-[0_0_20px_rgba(105,218,255,0.3)] scale-110" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">notifications</span>
+</a>
+<a class="text-neutral-500 p-3 hover:text-white transition-colors" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</nav>
+</body></html>

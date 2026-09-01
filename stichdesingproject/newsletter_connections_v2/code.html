@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#fe00d5",
+              "surface-container-high": "#201f1f",
+              "surface-container-lowest": "#000000",
+              "surface-container-low": "#131313",
+              "tertiary-fixed": "#ff87db",
+              "error": "#ff716c",
+              "surface-tint": "#69daff",
+              "surface": "#0e0e0e",
+              "primary-fixed-dim": "#00c0ea",
+              "secondary-fixed": "#dac9ff",
+              "on-background": "#ffffff",
+              "tertiary-dim": "#ff5dd7",
+              "primary-fixed": "#00cffc",
+              "outline-variant": "#494847",
+              "secondary-fixed-dim": "#ceb9ff",
+              "primary-dim": "#00c0ea",
+              "on-tertiary": "#430036",
+              "on-primary-container": "#004050",
+              "on-primary-fixed-variant": "#004a5c",
+              "on-tertiary-fixed": "#34002a",
+              "error-container": "#9f0519",
+              "surface-container": "#1a1919",
+              "tertiary": "#ff5dd7",
+              "surface-dim": "#0e0e0e",
+              "on-surface-variant": "#adaaaa",
+              "inverse-on-surface": "#565554",
+              "background": "#0e0e0e",
+              "on-secondary-fixed": "#41009a",
+              "on-tertiary-container": "#0e000a",
+              "on-error": "#490006",
+              "surface-variant": "#262626",
+              "outline": "#777575",
+              "on-tertiary-fixed-variant": "#6f005c",
+              "tertiary-fixed-dim": "#ff6ad8",
+              "on-primary-fixed": "#002a35",
+              "on-secondary-container": "#f8f1ff",
+              "surface-bright": "#2c2c2c",
+              "on-secondary-fixed-variant": "#6300e2",
+              "on-primary": "#004a5d",
+              "secondary-container": "#7000ff",
+              "on-surface": "#ffffff",
+              "inverse-surface": "#fcf8f8",
+              "secondary": "#ac89ff",
+              "inverse-primary": "#006880",
+              "secondary-dim": "#874cff",
+              "error-dim": "#d7383b",
+              "surface-container-highest": "#262626",
+              "primary-container": "#00cffc",
+              "on-error-container": "#ffa8a3",
+              "primary": "#69daff",
+              "on-secondary": "#290067"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+        }
+        .crystal-refraction {
+            box-shadow: 
+                inset -10px -10px 50px rgba(0, 0, 0, 0.5),
+                inset 10px 10px 50px rgba(255, 255, 255, 0.1),
+                0 0 80px rgba(105, 218, 255, 0.15);
+        }
+        .aura-glow {
+            filter: blur(120px);
+            background: radial-gradient(circle, rgba(105, 218, 255, 0.15) 0%, rgba(172, 137, 255, 0.1) 100%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body min-h-screen selection:bg-primary/30 overflow-x-hidden">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-900/40 backdrop-blur-3xl border-b border-white/10 flex justify-between items-center px-6 py-4 w-full shadow-[0_0_80px_rgba(105,218,255,0.15)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-cyan-400" data-icon="diamond">diamond</span>
+<span class="text-xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500 font-headline">LIQUID CRYSTAL</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-neutral-400 hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-widest" href="#">Connect</a>
+<a class="text-neutral-400 hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-widest" href="#">Crystalize</a>
+<a class="text-neutral-400 hover:text-white transition-all duration-300 font-bold text-xs uppercase tracking-widest" href="#">Pulse</a>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-white" data-icon="menu">menu</span>
+</div>
+</nav>
+<!-- Background Auras -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+<div class="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] aura-glow rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] aura-glow rounded-full"></div>
+</div>
+<main class="relative z-10 pt-24 pb-32 px-6 flex flex-col items-center justify-center min-h-screen max-w-7xl mx-auto">
+<!-- Header Section -->
+<header class="text-center mb-12 md:mb-20">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-4 block">Ecosystem pulse</span>
+<h1 class="text-4xl md:text-7xl font-extrabold tracking-tighter leading-none mb-6 font-headline">
+                The <span class="text-transparent bg-clip-text bg-gradient-to-b from-white to-neutral-500">Crystal</span><br/>Connections
+            </h1>
+<p class="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                Sync with the fluid intelligence of the network. Receive curated insights delivered through a glass-darkly.
+            </p>
+</header>
+<!-- Main Bento Grid Layout -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 w-full">
+<!-- Newsletter Glass Card (Subscription) -->
+<div class="md:col-span-8 glass-card crystal-refraction rounded-xl p-8 md:p-12 relative overflow-hidden flex flex-col justify-center">
+<div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 blur-[80px] -mr-32 -mt-32 rounded-full"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-3 mb-8">
+<div class="w-12 h-12 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+<span class="material-symbols-outlined text-primary" data-icon="edit_note" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+</div>
+<h2 class="text-2xl font-bold tracking-tight">Sync Frequency</h2>
+</div>
+<form class="space-y-6 max-w-md" onsubmit="return false">
+<div class="relative">
+<input class="w-full bg-white/5 border border-white/10 rounded-full py-5 px-8 text-on-surface placeholder:text-neutral-500 focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all outline-none backdrop-blur-md" placeholder="Input access node (Email)" type="email"/>
+</div>
+<div class="flex flex-wrap gap-4 pt-2">
+<button class="flex items-center gap-3 px-8 py-5 rounded-full bg-gradient-to-br from-cyan-400 to-violet-500 text-white font-bold tracking-tight shadow-[0_0_40px_rgba(105,218,255,0.3)] hover:scale-105 active:scale-95 duration-200 transition-transform">
+<span>Initialize Connection</span>
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<p class="text-[11px] text-neutral-500 uppercase tracking-widest font-bold">
+                            By subscribing you accept the liquid crystal protocol.
+                        </p>
+</form>
+</div>
+<!-- Abstract Decorative Element -->
+<div class="hidden md:block absolute bottom-0 right-0 w-1/3 h-full pointer-events-none opacity-20">
+<div class="w-full h-full bg-gradient-to-tl from-primary to-transparent"></div>
+</div>
+</div>
+<!-- Social/Community Cards -->
+<div class="md:col-span-4 space-y-6">
+<!-- Social Connect Grid -->
+<div class="glass-card rounded-xl p-6 flex flex-col gap-6">
+<h3 class="text-xs font-bold uppercase tracking-[0.15em] text-neutral-400">Nodes Network</h3>
+<div class="grid grid-cols-2 gap-4">
+<a class="group bg-surface-container-low hover:bg-white/5 border border-white/5 p-5 rounded-xl flex flex-col items-center gap-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-secondary text-3xl transition-transform group-hover:scale-110" data-icon="share">share</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400">Twitter</span>
+</a>
+<a class="group bg-surface-container-low hover:bg-white/5 border border-white/5 p-5 rounded-xl flex flex-col items-center gap-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-primary text-3xl transition-transform group-hover:scale-110" data-icon="forum" style="font-variation-settings: 'FILL' 1;">forum</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400">Discord</span>
+</a>
+<a class="group bg-surface-container-low hover:bg-white/5 border border-white/5 p-5 rounded-xl flex flex-col items-center gap-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-tertiary text-3xl transition-transform group-hover:scale-110" data-icon="video_library">video_library</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400">Youtube</span>
+</a>
+<a class="group bg-surface-container-low hover:bg-white/5 border border-white/5 p-5 rounded-xl flex flex-col items-center gap-3 transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-white text-3xl transition-transform group-hover:scale-110" data-icon="alternate_email">alternate_email</span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-neutral-400">Medium</span>
+</a>
+</div>
+</div>
+<!-- Secondary CTA Card -->
+<div class="glass-card rounded-xl p-6 bg-gradient-to-br from-white/5 to-transparent border border-white/10">
+<div class="flex items-start justify-between mb-4">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary" data-icon="auto_awesome">auto_awesome</span>
+</div>
+<span class="material-symbols-outlined text-neutral-600" data-icon="north_east">north_east</span>
+</div>
+<h4 class="font-bold text-lg mb-2">Join the Guild</h4>
+<p class="text-neutral-400 text-sm font-light">Direct access to the forge's internal development stream.</p>
+</div>
+</div>
+<!-- Full-width visual separator or info banner -->
+<div class="md:col-span-12 glass-card rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-8 border-none bg-surface-container-low/40">
+<div class="flex items-center gap-6">
+<img alt="Community artwork" class="w-20 h-20 rounded-2xl object-cover ring-1 ring-white/20" data-alt="Abstract vibrant geometric glass texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmRKKvDWSm7fgTjY-F5mb9Y3-pdfkHXv0466kG7HdGyxc8hHvmTCXWoonu3jXptMTbh9sW5EIAONqffrq61EvCD07D_hF00AiiHFa6yrXgiTF37fyOUPygnhjZ4pChLTOrAwdC9bZ66DrowlOQX2dC0vM9qEN2UGHk__oLNsFrLCaw41Df7cW87lUVTxSFdTcKbXDnHUxPY7WK2SX7oISywM15nv4Zf6s2TG9pgb0sFz9JUcAkYkABKQfzmfsZhChU4SdOzHEKsOA"/>
+<div>
+<h4 class="text-xl font-bold tracking-tight">Active Node Members</h4>
+<p class="text-neutral-400 text-sm">Join 12,400+ entities already synchronized.</p>
+</div>
+</div>
+<div class="flex -space-x-4">
+<div class="w-12 h-12 rounded-full border-2 border-surface bg-neutral-800 flex items-center justify-center text-[10px] font-bold">+2k</div>
+<img alt="User avatar" class="w-12 h-12 rounded-full border-2 border-surface" data-alt="Portrait of a digital user" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxw0kKjqq6Wzw8k0G03UzyrVd0zITSZc-WPAd3lNkDxpOhESlkPi8VYTFtuY0wCFNSxiBOsXteh0iRu5teY5oJe9Vil7gG8tqWrFQOeggEIJUh2104Wsls3urK_t5eY0eEf2IeGjGJE_znEjO4a7ewsKMOD_DIfurZH7_fNgBuu3755sZNIX0UpdMqaRWxr1nvLN27JiMWhM2D-iGdKwYaDj746ODOR4Nzua2UxqCN-V4tVdICsE4QAbJBhFxxX2kBEZDMrj7WpmA"/>
+<img alt="User avatar" class="w-12 h-12 rounded-full border-2 border-surface" data-alt="Portrait of a digital user" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLb1dIBFlBSF7GrY6T1oderZVX8xWrQ4yFmrcCv64hogDJNWkcFzhAiq7V4yy6vDYlvg245Amd9RCm3k4a86iIwifKZvAAZ07m1A9CT_c7elvVtFiTeXdax4dm-TuShfmkzYtz2I8Gq6bCaBY2ZTY333rBnxM4W5GugP-EM-CddnJRGlqiX13LtgbBs-HpWKfKxPTP30kj-JkJS5wX8Nds8KZUVHf3nX5tz-Tmwu0pd8pbawCntlVDkiDPU1KEhn0aCpXKMLPaSWI"/>
+<img alt="User avatar" class="w-12 h-12 rounded-full border-2 border-surface" data-alt="Portrait of a digital user" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqgeKbYFsD-QZV7j5SSuXHefknoI870PSpBWQBKqlpkW2s92AykoIdGe_l6KmMiiFQibysFJsz1CY2uhKT2MkUm3lueIdri8WUhOhuMD4TVQFBYD9XZmlKoZ2rxSR1qznCRlqux5CQhZMPULjP6h3xoswqFZLZLfiQhsHZE8Xr_ITs4qtlJETJCDdmRx6Oets8Ow6-4Gr9cOLyiHIhmx1-fPw0eoG9ijMLCMWagdmvdclLqRKiGQP1Akb_reTibi52jpGMHouLDuc"/>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mobile Perspective) -->
+<div class="md:hidden">
+<nav class="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex justify-around items-center px-4 py-2 bg-neutral-900/40 backdrop-blur-2xl w-[90%] max-w-md rounded-full border-[0.5px] border-white/10 inset-[-10px_-10px_50px_rgba(0,0,0,0.5)] shadow-[0_0_80px_rgba(105,218,255,0.15)]">
+<a class="flex items-center justify-center text-neutral-400 p-3 hover:scale-110 hover:text-cyan-300 transition-transform active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</a>
+<a class="flex items-center justify-center bg-gradient-to-br from-cyan-400 to-violet-500 text-white rounded-full p-3 shadow-[0_0_20px_rgba(105,218,255,0.5)] active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note" style="font-variation-settings: 'FILL' 1;">edit_note</span>
+</a>
+<a class="flex items-center justify-center text-neutral-400 p-3 hover:scale-110 hover:text-cyan-300 transition-transform active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</a>
+<a class="flex items-center justify-center text-neutral-400 p-3 hover:scale-110 hover:text-cyan-300 transition-transform active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</nav>
+</div>
+</body></html>

@@ -1,10 +1,12 @@
 import React from "react";
+import Link from "next/link";
 import { GlassCard } from "./GlassCard";
 
 const FEATURED = [
   {
     id: 101,
     title: "El Sistema Operativo Neurobiológico Dual (TDAH)",
+    slug: "adhd-hyperfocus-vibe-coding",
     excerpt:
       "Metodologías de Hyperfocus aplicadas al desarrollo ágil y cómo convertir el 'Burst & Crash' en una ventaja competitiva.",
     readTime: "7 min",
@@ -12,17 +14,19 @@ const FEATURED = [
   },
   {
     id: 102,
-    title: "OBS NDI: Zero-Latency Streaming Architecture",
+    title: "Multi-Stream Real-Time Financial Surfaces at 60 FPS",
+    slug: "realtime-financial-websockets",
     excerpt:
-      "Integrando WebSockets y Python para automatizar transiciones y alertas visuales en vivo.",
-    readTime: "12 min",
-    icon: "📡",
+      "Integración de WebSockets multi-stream con Kraken y OKX, message batching y pruebas automatizadas con Playwright.",
+    readTime: "10 min",
+    icon: "⚡",
   },
   {
     id: 103,
-    title: "Agent Orchestrator: Mi Segundo Cerebro",
+    title: "Sovereign AI & Autonomous Second Brain Architecture",
+    slug: "sovereign-ai-architecture",
     excerpt:
-      "Construyendo un puente entre Obsidian y Claude 3.5 Sonnet para automatización cognitiva profunda.",
+      "Construyendo un puente entre Obsidian PARA, modelos locales y agentes autónomos para automatización cognitiva.",
     readTime: "9 min",
     icon: "🤖",
   },
@@ -47,9 +51,10 @@ export function FeaturedCarousel() {
         {/* ── Carousel ── */}
         <div className="flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbars">
           {FEATURED.map((item) => (
-            <div
+            <Link
               key={item.id}
-              className="snap-start shrink-0 w-[85vw] sm:w-[50vw] md:w-[400px]"
+              href={`/blog/${item.slug}`}
+              className="snap-start shrink-0 w-[85vw] sm:w-[50vw] md:w-[400px] block group focus:outline-none"
             >
               <GlassCard
                 variant="glow"
@@ -88,7 +93,7 @@ export function FeaturedCarousel() {
                   </svg>
                 </div>
               </GlassCard>
-            </div>
+            </Link>
           ))}
         </div>
 

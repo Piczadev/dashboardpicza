@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface": "#ffffff",
+              "surface-container": "#1a1919",
+              "surface-container-high": "#201f1f",
+              "primary-dim": "#00c0ea",
+              "error-container": "#9f0519",
+              "inverse-primary": "#006880",
+              "on-tertiary-fixed": "#34002a",
+              "secondary-fixed": "#dac9ff",
+              "surface-dim": "#0e0e0e",
+              "inverse-surface": "#fcf8f8",
+              "secondary-dim": "#874cff",
+              "outline": "#777575",
+              "tertiary-dim": "#ff5dd7",
+              "on-primary-fixed-variant": "#004a5c",
+              "on-tertiary-container": "#0e000a",
+              "on-secondary": "#290067",
+              "secondary": "#ac89ff",
+              "on-secondary-fixed-variant": "#6300e2",
+              "primary-fixed": "#00cffc",
+              "on-secondary-container": "#f8f1ff",
+              "surface-variant": "#262626",
+              "error-dim": "#d7383b",
+              "tertiary": "#ff5dd7",
+              "surface-container-highest": "#262626",
+              "tertiary-fixed-dim": "#ff6ad8",
+              "on-error-container": "#ffa8a3",
+              "primary": "#69daff",
+              "surface-container-lowest": "#000000",
+              "surface": "#0e0e0e",
+              "surface-container-low": "#131313",
+              "error": "#ff716c",
+              "on-primary-container": "#004050",
+              "secondary-fixed-dim": "#ceb9ff",
+              "secondary-container": "#7000ff",
+              "background": "#0e0e0e",
+              "surface-bright": "#2c2c2c",
+              "primary-container": "#00cffc",
+              "on-background": "#ffffff",
+              "inverse-on-surface": "#565554",
+              "tertiary-container": "#fe00d5",
+              "surface-tint": "#69daff",
+              "on-secondary-fixed": "#41009a",
+              "on-tertiary-fixed-variant": "#6f005c",
+              "on-tertiary": "#430036",
+              "on-primary-fixed": "#002a35",
+              "on-primary": "#004a5d",
+              "outline-variant": "#494847",
+              "primary-fixed-dim": "#00c0ea",
+              "on-surface-variant": "#adaaaa",
+              "tertiary-fixed": "#ff87db",
+              "on-error": "#490006"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        .liquid-bg {
+            background: radial-gradient(circle at 50% 50%, #1a1a1a 0%, #0e0e0e 100%);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -2;
+        }
+        .crystal-sphere {
+            background: radial-gradient(circle at 30% 30%, rgba(105, 218, 255, 0.4), rgba(172, 137, 255, 0.2), transparent 70%);
+            box-shadow: inset -10px -10px 50px rgba(0, 0, 0, 0.5), 
+                        inset 10px 10px 50px rgba(255, 255, 255, 0.1),
+                        0 0 80px rgba(105, 218, 255, 0.15);
+            backdrop-filter: blur(40px);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+        }
+        .aura-glow {
+            filter: drop-shadow(0 0 20px rgba(105, 218, 255, 0.4));
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="selection:bg-primary/30 selection:text-primary">
+<div class="liquid-bg"></div>
+<!-- Shared Component: TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-low/40 dark:bg-black/40 backdrop-blur-3xl border-b border-white/10 shadow-[0_0_40px_rgba(105,218,255,0.06)]">
+<div class="flex justify-between items-center px-6 py-4 w-full max-w-none">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full overflow-hidden border border-white/10 glass-card">
+<img alt="Crystal Refraction Avatar" class="w-full h-full object-cover" data-alt="Portrait of a professional man with crystal lighting effects" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBi8fClap6pND7k7SOW7GSB-pPny4Y_0nATaeHl5KJE7lfsQQWcNWTnPn5GvVDsP3F8I2KWXUEhlhRPEwdsSlsQ7MQxTfQJdc5S7zmO3DzYbSvo7zS7NaId9Tq1KZ0bXUzCHGbPfAT-y9ChsfoYMj7So1aKPrP2cJ06-5gw1Xq3nZOCvh_ge7ITGebyC_jW4n5rNpFdWIU5QZlcIX5be__fC7d2Lg2EpHwQxGImrmKvIAp-jgQjUO4vtsUsG25I_LSGwBl1JNCsvVQ"/>
+</div>
+<span class="text-2xl font-black bg-gradient-to-r from-[#69daff] to-[#ac89ff] bg-clip-text text-transparent">PiczaDev</span>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-[11px] tracking-[0.05em] font-medium text-cyan-400 font-bold hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded-full" href="#">Home</a>
+<a class="text-[11px] tracking-[0.05em] font-medium text-slate-400 hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded-full" href="#">Proyectos</a>
+<a class="text-[11px] tracking-[0.05em] font-medium text-slate-400 hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded-full" href="#">Blog</a>
+<a class="text-[11px] tracking-[0.05em] font-medium text-slate-400 hover:bg-white/5 transition-all duration-300 px-3 py-1 rounded-full" href="#">Contacto</a>
+</nav>
+<button class="material-symbols-outlined text-cyan-400 dark:text-cyan-300 hover:bg-white/5 transition-all duration-300 p-2 rounded-full">menu</button>
+</div>
+</header>
+<main class="relative min-h-screen flex flex-col items-center justify-center pt-24 pb-32 px-6 overflow-hidden">
+<!-- Background Decorative Elements -->
+<div class="absolute top-1/4 -left-20 w-96 h-96 bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<div class="absolute bottom-1/4 -right-20 w-96 h-96 bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
+<!-- Hero Section -->
+<section class="relative z-10 w-full max-w-6xl flex flex-col items-center text-center">
+<!-- 3D Glass Sphere Hero Visual -->
+<div class="relative w-64 h-64 md:w-96 md:h-96 mb-12 group">
+<div class="absolute inset-0 crystal-sphere rounded-full animate-pulse transition-transform duration-700 group-hover:scale-105"></div>
+<!-- Refraction Details -->
+<div class="absolute top-1/4 left-1/4 w-full h-full bg-gradient-to-br from-white/20 to-transparent rounded-full blur-xl opacity-30"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4/5 h-4/5 rounded-full border border-white/5 backdrop-blur-sm"></div>
+</div>
+<div class="max-w-3xl space-y-6">
+<h1 class="text-5xl md:text-8xl font-extrabold tracking-tighter text-white leading-none">
+                    Yahir Rivera
+                </h1>
+<p class="text-lg md:text-2xl font-light text-slate-400 tracking-wide flex items-center justify-center gap-3">
+                    CEO de <span class="text-secondary font-semibold">PizzaLabs</span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+                    Arquitecto Web3 &amp; IA
+                </p>
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-center gap-6">
+<!-- CTA Button -->
+<button class="relative group px-10 py-5 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-bold text-lg aura-glow active:scale-95 transition-all duration-300 overflow-hidden shadow-[0_0_30px_rgba(105,218,255,0.3)]">
+<span class="relative z-10 flex items-center gap-2">
+                            Suscríbete al Newsletter
+                            <span class="material-symbols-outlined">arrow_forward</span>
+</span>
+<div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</button>
+<!-- Secondary Button -->
+<button class="px-10 py-5 rounded-full glass-card text-white font-medium hover:bg-white/10 transition-all duration-300">
+                        Ver Roadmap
+                    </button>
+</div>
+</div>
+</section>
+<!-- Bento Grid Section (Editorial 2 Pattern) -->
+<section class="w-full max-w-6xl mt-32 grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Large Card: IA Focus -->
+<div class="md:col-span-8 glass-card rounded-[2.5rem] p-10 flex flex-col justify-between min-h-[400px] group overflow-hidden">
+<div class="relative z-10">
+<span class="label-sm px-4 py-1.5 rounded-full bg-primary/20 text-primary uppercase tracking-[0.1em] font-bold text-[10px]">Ecosistema</span>
+<h2 class="text-4xl font-bold mt-6 leading-tight max-w-md">Construyendo el futuro de la Inteligencia Artificial Descentralizada.</h2>
+</div>
+<div class="relative z-10 flex items-center gap-4 mt-8">
+<div class="flex -space-x-3">
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-surface-container-high"></div>
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-primary/40"></div>
+<div class="w-10 h-10 rounded-full border-2 border-surface bg-secondary/40"></div>
+</div>
+<span class="text-slate-400 text-sm font-medium">+5000 Devs activos</span>
+</div>
+<!-- Abstract Graphic -->
+<div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-gradient-to-tl from-primary/20 to-transparent blur-3xl group-hover:scale-110 transition-transform duration-1000"></div>
+</div>
+<!-- Side Card: Socials & Connectivity -->
+<div class="md:col-span-4 glass-card rounded-[2.5rem] p-10 flex flex-col items-center justify-center gap-8 text-center bg-surface-container-high/20">
+<h3 class="text-xl font-bold">Conecta Conmigo</h3>
+<div class="grid grid-cols-2 gap-4 w-full">
+<a class="p-6 rounded-[2rem] glass-card flex items-center justify-center hover:bg-white/10 transition-all group" href="#">
+<img alt="X" class="w-6 h-6 group-hover:scale-110 transition-transform" data-alt="Social media X logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAI7QKblFHaBsoAB33FmgGUUKbWZsLsAA7sYiNI0XtBDMsLAcRcxn6RnpQL9qh8tMPXRKla5SYRFBKMhi1QnkTJ35cBlSKQ_AadcCT997E_QhcHGcqC3CDjhnwXfo-tMva8LQ8c1GL7jNvBLCzIpoSBPF8QOD_JEixzY2feNR8r7bDWXJzYlxvztGnI-D0Og34KLRFvYM1a1aGedicbgbTpjm3PvkcrbEaDFJeXnfkLQ1sHx-co2sZWOydAlaYam4KEj-leG9WuaVY"/>
+</a>
+<a class="p-6 rounded-[2rem] glass-card flex items-center justify-center hover:bg-white/10 transition-all group" href="#">
+<img alt="Github" class="w-6 h-6 group-hover:scale-110 transition-transform" data-alt="Github developer logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7lUZZTXEkxzz0EYC8LcfSGHXf89lnI9Ru1D4z-gfE7FOMbqTkGjrw6_DvBu5sMsoIyf4_yPstIpClhYbonja4C5KdiDN20KcreCzuvYTWzP2pFxhR201FVyKbKAOgl2NtD1A_cbkpp-stRfG8aGbjyN9vw2_y46QgVbxfhLwDyiQxbYXhKZzWV4Ogf7MYGWcwyDaZEx4p59VCIU9CNIhIEMpIVnpwmKo6Zd2rOyn5btNlPaJh-mOtuwV2WXfTph5Ja9B0I_VJhvI"/>
+</a>
+<a class="p-6 rounded-[2rem] glass-card flex items-center justify-center hover:bg-white/10 transition-all group" href="#">
+<img alt="LinkedIn" class="w-6 h-6 group-hover:scale-110 transition-transform" data-alt="LinkedIn professional logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMzsatABkOlKXTFDArzjSO02i3nHix9p739Lu7P_1nW_vUkJWi0tNHgon2B_gBhGAfxBZw07x0E3atPR6pbLHQFZ01ca8wJKilcYmMdL3toyBZVmJU_MhrpkptVdX7vhyHYwBXTaTxOQ05xjlYu6DelLj6fEvaA118r3GVoyVLP3cv6REA3vtEh-YkSN580DOXYh0jUdkfZl0niyGBL3SoIX8wzocWjpMn1alHH7DhysvWmfW8InlOIwTnKTXMU1ABOMGBjKE1V-s"/>
+</a>
+<a class="p-6 rounded-[2rem] glass-card flex items-center justify-center hover:bg-white/10 transition-all group" href="#">
+<img alt="Instagram" class="w-6 h-6 group-hover:scale-110 transition-transform" data-alt="Instagram brand logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeP8gPv6kgGnI93uPI00BYS9n9CoCD5-aFYYvajZPlgCyiQb8S-sjFj9aGcFc4Be8THRAu5MgfwujGm2okd-eqyxulI0xVHcmsu7r1S6Tk7Q50urc1uizn0o1KEpnIPx9ci6DsM2xpMjJm4Q6KJMpODXwv2IQO2sFKnVx0PQW4ZOTqBIq1DHZrWPNyuzPPYTGguqE78DX0oL7wPM7QIoHdzOgEAP3k1WEy6va7eZtQ4GDW2Eq8T-WfUy3RIKFg4k398o0SgfZOIkM"/>
+</a>
+</div>
+<p class="text-slate-500 text-xs tracking-widest uppercase font-bold">@yahirivera_dev</p>
+</div>
+<!-- Small Bento Items -->
+<div class="md:col-span-4 glass-card rounded-[2.5rem] p-8 aspect-square flex flex-col items-center justify-center text-center gap-4 border-primary/20">
+<span class="material-symbols-outlined text-5xl text-primary" style="font-variation-settings: 'FILL' 1;">deployed_code</span>
+<h4 class="text-2xl font-bold">32+ DApps</h4>
+<p class="text-slate-400 text-sm">Desplegadas en mainnet durante el último año.</p>
+</div>
+<div class="md:col-span-4 glass-card rounded-[2.5rem] p-8 aspect-square flex flex-col items-center justify-center text-center gap-4">
+<span class="material-symbols-outlined text-5xl text-secondary" style="font-variation-settings: 'FILL' 1;">groups</span>
+<h4 class="text-2xl font-bold">PizzaLabs</h4>
+<p class="text-slate-400 text-sm">Liderando la innovación en el ecosistema digital.</p>
+</div>
+<div class="md:col-span-4 glass-card rounded-[2.5rem] p-8 aspect-square flex flex-col items-center justify-center text-center gap-4">
+<span class="material-symbols-outlined text-5xl text-tertiary" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+<h4 class="text-2xl font-bold">Web3 Crystal</h4>
+<p class="text-slate-400 text-sm">Diseño de interfaces con alma y profundidad.</p>
+</div>
+</section>
+</main>
+<!-- Shared Component: BottomNavBar (Visible on Mobile) -->
+<nav class="md:hidden fixed bottom-8 left-0 right-0 z-50 flex justify-around items-center px-4 py-2">
+<div class="flex justify-around items-center w-[90%] max-w-md mx-auto rounded-full bg-surface-container-high/40 dark:bg-[#1a1a1a]/40 backdrop-blur-2xl border border-white/10 px-4 py-2 shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
+<a class="flex items-center justify-center bg-[#69daff]/20 text-[#69daff] rounded-full p-3 shadow-[inset_0_1px_4px_rgba(255,255,255,0.2)]" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="flex items-center justify-center text-slate-400 p-3 hover:text-cyan-200 hover:scale-110 transition-all" href="#">
+<span class="material-symbols-outlined">subscriptions</span>
+</a>
+<a class="flex items-center justify-center text-slate-400 p-3 hover:text-cyan-200 hover:scale-110 transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+</a>
+<a class="flex items-center justify-center text-slate-400 p-3 hover:text-cyan-200 hover:scale-110 transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</div>
+</nav>
+<footer class="w-full py-16 flex flex-col items-center justify-center text-center border-t border-white/5 bg-surface-container-lowest">
+<div class="flex items-center gap-2 mb-6">
+<span class="text-2xl font-black bg-gradient-to-r from-[#69daff] to-[#ac89ff] bg-clip-text text-transparent">PiczaDev</span>
+<span class="w-1 h-1 rounded-full bg-outline-variant"></span>
+<span class="text-xs font-bold tracking-widest text-slate-500 uppercase">Est. 2024</span>
+</div>
+<p class="text-slate-400 text-sm max-w-md px-6">
+            Explorando las fronteras entre lo tangible y lo digital. Diseñado bajo el concepto de Liquid Glass.
+        </p>
+<div class="mt-8 text-[10px] uppercase tracking-widest font-bold text-slate-600">
+            © Yahir Rivera - Todos los derechos reservados
+        </div>
+</footer>
+</body></html>

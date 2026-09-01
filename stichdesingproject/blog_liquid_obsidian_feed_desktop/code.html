@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-primary-fixed-variant": "#004a5c", background: "#0e0e0e", "on-error-container": "#ffa8a3", "primary-fixed": "#00cffc", "surface-container-high": "#201f1f", "primary-dim": "#00c0ea", "tertiary-container": "#fe00d5", "outline-variant": "#494847", "inverse-primary": "#006880", "secondary-dim": "#874cff", "on-secondary-fixed-variant": "#6300e2", "on-primary-fixed": "#002a35", "surface-variant": "#262626", "on-tertiary-fixed": "#34002a", secondary: "#ac89ff", "error-dim": "#d7383b", "on-secondary-container": "#f8f1ff", "on-background": "#ffffff", "tertiary-fixed-dim": "#ff6ad8", "tertiary-fixed": "#ff87db", "secondary-container": "#7000ff", "primary-fixed-dim": "#00c0ea", "secondary-fixed-dim": "#ceb9ff", "surface-tint": "#69daff", "inverse-surface": "#fcf8f8", "on-surface": "#ffffff", "on-secondary": "#290067", "surface-container-low": "#131313", tertiary: "#ff5dd7", "surface-container-highest": "#262626", "primary-container": "#00cffc", "surface-dim": "#0e0e0e", "secondary-fixed": "#dac9ff", "on-surface-variant": "#adaaaa", "on-secondary-fixed": "#41009a", "surface-bright": "#2c2c2c", "error-container": "#9f0519", error: "#ff716c", outline: "#777575", "surface-container-lowest": "#000000", "on-tertiary": "#430036", primary: "#69daff", surface: "#0e0e0e", "tertiary-dim": "#ff5dd7", "on-error": "#490006", "on-tertiary-fixed-variant": "#6f005c", "on-primary": "#004a5d", "on-tertiary-container": "#0e000a", "surface-container": "#1a1919", "on-primary-container": "#004050", "inverse-on-surface": "#565554"}, fontFamily: {headline: ["Plus Jakarta Sans"], body: ["Plus Jakarta Sans"], label: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"]}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}, fontSize: {}}}};</script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .liquid-gradient {
+            background: radial-gradient(circle at 20% 30%, rgba(105, 218, 255, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(172, 137, 255, 0.15) 0%, transparent 40%);
+        }
+        .aura-glow-primary {
+            box-shadow: 0 0 60px -15px rgba(105, 218, 255, 0.2);
+        }
+        .inner-glow {
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body selection:bg-primary selection:text-on-primary min-h-screen relative overflow-x-hidden">
+<!-- Fluid Background Texture -->
+<div class="fixed inset-0 liquid-gradient pointer-events-none z-0"></div>
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-black/40 backdrop-blur-2xl border-b border-white/10 shadow-[0_8px_32px_0_rgba(0,209,255,0.1)]">
+<nav class="flex justify-between items-center h-20 px-8 max-w-7xl mx-auto">
+<!-- Brand Logo -->
+<div class="text-2xl font-bold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 font-headline">
+                PiczaDev
+            </div>
+<!-- Navigation Links -->
+<div class="hidden md:flex items-center gap-8">
+<a class="font-plus-jakarta text-sm tracking-widest uppercase text-cyan-400 border-b border-cyan-400 pb-1" href="#">Articles</a>
+<a class="font-plus-jakarta text-sm tracking-widest uppercase text-slate-400 hover:text-white transition-colors" href="#">Labs</a>
+<a class="font-plus-jakarta text-sm tracking-widest uppercase text-slate-400 hover:text-white transition-colors" href="#">About</a>
+<a class="font-plus-jakarta text-sm tracking-widest uppercase text-slate-400 hover:text-white transition-colors" href="#">Contact</a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex items-center gap-6">
+<button class="material-symbols-outlined text-slate-400 hover:text-white transition-all active:scale-95">rss_feed</button>
+<button class="material-symbols-outlined text-slate-400 hover:text-white transition-all active:scale-95">light_mode</button>
+<div class="w-10 h-10 rounded-full border border-white/20 overflow-hidden hover:border-primary/50 transition-all cursor-pointer">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="Stylized user profile avatar portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBN8vM4auafpqFix2YhpRZ1853OlMRpVLpJjVN3kcCPZau9X-GGcjV-Ontye4r6enlz2uKlEw-cgpvCapTGXLCuQI2-Yz_Gu9l8aFDfVYwTlBYNXa4pugqp75gqp9KHa9NXYF2HAP56WlXPpkDT0KL2tUtVh7uP99zqFz0hF_PhRO3ZrPCuVOnl4D7-k7ip4VopNBaJN6-EhDlh9eI-0O3kmBb9I-wpAt1BaVVUiFu6T-rAt_YaPGCGMIzS6RytgGRoVhgGUDGe2AI"/>
+</div>
+</div>
+</nav>
+</header>
+<main class="relative z-10 pt-32 pb-24 px-8 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="mb-20">
+<div class="flex flex-col md:flex-row justify-between items-end gap-8">
+<div class="max-w-2xl">
+<span class="inline-block px-3 py-1 rounded-full bg-white/5 backdrop-blur-md border border-white/10 text-primary text-[10px] tracking-widest uppercase font-bold mb-6">Featured Insights</span>
+<h1 class="text-5xl md:text-7xl font-extrabold font-headline leading-[1.1] tracking-tighter mb-6">
+                        The Liquid <span class="text-transparent bg-clip-text bg-gradient-to-br from-primary via-secondary to-tertiary">Ecosystem</span>
+</h1>
+<p class="text-on-surface-variant text-lg max-w-lg font-light leading-relaxed">
+                        Exploring the convergence of high-fidelity design, neural computation, and the future of decentralized interfaces.
+                    </p>
+</div>
+<div class="hidden lg:block">
+<div class="flex gap-4">
+<button class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 transition-all active:scale-90">
+<span class="material-symbols-outlined text-white">chevron_left</span>
+</button>
+<button class="w-12 h-12 rounded-full border border-primary/30 flex items-center justify-center bg-primary/10 text-primary hover:bg-primary/20 transition-all active:scale-90 aura-glow-primary">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Articles Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Featured Article (Span 8) -->
+<article class="md:col-span-8 group relative rounded-3xl overflow-hidden glass-card inner-glow cursor-pointer transition-all duration-500 hover:translate-y-[-4px]">
+<div class="aspect-[16/9] w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Abstract neural network visualization with blue glowing lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQOaloi26NfEd5TL4WxtLU855OcnDsML24t61gfv6jAtldRfTr0KsFsaSLPkRvELDekVs9BByLsogCh6qjoBiCJ9Nl0nfSLcSvZBmp4Y4jADWUoXkEdMFUCmWJcZrwpBP8IgC5VPtUN8Zv-uRjfbUK8sM3yPMg0MOIgA0VF9hD_9uMb-0MpDj90zIRgikRHh9ZMsO7U-z_85spam_9o8nFQOYRJlyuxvOTgjmrYPy6foS_KMuPbap2GMcrIavyEpP2j5wfRSHOci4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+</div>
+<div class="absolute bottom-0 p-10 w-full">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-bold tracking-widest uppercase backdrop-blur-md border border-primary/20">AI</span>
+<span class="px-3 py-1 rounded-full bg-white/5 text-on-surface-variant text-[10px] font-bold tracking-widest uppercase backdrop-blur-md border border-white/10">Research</span>
+</div>
+<h2 class="text-3xl font-bold font-headline mb-4 group-hover:text-primary transition-colors">Neural Refractions: The Future of AI</h2>
+<p class="text-on-surface-variant line-clamp-2 max-w-xl">Deep diving into how generative models are reshaping the way we perceive digital light and color in user interface design.</p>
+</div>
+</article>
+<!-- Secondary Article (Span 4) -->
+<article class="md:col-span-4 group relative rounded-3xl overflow-hidden glass-card inner-glow cursor-pointer transition-all duration-500 hover:translate-y-[-4px]">
+<div class="aspect-square w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Geometric 3D glass sculpture with purple refraction" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9sNAPZ_nCh5LYyMI9kf7dMok9X9UfmX1vRSTzmAZk3fdMN89QZo3WWiPyRDt5AQCjphzj9oBYtERwAYmIdidwOchKB-obF1-n4lowito2dAYQ36oVhjaTR8scSTys-5oi6tBu1le2wG_nw2LIqH6RaV8xejZa_QayyJ2Adgm5bo_5s2slauNatO9K0nDKpmNvQBEr06FpBn5qCYlazSiTj3ycW8W02oVGjVuSSz2IUksiF9GjV1IuRAVRkHBG5mx8-cmxDBfRvXU"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/60 to-transparent"></div>
+</div>
+<div class="absolute bottom-0 p-8 w-full">
+<div class="flex gap-2 mb-3">
+<span class="px-3 py-1 rounded-full bg-secondary/20 text-secondary text-[10px] font-bold tracking-widest uppercase border border-secondary/20">Web3</span>
+</div>
+<h2 class="text-xl font-bold font-headline mb-2">Liquid Governance Models</h2>
+<p class="text-on-surface-variant text-sm line-clamp-2">How decentralized entities are evolving beyond flat voting mechanisms.</p>
+</div>
+</article>
+<!-- Bottom Row Articles -->
+<article class="md:col-span-4 group rounded-3xl overflow-hidden glass-card inner-glow cursor-pointer transition-all duration-500 hover:translate-y-[-4px]">
+<div class="aspect-[4/3] w-full p-4">
+<img class="w-full h-full object-cover rounded-2xl" data-alt="Close up of a futuristic server farm with neon lights" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIW-zNhYQAtPsTIG5HrgB9nVpg9fsll-oyoKIntrfuVT6IsIffvJXhIuwd2Gda7A9EhY5l4o4kldiltT8uvo6Nzx7ccDIdPXdEQlsXYOLxn5z1phsunJTow98ktMQly8dtoGllBfX6BWgpCVokCtKt90xMQKjkmD3gLBdqeLppKEDxgs2l9Iy6xeuo92sHyQnPdjNvDcZIwok4VzNrBXRz2sB02j4eN06InET0jA1HVpnkFEMaLzfh7Fkh_J2G79cn69_Ii6V5le8"/>
+</div>
+<div class="px-6 pb-8">
+<div class="flex gap-2 mb-3">
+<span class="px-3 py-1 rounded-full bg-tertiary/20 text-tertiary text-[10px] font-bold tracking-widest uppercase border border-tertiary/20">Design</span>
+</div>
+<h2 class="text-xl font-bold font-headline mb-2">The Glass Aesthetic</h2>
+<p class="text-on-surface-variant text-sm">Why translucent surfaces are winning over flat minimalism.</p>
+</div>
+</article>
+<article class="md:col-span-4 group rounded-3xl overflow-hidden glass-card inner-glow cursor-pointer transition-all duration-500 hover:translate-y-[-4px]">
+<div class="aspect-[4/3] w-full p-4">
+<img class="w-full h-full object-cover rounded-2xl" data-alt="Colorful liquid metal texture background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfC-1CaSJO2SWExUnWhbcd_mjUn0ZG77-M3G050aPNfsQZA9u7pakIPkJlfYp3QQGmFhd5jyDJL2OS6F4mhy0pbDk-am9ivNeoohN9De9SWe8zYTcnmjDNDoAzBvSShdZh6QAf-LVJn35mB8ZGXKCugdm7l60P2Yn_VMCyW-N0pQeBmt8e0VUPTI6tSucD5hUTc4-UfUa4dJ55F5dgMMQ1XtfApSrSNkzid_QqSQMvqFWu4--SU3hFXXL9OcxctcwNDDe0bEEiUSA"/>
+</div>
+<div class="px-6 pb-8">
+<div class="flex gap-2 mb-3">
+<span class="px-3 py-1 rounded-full bg-primary/20 text-primary text-[10px] font-bold tracking-widest uppercase border border-primary/20">Vision</span>
+</div>
+<h2 class="text-xl font-bold font-headline mb-2">Spatial Architectures</h2>
+<p class="text-on-surface-variant text-sm">Designing for infinite canvases beyond the rectangular frame.</p>
+</div>
+</article>
+<article class="md:col-span-4 group rounded-3xl overflow-hidden glass-card inner-glow cursor-pointer transition-all duration-500 hover:translate-y-[-4px]">
+<div class="aspect-[4/3] w-full p-4">
+<img class="w-full h-full object-cover rounded-2xl" data-alt="Satellite image of glowing earth at night" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCnLUYvzXm0Njz3_Z6kB6K90MuFEyAi_yu4VDgPlzxLyhm3ExylbHTcwa1h-t25X0HbEJj27JCULA5R4EK0BlyY4xCwj7QjcYA9BxPbjrofnhnDHCatdBj_XFvsbIyff1FmoTdlPH5S0ul2jDcEqRFfAgmyxMKh8LDi99Na-sdjG9EbK-VQm5ALZqc4MH3-jkHBDObqWClDsJcBwRVj3k-KOHErURYAwkn1iyBxoWjfzLCcgOFZWZtYvqtzlXUUrG_Eoqc189VGGD8"/>
+</div>
+<div class="px-6 pb-8">
+<div class="flex gap-2 mb-3">
+<span class="px-3 py-1 rounded-full bg-secondary/20 text-secondary text-[10px] font-bold tracking-widest uppercase border border-secondary/20">Labs</span>
+</div>
+<h2 class="text-xl font-bold font-headline mb-2">Hyper-Local Nodes</h2>
+<p class="text-on-surface-variant text-sm">Rebuilding the internet using distributed atmospheric data.</p>
+</div>
+</article>
+</div>
+<!-- Featured Lab Highlight -->
+<section class="mt-24 rounded-[3rem] overflow-hidden glass-card border border-primary/20 relative p-12 lg:p-20">
+<div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/10 to-transparent pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row items-center gap-12">
+<div class="lg:w-1/2">
+<h3 class="text-primary font-headline font-bold text-sm tracking-[0.2em] uppercase mb-4">New Laboratory Release</h3>
+<h2 class="text-4xl md:text-5xl font-extrabold font-headline mb-6">Crystal Engine v2.0</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-10">
+                        Our proprietary rendering engine for high-fidelity glassmorphism on the web. Open source and ready for production.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 bg-gradient-to-r from-primary to-primary-dim text-on-primary-container font-bold rounded-full transition-all hover:aura-glow-primary active:scale-95">
+                            Get Early Access
+                        </button>
+<button class="px-8 py-4 bg-white/5 backdrop-blur-md border border-white/10 text-white font-bold rounded-full hover:bg-white/10 transition-all active:scale-95">
+                            Read Documentation
+                        </button>
+</div>
+</div>
+<div class="lg:w-1/2 flex justify-center">
+<div class="w-80 h-80 rounded-[4rem] glass-card inner-glow flex items-center justify-center relative aura-glow-primary transform rotate-12 transition-transform hover:rotate-0 duration-700">
+<span class="material-symbols-outlined text-primary text-9xl" style="font-variation-settings: 'FILL' 1;">fluid</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] w-full py-12 border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 max-w-7xl mx-auto gap-4">
+<div class="text-lg font-bold text-slate-200 font-headline tracking-tighter">
+                PiczaDev
+            </div>
+<div class="flex gap-8">
+<a class="font-plus-jakarta text-[10px] tracking-[0.05em] uppercase text-slate-500 hover:text-cyan-400 transition-colors" href="#">Privacy</a>
+<a class="font-plus-jakarta text-[10px] tracking-[0.05em] uppercase text-slate-500 hover:text-cyan-400 transition-colors" href="#">Terms</a>
+<a class="font-plus-jakarta text-[10px] tracking-[0.05em] uppercase text-slate-500 hover:text-cyan-400 transition-colors" href="#">Github</a>
+<a class="font-plus-jakarta text-[10px] tracking-[0.05em] uppercase text-slate-500 hover:text-cyan-400 transition-colors" href="#">Twitter</a>
+</div>
+<div class="font-plus-jakarta text-[10px] tracking-[0.05em] uppercase text-slate-500">
+                © 2024 PiczaDev. Built on the Fluid Crystal.
+            </div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "on-surface": "#ffffff",
+            "surface-container": "#1a1919",
+            "surface-container-high": "#201f1f",
+            "primary-dim": "#00c0ea",
+            "error-container": "#9f0519",
+            "inverse-primary": "#006880",
+            "on-tertiary-fixed": "#34002a",
+            "secondary-fixed": "#dac9ff",
+            "surface-dim": "#0e0e0e",
+            "inverse-surface": "#fcf8f8",
+            "secondary-dim": "#874cff",
+            "outline": "#777575",
+            "tertiary-dim": "#ff5dd7",
+            "on-primary-fixed-variant": "#004a5c",
+            "on-tertiary-container": "#0e000a",
+            "on-secondary": "#290067",
+            "secondary": "#ac89ff",
+            "on-secondary-fixed-variant": "#6300e2",
+            "primary-fixed": "#00cffc",
+            "on-secondary-container": "#f8f1ff",
+            "surface-variant": "#262626",
+            "error-dim": "#d7383b",
+            "tertiary": "#ff5dd7",
+            "surface-container-highest": "#262626",
+            "tertiary-fixed-dim": "#ff6ad8",
+            "on-error-container": "#ffa8a3",
+            "primary": "#69daff",
+            "surface-container-lowest": "#000000",
+            "surface": "#0e0e0e",
+            "surface-container-low": "#131313",
+            "error": "#ff716c",
+            "on-primary-container": "#004050",
+            "secondary-fixed-dim": "#ceb9ff",
+            "secondary-container": "#7000ff",
+            "background": "#0e0e0e",
+            "surface-bright": "#2c2c2c",
+            "primary-container": "#00cffc",
+            "on-background": "#ffffff",
+            "inverse-on-surface": "#565554",
+            "tertiary-container": "#fe00d5",
+            "surface-tint": "#69daff",
+            "on-secondary-fixed": "#41009a",
+            "on-tertiary-fixed-variant": "#6f005c",
+            "on-tertiary": "#430036",
+            "on-primary-fixed": "#002a35",
+            "on-primary": "#004a5d",
+            "outline-variant": "#494847",
+            "primary-fixed-dim": "#00c0ea",
+            "on-surface-variant": "#adaaaa",
+            "tertiary-fixed": "#ff87db",
+            "on-error": "#490006"
+          },
+          fontFamily: {
+            "headline": ["Plus Jakarta Sans"],
+            "body": ["Plus Jakarta Sans"],
+            "label": ["Plus Jakarta Sans"]
+          },
+          borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    .glass-inner-glow {
+      box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.15);
+    }
+    .liquid-aura {
+      filter: blur(80px);
+      opacity: 0.15;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-primary/30 min-h-screen overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-surface-container-low/40 dark:bg-black/40 backdrop-blur-3xl border-b border-white/10 shadow-[0_0_40px_rgba(105,218,255,0.06)]">
+<nav class="flex justify-between items-center px-6 py-4 w-full max-w-none">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary p-[1px]">
+<img alt="Crystal Refraction Avatar" class="w-full h-full rounded-full object-cover" data-alt="Crystal Refraction Avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-TebCIt29byERvaQFZw_U8D02SlizKfJGEWBpBPOZ4Zn0IZRLwmcJurEqndw67TqcvYXDfW8ioI52bEmeak4TM1xwPGxZCu68gnYHJkhYEuQna-0FFPaEjQIzNxQoNSaFhUtJHIUS-FX8fKBp5aV7WI0awd_f8Aq8G4cgrt530EhPXD7aIGQLfjCFcI_Z9DeDGRH9qmKRgNWHL0XKzVd4YtdBK-GDThHywJTawHyBZHWUcGfen94yw5dmVWuU8xQOLAqYLQxPLxo"/>
+</div>
+<span class="text-2xl font-black bg-gradient-to-r from-[#69daff] to-[#ac89ff] bg-clip-text text-transparent">PiczaDev</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-cyan-400 font-bold text-[11px] tracking-[0.05em] uppercase transition-all duration-300" href="#">Newsletter</a>
+<a class="text-slate-400 text-[11px] tracking-[0.05em] uppercase hover:text-cyan-200 transition-all duration-300" href="#">Community</a>
+<a class="text-slate-400 text-[11px] tracking-[0.05em] uppercase hover:text-cyan-200 transition-all duration-300" href="#">Identity</a>
+</div>
+<button class="p-2 rounded-full hover:bg-white/5 transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined text-cyan-300">menu</span>
+</button>
+</nav>
+</header>
+<!-- Hero Background Elements -->
+<div class="fixed inset-0 -z-10 pointer-events-none">
+<div class="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-primary liquid-aura rounded-full"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] bg-secondary liquid-aura rounded-full"></div>
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(105,218,255,0.03)_0%,transparent_70%)]"></div>
+</div>
+<main class="relative pt-32 pb-40 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Newsletter Section (Bento Column 1) -->
+<section class="lg:col-span-7 space-y-12">
+<header class="space-y-4">
+<div class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container-high/60 border border-white/5 backdrop-blur-md">
+<span class="material-symbols-outlined text-primary text-[14px] mr-2">auto_awesome</span>
+<span class="text-[10px] uppercase tracking-[0.2em] font-bold text-primary">Next Generation Intelligence</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]">
+          The Liquid <span class="bg-gradient-to-r from-primary via-secondary to-tertiary bg-clip-text text-transparent">Nexus.</span>
+</h1>
+<p class="text-on-surface-variant text-lg max-w-xl leading-relaxed">
+          Stay fluid in the ever-shifting landscape of Web3. Curated insights on liquid restaking, refractive UI patterns, and the future of decentralized artifacts.
+        </p>
+</header>
+<!-- Subscription Card (Liquid Glass) -->
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-secondary/20 rounded-[2.5rem] blur-xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
+<div class="relative bg-surface-container-low/40 backdrop-blur-[40px] border border-white/10 rounded-[2.5rem] p-8 md:p-12 glass-inner-glow overflow-hidden">
+<!-- Fluid Accent inside card -->
+<div class="absolute -top-20 -right-20 w-40 h-40 bg-tertiary/20 blur-[60px] rounded-full"></div>
+<div class="relative z-10 flex flex-col md:flex-row gap-6 items-center">
+<div class="w-full relative">
+<input class="w-full bg-surface-container-lowest/50 border-none rounded-full py-5 px-8 text-on-surface focus:ring-2 focus:ring-primary/50 transition-all placeholder:text-outline text-lg backdrop-blur-md" placeholder="vitalik@eth.xyz" type="email"/>
+</div>
+<button class="w-full md:w-auto whitespace-nowrap px-10 py-5 rounded-full bg-gradient-to-r from-primary to-secondary text-on-primary font-bold text-lg shadow-[0_10px_30px_rgba(105,218,255,0.3)] hover:shadow-[0_15px_40px_rgba(105,218,255,0.5)] hover:scale-[1.02] active:scale-95 transition-all duration-300">
+              Suscribirse
+            </button>
+</div>
+<div class="mt-8 flex items-center gap-4 text-[11px] text-outline tracking-wider font-medium uppercase">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">verified</span> No Spam</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span>Weekly Artifacts</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span>12.4k Readers</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Connections Section (Bento Column 2) -->
+<aside class="lg:col-span-5 space-y-8">
+<div class="bg-surface-container-high/30 backdrop-blur-2xl border border-white/5 rounded-[2.5rem] p-8 glass-inner-glow flex flex-col h-full">
+<h3 class="text-xl font-bold mb-8 flex items-center gap-3">
+<span class="w-2 h-8 bg-primary rounded-full"></span>
+          Digital Footprint
+        </h3>
+<div class="grid grid-cols-1 gap-4 flex-grow">
+<!-- Connection Item: Farcaster -->
+<div class="group flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#8a63d2] to-[#472a91] flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white" data-weight="fill">hub</span>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase tracking-widest font-bold">Farcaster</p>
+<p class="text-on-surface font-semibold">@piczadev.eth</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<!-- Connection Item: Base Name -->
+<div class="group flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-[#0052ff] flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white" data-weight="fill">deployed_code</span>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase tracking-widest font-bold">Base Name</p>
+<p class="text-on-surface font-semibold">piczadev.base.eth</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+<!-- Connection Item: ENS -->
+<div class="group flex items-center justify-between p-4 rounded-2xl bg-white/5 border border-white/5 hover:bg-white/10 transition-all cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#5298ff] to-[#516eff] flex items-center justify-center shadow-lg">
+<span class="material-symbols-outlined text-white" data-weight="fill">language</span>
+</div>
+<div>
+<p class="text-[10px] text-outline uppercase tracking-widest font-bold">Ethereum Name Service</p>
+<p class="text-on-surface font-semibold">piczadev.eth</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors">arrow_outward</span>
+</div>
+</div>
+<!-- Social Grid -->
+<div class="mt-8 pt-8 border-t border-white/5 grid grid-cols-4 gap-4">
+<a class="aspect-square flex items-center justify-center rounded-2xl bg-surface-container-highest/50 hover:bg-primary/20 hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined">brand_family</span>
+</a>
+<a class="aspect-square flex items-center justify-center rounded-2xl bg-surface-container-highest/50 hover:bg-primary/20 hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined">chat_bubble</span>
+</a>
+<a class="aspect-square flex items-center justify-center rounded-2xl bg-surface-container-highest/50 hover:bg-primary/20 hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+<a class="aspect-square flex items-center justify-center rounded-2xl bg-surface-container-highest/50 hover:bg-primary/20 hover:text-primary transition-all group" href="#">
+<span class="material-symbols-outlined">rss_feed</span>
+</a>
+</div>
+</div>
+</aside>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<footer class="md:hidden fixed bottom-8 left-0 right-0 z-50 flex justify-around items-center px-4 py-2">
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full bg-surface-container-high/40 dark:bg-[#1a1a1a]/40 backdrop-blur-2xl border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] flex justify-around items-center py-2 px-4">
+<a class="flex items-center justify-center text-slate-400 p-3 hover:text-cyan-200 hover:scale-110 transition-all" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="flex items-center justify-center bg-[#69daff]/20 text-[#69daff] rounded-full p-3 shadow-[inset_0_1px_4px_rgba(255,255,255,0.2)] scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">subscriptions</span>
+</a>
+<a class="flex items-center justify-center text-slate-400 p-3 hover:text-cyan-200 hover:scale-110 transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+</a>
+<a class="flex items-center justify-center text-slate-400 p-3 hover:text-cyan-200 hover:scale-110 transition-all" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</div>
+</footer>
+</body></html>

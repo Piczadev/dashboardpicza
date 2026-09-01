@@ -1,0 +1,64 @@
+# Guía de Implementación Técnica: Ecosistema Liquid Obsidian (PiczaDev)
+
+Este documento detalla el stack tecnológico recomendado para replicar con fidelidad los diseños, efectos de refracción y la interactividad del sistema de diseño **Liquid Obsidian**.
+
+---
+
+## 1. Core Frameworks (Arquitectura)
+Para una base sólida, moderna y optimizada para SEO y rendimiento:
+- **Next.js (App Router)**: Recomendado para manejar el blog y las rutas dinámicas.
+- **React 18+**: Biblioteca base para la construcción de componentes.
+- **TypeScript**: Para garantizar la integridad de los datos, especialmente en integraciones Web3.
+
+---
+
+## 2. Estilizado y UI (Tailwind CSS Ecosystem)
+El diseño se basa fuertemente en utilidades de CSS para el Glassmorphism y layouts fluidos:
+- **Tailwind CSS**: Framework principal de utilidades.
+- **Tailwind Merge & Clsx**: Para la gestión dinámica de clases en componentes reutilizables.
+- **Tailwind-styled-components** (Opcional): Si prefieres una sintaxis de CSS-in-JS.
+
+### Plugins Críticos de Tailwind:
+- `@tailwindcss/typography`: Para el renderizado impecable de los artículos del blog.
+- `tailwindcss-animate`: Para micro-interacciones y transiciones suaves.
+
+---
+
+## 3. Animaciones y "Liquid Effects"
+Para lograr la fluidez de Apple y el movimiento orgánico del cristal:
+- **Framer Motion**: Indispensable para las transiciones de página, layouts compartidos y el efecto de entrada de las tarjetas.
+- **Three.js / React Three Fiber**: (Opcional) Si deseas implementar la esfera de cristal central como un objeto 3D real con refracción dinámica.
+- **Canvas-confetti**: Para celebraciones en suscripciones exitosas.
+
+---
+
+## 4. Iconografía y Tipografía
+- **Fonts**: `Plus Jakarta Sans` (vía Google Fonts o @next/font).
+- **Icons**: 
+  - `Lucide React`: Iconos limpios y modernos que encajan con la estética minimalista.
+  - `Tabler Icons`: Excelente alternativa para iconos más técnicos/Web3.
+
+---
+
+## 5. Web3 Integration (Opcional - Funcional)
+Si planeas que los contadores y dominios sean reales:
+- **Wagmi / Viem**: Para interacciones con Ethereum y Base.
+- **Solana Web3.js / @solana/wallet-adapter**: Para la integración con la red Solana.
+- **TanStack Query (React Query)**: Para el manejo de estados de datos on-chain y caché.
+
+---
+
+## 6. Comandos de Instalación (Quick Start)
+```bash
+# Iniciar proyecto Next.js con Tailwind
+npx create-next-app@latest piczadev --typescript --tailwind --eslint
+
+# Instalar dependencias de diseño
+npm install framer-motion lucide-react clsx tailwind-merge tailwindcss-animate
+
+# Instalar dependencias Web3 (si aplica)
+npm install wagmi viem @tanstack/react-query
+```
+
+---
+**Preparado para PiczaDev por Stitch (AI Design Partner).**

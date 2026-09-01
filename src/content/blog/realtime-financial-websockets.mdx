@@ -1,0 +1,46 @@
+---
+title: "Architecting Multi-Stream Real-Time Financial Surfaces at 60 FPS"
+category: "Web3 & Systems"
+excerpt: "How to integrate Kraken and OKX WebSocket streams with latency-aware message batching and Playwright E2E verification."
+date: "2026-08-28"
+gradient: "from-cyan-400 to-violet-500"
+---
+
+## Real-Time Financial UX Under Extreme Volatility
+
+Building consumer financial trading surfaces requires a delicate balance between sub-millisecond data freshness and smooth 60 FPS rendering performance. During high-volatility market events, raw WebSocket event feeds from exchanges like **Kraken** and **OKX** can deliver thousands of message deltas per second.
+
+Directly dispatching React state updates for every single ticker packet will immediately choke the browser's main execution thread, causing severe frame drops, UI freezes, and degraded consumer trust.
+
+```typescript
+// Latency-Aware Micro-Batching Buffer
+interface OrderbookDelta {
+  symbol: string;
+  bids: [number, number][];
+  asks: [number, number][];
+  timestamp: number;
+}
+
+class StreamBatcher {
+  private buffer: OrderbookDelta[] = [];
+  private frameScheduled = false;
+
+  public push(delta: OrderbookDelta, onFlush: (deltas: OrderbookDelta[]) => void) {
+    this.buffer.push(delta);
+    if (!this.frameScheduled) {
+      this.frameScheduled = true;
+      requestAnimationFrame(() => {
+        const batch = this.buffer.splice(0);
+        this.frameScheduled = false;
+        onFlush(batch);
+      });
+    }
+  }
+}
+```
+
+## Key Architectural Principles
+
+1. **RequestAnimationFrame Batching:** Decouple inbound WebSocket ingestion from the DOM render cycle. Group all incoming ticks within a single 16.6ms window into an atomic batch.
+2. **Off-Thread Data Normalization:** For heavy parsing and orderbook reconstruction, delegate data aggregation to dedicated Web Workers.
+3. **Automated E2E Rigor:** Verify transaction execution and reconnect resiliency using automated Playwright suites under simulated 500ms network jitter and connection drops.

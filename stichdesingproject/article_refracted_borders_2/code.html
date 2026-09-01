@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Refracted Borders: The Art of Generative NFTs</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-surface-variant": "#adaaaa",
+              "primary-container": "#00cffc",
+              "tertiary-fixed": "#ff87db",
+              "on-primary-fixed": "#002a35",
+              "on-background": "#ffffff",
+              "surface-container-high": "#201f1f",
+              "surface-container-highest": "#262626",
+              "surface-container": "#1a1919",
+              "outline": "#777575",
+              "on-secondary": "#290067",
+              "secondary": "#ac89ff",
+              "on-tertiary": "#430036",
+              "on-error-container": "#ffa8a3",
+              "secondary-container": "#7000ff",
+              "on-tertiary-fixed": "#34002a",
+              "inverse-primary": "#006880",
+              "on-secondary-container": "#f8f1ff",
+              "tertiary-fixed-dim": "#ff6ad8",
+              "tertiary": "#ff5dd7",
+              "background": "#0e0e0e",
+              "error": "#ff716c",
+              "primary-fixed-dim": "#00c0ea",
+              "inverse-on-surface": "#565554",
+              "primary-fixed": "#00cffc",
+              "primary-dim": "#00c0ea",
+              "surface-container-low": "#131313",
+              "error-container": "#9f0519",
+              "tertiary-container": "#fe00d5",
+              "surface": "#0e0e0e",
+              "secondary-dim": "#874cff",
+              "on-surface": "#ffffff",
+              "surface-container-lowest": "#000000",
+              "tertiary-dim": "#ff5dd7",
+              "on-primary": "#004a5d",
+              "inverse-surface": "#fcf8f8",
+              "on-error": "#490006",
+              "on-secondary-fixed-variant": "#6300e2",
+              "surface-tint": "#69daff",
+              "primary": "#69daff",
+              "surface-bright": "#2c2c2c",
+              "outline-variant": "#494847",
+              "on-primary-container": "#004050",
+              "on-secondary-fixed": "#41009a",
+              "on-tertiary-fixed-variant": "#6f005c",
+              "on-primary-fixed-variant": "#004a5c",
+              "secondary-fixed": "#dac9ff",
+              "surface-dim": "#0e0e0e",
+              "secondary-fixed-dim": "#ceb9ff",
+              "error-dim": "#d7383b",
+              "surface-variant": "#262626",
+              "on-tertiary-container": "#0e000a"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #0e0e0e;
+        color: #ffffff;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .glass-card {
+        background: rgba(32, 31, 31, 0.4);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .ghost-border-cyan {
+        border: 0.5px solid rgba(105, 218, 255, 0.15);
+      }
+      .ghost-border-purple {
+        border: 0.5px solid rgba(172, 137, 255, 0.15);
+      }
+      .aura-glow-primary {
+        box-shadow: 0 0 64px rgba(105, 218, 255, 0.06);
+      }
+      .aura-glow-secondary {
+        box-shadow: 0 0 64px rgba(172, 137, 255, 0.06);
+      }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen">
+<!-- TopAppBar Navigation -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-20 w-full bg-black/40 backdrop-blur-xl border-b border-white/10 shadow-[0_0_40px_rgba(105,218,255,0.06)] font-['Plus_Jakarta_Sans'] tracking-tight">
+<div class="text-2xl font-bold tracking-tighter text-white">REFRACTED</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-white/60 hover:text-white transition-colors" href="#">Gallery</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Artists</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Manifesto</a>
+<a class="text-white/60 hover:text-white transition-colors" href="#">Drops</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-6 py-2.5 rounded-full bg-gradient-to-r from-primary to-primary-dim text-on-primary font-bold active:scale-95 duration-200 transition-all hover:shadow-[0_0_20px_rgba(105,218,255,0.4)]">
+                Connect Wallet
+            </button>
+</div>
+</nav>
+<main class="flex-grow pt-20">
+<!-- Section 1: Hero Header -->
+<header class="relative min-h-[870px] flex items-end px-8 pb-24 overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img alt="Generative art background" class="w-full h-full object-cover" data-alt="Vibrant swirling neon lines and refractive glass patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCEDwPBXcSIcOd2WGQdKqNRkYjmiM927sIfWRuRiPI1fuw9vUUjALZpwjCZiaXtplvZJmQx_WqQmAgGRhQC7EB2PsgJj7mH56M-voMQ_D17eWe1gE9rDlNS15QD4FcQMd0uMXTiutVv9fjGMDJQjNlfpHX2DY5Bhvww02pZbnLKd7QECVoeH6_sPtQvifezmGh4xFspw9hPa-nvInQUOb_oa-vxP1DCuPFUaRdkH65miqhUaXkEQjtIgMrHKk4NqvpZXHL-xosWmF4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute inset-0 bg-gradient-to-r from-background via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 max-w-5xl mx-auto w-full">
+<div class="flex flex-col gap-6">
+<span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass-card ghost-border-cyan text-primary text-[0.6875rem] uppercase tracking-[0.1em] font-bold w-fit">
+                        Editorial / Generative Systems
+                    </span>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight max-w-4xl">
+                        Refracted Borders: The Art of Generative NFTs
+                    </h1>
+<div class="flex items-center gap-6 mt-4">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-full overflow-hidden border border-primary/20 p-0.5">
+<img alt="Author avatar" class="w-full h-full object-cover rounded-full" data-alt="Portrait of a digital artist" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeZIi1rtFNb-pOvj6vmafKihPzLPrEKcYlNSRVHrdN5ZL86p1eBV9oiPHq003oqS1qiRbF6ez5aBaXvLTiEm9CHTak9yRuvnTjveXIa25PYm20VAzoR1rNlQR6ToLnftt1BfDcJwfaI7Mjk-9BzqoG3dnFrS_B5UPhIRcankYNE6pYsp9RiOr0NlfSduNGFcqqZhSsYzLXOgpKe4VzeMuCnYwFXCaV0TFCCUYXzwxv5IK8C5B_eZRhWwAbBkOUMCXMKkvOC3V75nM"/>
+</div>
+<div>
+<p class="text-[0.6875rem] uppercase tracking-wider text-white/40">Written By</p>
+<p class="text-on-surface font-semibold">Elara Vance</p>
+</div>
+</div>
+<div class="h-8 w-px bg-white/10"></div>
+<div>
+<p class="text-[0.6875rem] uppercase tracking-wider text-white/40">Published</p>
+<p class="text-on-surface font-semibold">Oct 24, 2024</p>
+</div>
+<div class="h-8 w-px bg-white/10"></div>
+<div>
+<p class="text-[0.6875rem] uppercase tracking-wider text-white/40">Reading Time</p>
+<p class="text-on-surface font-semibold">12 Min</p>
+</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Section 2: Article Content -->
+<section class="max-w-7xl mx-auto px-8 py-24 grid grid-cols-1 lg:grid-cols-12 gap-16 relative">
+<!-- Sidebar / Metadata -->
+<aside class="lg:col-span-3 space-y-12 order-2 lg:order-1">
+<div class="glass-card ghost-border-cyan p-8 rounded-xl aura-glow-primary">
+<h3 class="text-primary text-[0.6875rem] uppercase tracking-[0.1em] font-bold mb-4">In this Article</h3>
+<ul class="space-y-4 text-sm text-white/60">
+<li class="hover:text-primary cursor-pointer transition-colors flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+                            The Algorithmic Brush
+                        </li>
+<li class="hover:text-primary cursor-pointer transition-colors flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+                            Ownership vs. Authorship
+                        </li>
+<li class="hover:text-primary cursor-pointer transition-colors flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-primary/40"></span>
+                            Refractive Realities
+                        </li>
+</ul>
+</div>
+<div class="p-8 space-y-4 border-l border-white/5">
+<h3 class="text-[0.6875rem] uppercase tracking-[0.1em] font-bold text-white/40">Technicals</h3>
+<div class="flex flex-wrap gap-2">
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-[10px] text-white/60 ghost-border-cyan uppercase tracking-wider">Solidity</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-[10px] text-white/60 ghost-border-cyan uppercase tracking-wider">P5.JS</span>
+<span class="px-3 py-1 bg-surface-container-high rounded-full text-[10px] text-white/60 ghost-border-cyan uppercase tracking-wider">Ray-marching</span>
+</div>
+</div>
+</aside>
+<!-- Main Text -->
+<article class="lg:col-span-9 space-y-12 order-1 lg:order-2">
+<div class="space-y-8 text-lg leading-relaxed text-white/80 font-light">
+<p class="first-letter:text-7xl first-letter:font-black first-letter:text-primary first-letter:float-left first-letter:mr-4 first-letter:mt-2">
+                        The intersection of mathematics and emotion has found a new canvas in the generative NFT movement. Unlike traditional digital art, where the artist dictates every pixel, generative art is an act of curation over chaos. The artist becomes an architect of systems, defining the parameters within which a machine can dream.
+                    </p>
+<p>
+                        In 'Refracted Borders,' we explore how the volatility of the blockchain itself acts as a source of randomness, a digital wind that shapes the final output. This isn't just about static images; it's about living code that breathes within the constraints of the smart contract.
+                    </p>
+<blockquote class="relative py-12 px-8 my-12 glass-card ghost-border-purple rounded-xl overflow-hidden aura-glow-secondary">
+<span class="absolute top-4 left-4 text-secondary/20 text-8xl font-black select-none">“</span>
+<p class="text-2xl font-bold text-white italic relative z-10 leading-tight">
+                            "The beauty of generative art lies in the surrender. The artist designs the laws, but the machine finds the loopholes."
+                        </p>
+<p class="mt-6 text-secondary text-sm font-bold uppercase tracking-widest">— Julian Thorne, Lead Curator</p>
+</blockquote>
+<h2 class="text-3xl font-extrabold tracking-tighter text-white mt-16 mb-8">Refractive Realities and Liquid Shapes</h2>
+<p>
+                        Modern generative systems have evolved beyond simple geometric repetition. Through complex ray-marching techniques and signed distance fields, artists are now creating textures that mimic physical light refraction. These 'Liquid Crystals' are not just 3D models; they are mathematical proofs of aesthetic beauty.
+                    </p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-12">
+<div class="space-y-4">
+<img alt="Generative art piece 1" class="rounded-xl w-full aspect-square object-cover ghost-border-cyan aura-glow-primary" data-alt="Abstract fluid pink and blue shapes floating in dark space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdVL_dvZV39VVBEh5L2SJ2uEpgY2ab7oQQ11eFmrEGOsZRmBeljlf93dwx1wSSQnIlN3qDtxqBNtlnMegcGmVelSVILgfhqJInf1uL5gzgeESuoSnOx3_NClNDhjIYCZ81cBjI9q1PxEkP8EOuITCcO6_zFd7DsOWquTuFF-JCpRSajR_mE2iVEhlhKf-nTu_-61V6HmjE1b34yEOW9uyy4FFrIzhvIdEmRnUEzSm5jgFVNRjeoAf168yW-dML9EjwEpXBQAa8QZo"/>
+<p class="text-xs text-white/40 uppercase tracking-widest text-center">Protocol-04: Fluid Interaction</p>
+</div>
+<div class="space-y-4">
+<img alt="Generative art piece 2" class="rounded-xl w-full aspect-square object-cover ghost-border-purple aura-glow-secondary" data-alt="Prismatic glass structure with neon light reflections" src="https://lh3.googleusercontent.com/aida-public/AB6AXuClVgjgQRV8UJU5r4e8gNwdzQ-_sioaccsdIHMtHPoMQ_92GYLvJkaUKzpw4u80hdfOFu-bnqVgsU7UyXGKfHAy7ryD3DHuGdujpLBRoQTlsuIlOAVBfHaeG2JMNgdVOBrhPMNbao1irDiLCd3pIdsH-qhg0X1zLLnx1LnKZclmaKeBBtpvyZe-Sncbo8mGGRp_N3L7PH6dRe-Tje5smpEeC7SduGgbyEkhoJ5-zpOy3_SbXck-DhJJX_8PbWXKe6NW7NRgHOpr-m4"/>
+<p class="text-xs text-white/40 uppercase tracking-widest text-center">Refraction Cycle: Prism Alpha</p>
+</div>
+</div>
+<p>
+                        The permanence of the blockchain ensures that these digital artifacts remain uncorrupted by time. While physical paint fades and digital files rot, the code on-chain remains a mathematical constant, waiting to be rendered by the next generation of hardware.
+                    </p>
+</div>
+</article>
+</section>
+<!-- Section 3: Art Gallery -->
+<section class="bg-surface-container-lowest py-32 border-y border-white/5">
+<div class="max-w-7xl mx-auto px-8">
+<div class="flex justify-between items-end mb-16">
+<div class="space-y-2">
+<span class="text-secondary text-[0.6875rem] uppercase tracking-[0.2em] font-black">Collection Highlight</span>
+<h2 class="text-4xl font-extrabold tracking-tighter">Featured Generative Artifacts</h2>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold hover:gap-4 transition-all uppercase text-[0.6875rem] tracking-widest">
+                        View Entire Drop <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Art Card 1 -->
+<div class="glass-card ghost-border-cyan rounded-xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
+<div class="h-64 overflow-hidden relative group">
+<img alt="Art Artifact 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Vibrant multi-colored digital storm pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrQ-SdRcodqt_KJysPSCsLapYz9jwY0wsSN7ApCMkVsBFDQgZwq6n4aVsdeMlg-rohVcJY_wqRFeo6Ne0So-wDdNdgIBwtZD8E98tklh17X_4LV5uPrKEyVFcMXoBz_gbyHjHQYLMDwyeQ0ywucvEyqzEGJEnerE6HwQWydwWkIHTLIdKjWdVtnM-SHq4ldyNru0-_InXP0SPsN_WCjx2gGNaI2lbxb4EVKV7GL0Q5zb4rvo07yAuEyp6_LVobO85X2GWYOIpAq_Q"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-[0.6875rem] text-primary font-bold uppercase tracking-widest">#001 / Chronos</span>
+<span class="text-[0.6875rem] text-white/40">Edition 1/1</span>
+</div>
+<h4 class="text-xl font-bold">Temporal Distortion</h4>
+<p class="text-sm text-white/60 line-clamp-2 font-light">A visual exploration of time-dilation through recursive fractal loops.</p>
+</div>
+</div>
+<!-- Art Card 2 -->
+<div class="glass-card ghost-border-purple rounded-xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
+<div class="h-64 overflow-hidden relative group">
+<img alt="Art Artifact 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Abstract soft glowing purple neon wave" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAihl5r2BLzb6ZoF4sCx7t4XMJV-B3uUjqpPQFCw2KJmLyRwKE1l-up3FrIHh-XRoGvtpy1OIBmbeAIQhrPU9V4O7vYYkAwRtgHaARof58nnVauwCQwtSInkA6E7-bz42d-8yhJIg-ohXMAUPvZ2pAyJ2g9lZWGnCIRe_-OEDu4P1p7bao3q9Law7szxvvYMdB5rqW6eOVDq16XB8hgLckCkYT6vayfVPzbtNfyLAGFAnRANiqenxoJuDJBtRY9f4R-hKTemeS-QK0"/>
+<div class="absolute inset-0 bg-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-[0.6875rem] text-secondary font-bold uppercase tracking-widest">#042 / Aether</span>
+<span class="text-[0.6875rem] text-white/40">Edition 1/1</span>
+</div>
+<h4 class="text-xl font-bold">Etheric Flow</h4>
+<p class="text-sm text-white/60 line-clamp-2 font-light">Capturing the unseen movements of digital energy in a vacuum.</p>
+</div>
+</div>
+<!-- Art Card 3 -->
+<div class="glass-card ghost-border-cyan rounded-xl overflow-hidden hover:scale-[1.02] transition-transform duration-500">
+<div class="h-64 overflow-hidden relative group">
+<img alt="Art Artifact 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Geometric crystalline structures with blue light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3a4cj1xMhTK0K7_-X3vFd2Z4L6xc2c3cmSKftc96TcXisJa_5SM5cRVhp-gqobhijT52RzjgcA8ZVinlTKGD6mTp0OgQdbI7eMAHzzOzMYL8qj0VjZguaOUidFQMkiFVLyn-P_GI59cg9YmKAUFjQdp2Bk1qpC58fRPCLT_SHnWRUQ7FtG3ibpMaVxpbq8BY7Zvf9LCEk4YimI5ASdEtoVQv_bsue55hpWLX6fZbYWVtXeuDJS7OqVVDlTTPfCy6exFMI1l3WQ8M"/>
+<div class="absolute inset-0 bg-primary/20 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-6 space-y-3">
+<div class="flex justify-between items-center">
+<span class="text-[0.6875rem] text-primary font-bold uppercase tracking-widest">#108 / Obsidian</span>
+<span class="text-[0.6875rem] text-white/40">Edition 1/5</span>
+</div>
+<h4 class="text-xl font-bold">Carbon Refraction</h4>
+<p class="text-sm text-white/60 line-clamp-2 font-light">Sharp, crystalline structures emerging from pure obsidian voids.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Related Articles -->
+<section class="max-w-7xl mx-auto px-8 py-32">
+<h3 class="text-white/40 text-[0.6875rem] uppercase tracking-[0.2em] font-black mb-12">Continue Exploring</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<a class="group flex items-center justify-between p-8 glass-card ghost-border-cyan rounded-xl hover:bg-white/5 transition-all" href="#">
+<div>
+<span class="text-primary text-[0.6875rem] font-bold uppercase tracking-widest">Next Chapter</span>
+<h4 class="text-2xl font-bold mt-2 group-hover:text-primary transition-colors">Metaverse Real Estate</h4>
+</div>
+<span class="material-symbols-outlined text-4xl text-white/20 group-hover:text-primary transition-colors">arrow_right_alt</span>
+</a>
+<a class="group flex items-center justify-between p-8 glass-card ghost-border-purple rounded-xl hover:bg-white/5 transition-all" href="#">
+<div>
+<span class="text-secondary text-[0.6875rem] font-bold uppercase tracking-widest">Perspective</span>
+<h4 class="text-2xl font-bold mt-2 group-hover:text-secondary transition-colors">Liquid Governance</h4>
+</div>
+<span class="material-symbols-outlined text-4xl text-white/20 group-hover:text-secondary transition-colors">arrow_right_alt</span>
+</a>
+</div>
+</section>
+<!-- Section 5: Newsletter -->
+<section class="max-w-7xl mx-auto px-8 pb-32">
+<div class="relative glass-card ghost-border-cyan rounded-2xl p-12 md:p-20 overflow-hidden aura-glow-primary">
+<div class="absolute top-0 right-0 w-1/3 h-full opacity-10 pointer-events-none">
+<img alt="Subtle background" class="w-full h-full object-cover" data-alt="Abstract soft glowing purple texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkCkwfAyGwbXvagiSQX7NHbiUVUjU-Ri9kfhVXc68d7Bitohk5sLeLuqLI1PpSP_OrKnmcdwybQnNocbdeKu3xU2-GFUSoOWwC-ikRZlUHeP95Oyxo-CsoSDHziJUTuxxIyTjSLYe1Bj0JbGUGx3vIbZoSqUa7cZf_ooMJ7Ohui4nbgKlDU9wMBGDh1azbSJu1jvvTKv5c5Yg8pH5U1wbPsmiZF6ReNkG7A68zYCvzUXe4A2ooO58_PXy-BBUlXT9DfkR73objc-8"/>
+</div>
+<div class="relative z-10 max-w-2xl">
+<h2 class="text-4xl md:text-5xl font-extrabold tracking-tighter mb-6">Stay ahead of the <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Algorithm.</span></h2>
+<p class="text-lg text-white/60 mb-10 font-light">Join 15,000+ collectors and developers receiving our weekly dispatch on generative aesthetics and technical breakthroughs.</p>
+<form class="flex flex-col md:flex-row gap-4">
+<input class="flex-grow bg-surface-container-low border-white/10 rounded-full px-8 py-4 text-white focus:border-primary focus:ring-0 transition-colors uppercase tracking-[0.1em] text-xs font-bold" placeholder="ENTER YOUR EMAIL" type="email"/>
+<button class="bg-primary hover:bg-primary-dim text-on-primary font-black uppercase tracking-[0.1em] text-xs px-10 py-4 rounded-full transition-all active:scale-95 whitespace-nowrap" type="submit">
+                            Subscribe
+                        </button>
+</form>
+<p class="mt-6 text-[10px] text-white/30 uppercase tracking-[0.2em]">Zero noise. Pure signal. Weekly frequency.</p>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] w-full py-12 px-8 mt-auto border-t border-white/5">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 max-w-7xl mx-auto">
+<div class="text-lg font-black text-white">REFRACTED</div>
+<p class="text-[0.6875rem] uppercase tracking-[0.05em] font-['Plus_Jakarta_Sans'] text-white/40">© 2024 THE FLUID CRYSTAL. ALL RIGHTS RESERVED.</p>
+<div class="flex gap-8">
+<a class="text-[0.6875rem] uppercase tracking-[0.05em] font-['Plus_Jakarta_Sans'] text-white/40 hover:text-[#69daff] transition-colors" href="#">Terms</a>
+<a class="text-[0.6875rem] uppercase tracking-[0.05em] font-['Plus_Jakarta_Sans'] text-white/40 hover:text-[#69daff] transition-colors" href="#">Privacy</a>
+<a class="text-[0.6875rem] uppercase tracking-[0.05em] font-['Plus_Jakarta_Sans'] text-white/40 hover:text-[#69daff] transition-colors" href="#">Discord</a>
+<a class="text-[0.6875rem] uppercase tracking-[0.05em] font-['Plus_Jakarta_Sans'] text-white/40 hover:text-[#69daff] transition-colors" href="#">Twitter</a>
+</div>
+</div>
+</footer>
+</body></html>

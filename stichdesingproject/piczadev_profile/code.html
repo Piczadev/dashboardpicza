@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Piczadev | Curator Profile</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#2f3131",
+              "error-container": "#ffdad6",
+              "tertiary-container": "#5168e9",
+              "on-error": "#ffffff",
+              "secondary-fixed": "#e5e2e1",
+              "surface-container-high": "#e8e8e8",
+              "secondary-container": "#e2dfde",
+              "outline-variant": "#c5c5d6",
+              "on-primary": "#ffffff",
+              "primary-container": "#5168e9",
+              "on-secondary": "#ffffff",
+              "background": "#f9f9f9",
+              "error": "#ba1a1a",
+              "surface-container-low": "#f3f3f3",
+              "secondary-fixed-dim": "#c8c6c5",
+              "on-primary-fixed": "#00105c",
+              "secondary": "#5f5e5e",
+              "inverse-primary": "#bac3ff",
+              "tertiary-fixed-dim": "#bac3ff",
+              "on-secondary-container": "#636262",
+              "on-tertiary-fixed": "#00105c",
+              "surface-container-lowest": "#ffffff",
+              "tertiary": "#354ecf",
+              "outline": "#757686",
+              "primary-fixed": "#dee0ff",
+              "surface-tint": "#3850d2",
+              "on-primary-fixed-variant": "#1835ba",
+              "surface-dim": "#dadada",
+              "on-background": "#1a1c1c",
+              "on-surface": "#1a1c1c",
+              "on-surface-variant": "#444654",
+              "on-secondary-fixed-variant": "#474646",
+              "surface-bright": "#f9f9f9",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#93000a",
+              "surface": "#f9f9f9",
+              "on-tertiary-container": "#fffbff",
+              "primary": "#354ecf",
+              "surface-variant": "#e2e2e2",
+              "tertiary-fixed": "#dee0ff",
+              "surface-container-highest": "#e2e2e2",
+              "on-tertiary-fixed-variant": "#1835ba",
+              "primary-fixed-dim": "#bac3ff",
+              "on-secondary-fixed": "#1c1b1b",
+              "inverse-on-surface": "#f1f1f1",
+              "on-primary-container": "#fffbff",
+              "surface-container": "#eeeeee"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .signature-texture {
+        background: linear-gradient(15deg, #354ecf 0%, #5168e9 100%);
+      }
+      .ambient-shadow {
+        box-shadow: 0 10px 30px -5px rgba(26, 28, 28, 0.06);
+      }
+      .ghost-border {
+        border: 1px solid rgba(197, 197, 214, 0.15);
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- TopAppBar Shared Component -->
+<header class="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl shadow-sm">
+<div class="flex items-center justify-between px-6 py-4 max-w-2xl mx-auto">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Piczadev Avatar" class="w-full h-full object-cover" data-alt="Circular minimalist professional portrait of a creator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqrDHjYQf-zSZPtdot1MOBqpr4kbtv4F1oCy5Wupn0hDHqHq-Aps8EuCTfQqAQa4EHVyAMG3AA952q-boM5LK5vpfidFTYrZHqShxa4M5-ovEolNjcDJ0AAJN3UiN3zs830ROa5mv8HnzmHpWWR-qaxLlBhaH3OA0vT6L6bScnhzb_JSDj1qoJvFdimepkSjR-gHUTSkoIMx7lwBDQW46j-Hlzm2JT0RsU670I9QC6dIjL8SNw9OaGXpDGxnGNUA2RT9oKdGfMci8"/>
+</div>
+<h1 class="font-headline font-bold text-zinc-900 tracking-tight text-lg">Curator Profile</h1>
+</div>
+<div class="flex items-center gap-2">
+<button class="material-symbols-outlined text-zinc-500 p-2 hover:bg-zinc-100/50 transition-colors rounded-full active:scale-95 duration-200">share</button>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto space-y-12">
+<!-- Hero / Profile Section -->
+<section class="flex flex-col items-center text-center space-y-6">
+<div class="relative group">
+<div class="absolute -inset-1 signature-texture rounded-full blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+<div class="relative w-32 h-32 rounded-full border-4 border-surface-container-lowest shadow-xl overflow-hidden">
+<img alt="Piczadev" class="w-full h-full object-cover scale-110" data-alt="High quality close up avatar of a digital creator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiMPTal1xqtZmSNW1uFegOAcVs-MZyxnAKml-jvu4o-Cl9bpgxed3FbqVK-P7PM609h0iCj87aDpMOOJKfcBI-7U9mjFMe9tcsCs-JiATHCFZjYxqpqOy9K5Y1sNUfxeYXCeo_o9W9NzCGY3tFxt0waqXTsivEHt8qdMW9RzY603MLriG7YpGCzrTBHjTAlyZr3cIpDfLDhFnhizS2pSo9qKlJJKnwjQVMhlee1MFg2Gs8MCCdNZdWNzyDBnzsIIbgPNmVB8KsqiU"/>
+</div>
+</div>
+<div class="space-y-2">
+<h2 class="text-3xl font-headline font-extrabold tracking-tight text-on-surface">Piczadev</h2>
+<p class="text-on-surface-variant max-w-xs mx-auto leading-relaxed">Dev and trader on solana. Building the future of pizza-fueled technology.</p>
+</div>
+<button class="signature-texture text-on-primary px-8 py-3 rounded-full font-semibold shadow-lg shadow-primary/20 hover:scale-105 active:scale-95 transition-all">
+                Support Piczadev
+            </button>
+</section>
+<!-- Bento Grid Links -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Primary Link: Website (Wide) -->
+<a class="md:col-span-2 group flex items-center justify-between p-5 bg-surface-container-lowest rounded-xl ambient-shadow ghost-border hover:scale-[1.02] transition-all" href="#">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 flex items-center justify-center bg-primary-container/10 rounded-full text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">language</span>
+</div>
+<div>
+<span class="block font-bold text-on-surface">Piczadev</span>
+<span class="text-xs text-on-surface-variant font-label uppercase tracking-widest">Official Website</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+<!-- Featured: YouTube (Square/Visual) -->
+<a class="group relative overflow-hidden bg-surface-container-lowest rounded-xl ambient-shadow ghost-border hover:scale-[1.02] transition-all h-48" href="#">
+<img alt="YouTube" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" data-alt="Abstract colorful light streaks on a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCmT3KZlu7w2t995ze2bEfQRhJ06dDp-DtCDwrS4YiVeaphuKIDX-JfY7NJ6qjRMTEDEdf1Mrwf8dL3e3Oe-SP33c79DSmKJb3Q0i6dJWJg6NZuHB1UIGNm4fzeoqP4UE6qqeH1mTNjX8pLsbGoXmiUpEN2tqHZP0weHpqZBWRuJwjC_CHsTb-1C0StsGnZmhleSZsjB_7WelbXMzpa-5hwk5U7tskY4_C4ptyZ-L4rhLAsN0drf8EzvGTokjxGfzpOy_jiof0wp6I"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-5 left-5 right-5">
+<span class="text-white/70 text-[10px] font-label uppercase tracking-[0.2em]">Latest Content</span>
+<h3 class="text-white font-bold text-lg leading-tight">Pizzalabs YouTube</h3>
+</div>
+<div class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">play_circle</span>
+</div>
+</a>
+<!-- Featured: GitHub (Square/Visual) -->
+<a class="group relative overflow-hidden bg-surface-container-lowest rounded-xl ambient-shadow ghost-border hover:scale-[1.02] transition-all h-48" href="#">
+<img alt="GitHub" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:scale-110 transition-transform duration-700" data-alt="Clean minimal code editor screen with dark syntax highlighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDKUno7w5m386yiUTq2TgP2rAsiR6Hj7029KgApsh2MltT2UNTFA1W0d7QyQqxrguqYiQHTfgfYpQpBWYgP9CS1ZtCG6mPiAvRRQCfYL1mDP55_SnxDh8LolkI--n43VN0y4NYnax7cm_3FkR8uo3-9R-eBvFwTmmlEpSz2Ydk6-jNodyItRX-r4MRAjO3gJ_R1vn96nbe-eDOMmtKM-Drid7RrYS88E2eYanc2W71HkJEIl7K4obqLBabWn4wDs1CvIpNNTyFH_Ro"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
+<div class="absolute bottom-5 left-5 right-5">
+<span class="text-white/70 text-[10px] font-label uppercase tracking-[0.2em]">Open Source</span>
+<h3 class="text-white font-bold text-lg leading-tight">Piczadev - Overview</h3>
+</div>
+<div class="absolute top-5 right-5 w-8 h-8 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+<span class="material-symbols-outlined text-sm">terminal</span>
+</div>
+</a>
+<!-- Compact List -->
+<div class="md:col-span-2 grid grid-cols-1 gap-3 pt-2">
+<!-- Solana SNS -->
+<a class="group flex items-center p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-highest transition-colors" href="#">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-container-lowest rounded-full mr-4 shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant">token</span>
+</div>
+<span class="font-medium text-on-surface flex-grow">pizzalabs.sol</span>
+<span class="text-[10px] bg-secondary-container px-2 py-1 rounded text-on-secondary-container font-label uppercase">SNS</span>
+</a>
+<!-- X (Twitter) -->
+<a class="group flex items-center p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-highest transition-colors" href="#">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-container-lowest rounded-full mr-4 shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant">alternate_email</span>
+</div>
+<span class="font-medium text-on-surface flex-grow">@PiczaDev on X</span>
+<span class="material-symbols-outlined text-outline text-sm">north_east</span>
+</a>
+<!-- Instagram -->
+<a class="group flex items-center p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-highest transition-colors" href="#">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-container-lowest rounded-full mr-4 shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant">camera</span>
+</div>
+<span class="font-medium text-on-surface flex-grow">Instagram</span>
+<span class="material-symbols-outlined text-outline text-sm">north_east</span>
+</a>
+<!-- LinkedIn -->
+<a class="group flex items-center p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-highest transition-colors" href="#">
+<div class="w-10 h-10 flex items-center justify-center bg-surface-container-lowest rounded-full mr-4 shadow-sm">
+<span class="material-symbols-outlined text-on-surface-variant">work</span>
+</div>
+<span class="font-medium text-on-surface flex-grow">Linkedin</span>
+<span class="material-symbols-outlined text-outline text-sm">north_east</span>
+</a>
+<!-- Farcaster & Twitch (Side by Side) -->
+<div class="grid grid-cols-2 gap-3">
+<a class="group flex items-center p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-highest transition-colors" href="#">
+<div class="w-8 h-8 flex items-center justify-center bg-surface-container-lowest rounded-full mr-3 shadow-sm">
+<span class="material-symbols-outlined text-sm">hub</span>
+</div>
+<span class="text-sm font-medium">Farcaster</span>
+</a>
+<a class="group flex items-center p-4 bg-surface-container-low rounded-xl hover:bg-surface-container-highest transition-colors" href="#">
+<div class="w-8 h-8 flex items-center justify-center bg-surface-container-lowest rounded-full mr-3 shadow-sm">
+<span class="material-symbols-outlined text-sm">sensors</span>
+</div>
+<span class="text-sm font-medium">Twitch</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="w-full py-12 flex flex-col items-center gap-4 max-w-2xl mx-auto px-8">
+<div class="flex gap-6">
+<a class="text-xs font-label text-zinc-400 uppercase tracking-widest hover:text-blue-600 transition-opacity" href="#">Privacy</a>
+<a class="text-xs font-label text-zinc-400 uppercase tracking-widest hover:text-blue-600 transition-opacity" href="#">Terms</a>
+<a class="text-xs font-label text-zinc-400 uppercase tracking-widest hover:text-blue-600 transition-opacity" href="#">Support</a>
+</div>
+<p class="text-xs font-label text-zinc-400 uppercase tracking-widest opacity-80">© 2024 The Digital Curator</p>
+</footer>
+<!-- BottomNavBar Shared Component -->
+<nav class="fixed bottom-8 left-0 right-0 flex justify-center items-center z-50 px-4 pointer-events-none">
+<div class="bg-white/70 backdrop-blur-xl rounded-full px-4 py-2 border border-zinc-200/20 shadow-2xl flex gap-2 pointer-events-auto">
+<a class="text-zinc-500 p-3 hover:text-blue-500 transition-all hover:scale-110 active:scale-90" href="#">
+<span class="material-symbols-outlined">home</span>
+</a>
+<a class="text-zinc-500 p-3 hover:text-blue-500 transition-all hover:scale-110 active:scale-90" href="#">
+<span class="material-symbols-outlined">grid_view</span>
+</a>
+<!-- Active State for Profile Page -->
+<a class="bg-blue-600 text-white rounded-full p-3 shadow-lg shadow-blue-600/20 transition-all scale-110" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+</a>
+</div>
+</nav>
+</body></html>

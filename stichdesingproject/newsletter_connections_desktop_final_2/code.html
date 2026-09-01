@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Liquid Crystal | Transmissions &amp; Nodes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "secondary-container": "#7000ff",
+              "on-error-container": "#ffa8a3",
+              "on-tertiary": "#430036",
+              "secondary": "#ac89ff",
+              "on-secondary": "#290067",
+              "surface-container": "#1a1919",
+              "outline": "#777575",
+              "surface-container-high": "#201f1f",
+              "surface-container-highest": "#262626",
+              "on-primary-fixed": "#002a35",
+              "on-background": "#ffffff",
+              "primary-container": "#00cffc",
+              "tertiary-fixed": "#ff87db",
+              "on-surface-variant": "#adaaaa",
+              "inverse-on-surface": "#565554",
+              "primary-fixed-dim": "#00c0ea",
+              "error": "#ff716c",
+              "background": "#0e0e0e",
+              "tertiary": "#ff5dd7",
+              "tertiary-fixed-dim": "#ff6ad8",
+              "on-secondary-container": "#f8f1ff",
+              "inverse-primary": "#006880",
+              "on-tertiary-fixed": "#34002a",
+              "tertiary-dim": "#ff5dd7",
+              "surface-container-lowest": "#000000",
+              "on-surface": "#ffffff",
+              "surface": "#0e0e0e",
+              "secondary-dim": "#874cff",
+              "tertiary-container": "#fe00d5",
+              "error-container": "#9f0519",
+              "surface-container-low": "#131313",
+              "primary-dim": "#00c0ea",
+              "primary-fixed": "#00cffc",
+              "secondary-fixed-dim": "#ceb9ff",
+              "error-dim": "#d7383b",
+              "surface-variant": "#262626",
+              "on-tertiary-container": "#0e000a",
+              "surface-dim": "#0e0e0e",
+              "secondary-fixed": "#dac9ff",
+              "on-tertiary-fixed-variant": "#6f005c",
+              "on-primary-fixed-variant": "#004a5c",
+              "on-primary-container": "#004050",
+              "on-secondary-fixed": "#41009a",
+              "outline-variant": "#494847",
+              "surface-bright": "#2c2c2c",
+              "primary": "#69daff",
+              "surface-tint": "#69daff",
+              "on-secondary-fixed-variant": "#6300e2",
+              "on-error": "#490006",
+              "inverse-surface": "#fcf8f8",
+              "on-primary": "#004a5d"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset -10px -10px 50px rgba(0, 0, 0, 0.5), inset 10px 10px 50px rgba(255, 255, 255, 0.1);
+        }
+        .aura-primary {
+            background: radial-gradient(circle at center, rgba(105, 218, 255, 0.15) 0%, transparent 70%);
+            filter: blur(120px);
+        }
+        .aura-secondary {
+            background: radial-gradient(circle at center, rgba(172, 137, 255, 0.1) 0%, transparent 70%);
+            filter: blur(100px);
+        }
+        .text-gradient-primary {
+            background: linear-gradient(to right, #69daff, #ac89ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<!-- Top Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-20 bg-neutral-950/40 backdrop-blur-3xl border-b border-white/10 shadow-[0_0_80px_rgba(105,218,255,0.15)]">
+<div class="text-2xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500">
+            Liquid Crystal
+        </div>
+<div class="hidden md:flex items-center space-x-10">
+<a class="text-neutral-400 hover:text-white transition-colors font-plus-jakarta text-sm font-light tracking-wide" href="#">Ecosystem</a>
+<a class="text-cyan-400 font-bold border-b-2 border-cyan-400 pb-1 font-plus-jakarta text-sm tracking-wide" href="#">Transmissions</a>
+<a class="text-neutral-400 hover:text-white transition-colors font-plus-jakarta text-sm font-light tracking-wide" href="#">Nodes</a>
+<a class="text-neutral-400 hover:text-white transition-colors font-plus-jakarta text-sm font-light tracking-wide" href="#">Vault</a>
+</div>
+<button class="bg-gradient-to-r from-primary to-secondary text-on-primary-container px-6 py-2.5 rounded-full font-bold text-sm tracking-wide shadow-[0_0_20px_rgba(105,218,255,0.3)] hover:scale-105 active:scale-95 transition-transform">
+            Connect Wallet
+        </button>
+</nav>
+<!-- Global Background Elements -->
+<div class="fixed inset-0 pointer-events-none -z-10">
+<div class="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] aura-primary"></div>
+<div class="absolute bottom-[-10%] right-[-10%] w-[50%] h-[50%] aura-secondary"></div>
+</div>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-24 px-8 max-w-screen-2xl mx-auto">
+<!-- Editorial Header -->
+<header class="mb-20 max-w-3xl">
+<span class="font-label text-[10px] font-bold uppercase tracking-[0.2em] text-primary mb-4 block">Communication Network</span>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight mb-6">
+                Direct <span class="text-gradient-primary">Transmissions</span><br/>
+                &amp; Synced Nodes.
+            </h1>
+<p class="text-on-surface-variant text-xl font-light leading-relaxed">
+                Plug into the ethereal forge. Receive real-time updates from the ecosystem or establish secure connections with our high-frequency nodes.
+            </p>
+</header>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Newsletter: Massive Premium Card (8 Columns) -->
+<section class="col-span-12 lg:col-span-8 glass-card rounded-xl p-12 relative overflow-hidden group">
+<!-- Inner Aura -->
+<div class="absolute -top-24 -right-24 w-96 h-96 aura-primary opacity-30 group-hover:opacity-50 transition-opacity"></div>
+<div class="relative z-10 flex flex-col h-full justify-between">
+<div>
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-primary text-4xl p-4 bg-primary/10 rounded-2xl">broadcast_on_home</span>
+<h2 class="text-3xl font-bold tracking-tight">Crystal Transmissions</h2>
+</div>
+<p class="text-on-surface-variant text-lg max-w-md mb-12">
+                            The weekly frequency for high-end digital design, Web3 architecture, and the evolution of the Liquid Crystal ecosystem.
+                        </p>
+</div>
+<div class="flex flex-col md:flex-row gap-4 max-w-2xl">
+<div class="flex-grow relative">
+<input class="w-full bg-white/5 border border-white/10 rounded-full py-5 px-8 text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all font-light tracking-wide placeholder:text-neutral-600" placeholder="enter-frequency@identity.node" type="email"/>
+</div>
+<button class="bg-primary text-on-primary-container px-10 py-5 rounded-full font-bold tracking-widest uppercase text-xs hover:scale-105 active:scale-95 transition-transform flex items-center justify-center gap-2">
+                            Initialize <span class="material-symbols-outlined text-sm">bolt</span>
+</button>
+</div>
+<div class="mt-12 flex gap-8 items-center">
+<div class="flex -space-x-3">
+<img alt="Subscriber 1" class="w-10 h-10 rounded-full border-2 border-background object-cover" data-alt="Abstract portrait of a digital being" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVsWKCgusVfBoGi9KFOelGCHKeQ9qTe8EP8ujJT8MLGNc8jx_0zHS-aHV40Jomb1mnvWYFMSn9XdjKYZCN6YCPS5fgsE0oIlhxSV7md8O-tiStmUwa1GwPZKC9i2teVkp80vpeZMgUFk2bHi3QZAwfy7T0wL2BctEV2WkLrI6oRZOYQ5GgrB4smZsz5XQwrmNrKwFkCTc_KsICEf2u4HUF12l0aKp0iG3Q02UKDvwyOrLmvQ3wXO3bkFJtzHwRIogM58FyV7CU8qg"/>
+<img alt="Subscriber 2" class="w-10 h-10 rounded-full border-2 border-background object-cover" data-alt="Abstract portrait of a digital being" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9dSUt-4X1MPSomIFryjnIg2WSP44kswQKWDXSvOimLvJiq8qy_tVSFaRUPO_a65VJpg3R2PaxN0UnNA4zmjxeoI4n4PPBxwh3nBHa-cS2p4Ejkr8mOYS2Jf0nccBZ-LOIBpl3DxMyieDcdNJJf7fjuF7sigWjHgL6WNh1vFUIQhUd-j3dzpd_ZEgQJ7JUVNpaXeic0jL8lOD9ImsMickGEct77pIgXjXMBQyAmnas37XzpY1c9nsPn0eiPKA8ZfCWjFVXSRz-dtk"/>
+<img alt="Subscriber 3" class="w-10 h-10 rounded-full border-2 border-background object-cover" data-alt="Abstract portrait of a digital being" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgHUIJLNKzFZRbQAosX-rn5V4qhziv8pp-AHaztxZzCoOzhFD56oO_qsTq5Ts1Yi1utQSjpTf3bxgCzmUMLauMq1jg23Nxx-edRxEWu-gwYiixMvk9VWIGzPpOPvH5rZvc-s595XpZ7699dfMW_d25VvKgFVa9B7-9l8yOxhLWp7btTOT8yc4AVtdsUP6fKMNHsdzFd0zurHqW6pj695dKllgaf_ZXHgedKGjCAO0i4QGS4t-s_S7uE2CRIZCFhh1wrpYZcgxZ82I"/>
+</div>
+<span class="text-neutral-500 text-xs font-bold uppercase tracking-widest">+12.4k Nodes Subscribed</span>
+</div>
+</div>
+<!-- Abstract Visual Element -->
+<div class="absolute bottom-[-10%] right-[-5%] opacity-20 pointer-events-none transform rotate-12 scale-150">
+<span class="material-symbols-outlined text-[300px] text-primary">stream</span>
+</div>
+</section>
+<!-- Node Section: Staggered Social Nodes (4 Columns) -->
+<section class="col-span-12 lg:col-span-4 flex flex-col gap-6">
+<!-- Node 1: X/Twitter -->
+<div class="glass-card rounded-xl p-8 hover:bg-white/10 transition-all duration-500 cursor-pointer group">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-white/5 rounded-lg text-white group-hover:text-primary transition-colors">
+<svg class="w-6 h-6 fill-current" viewbox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.25h-6.657l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"></path></svg>
+</div>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse shadow-[0_0_8px_#69daff]"></span>
+<span class="text-[10px] font-bold uppercase tracking-widest text-primary">Live</span>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-1">Sync Mainframe</h3>
+<p class="text-neutral-400 text-sm mb-6">Real-time status updates and ecosystem milestones.</p>
+<div class="flex justify-between items-end">
+<div>
+<span class="block text-xl font-extrabold tracking-tight">84.2k</span>
+<span class="text-[9px] font-bold uppercase text-neutral-500 tracking-widest">Followers</span>
+</div>
+<span class="material-symbols-outlined text-neutral-500 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Node 2: Discord -->
+<div class="glass-card rounded-xl p-8 hover:bg-white/10 transition-all duration-500 cursor-pointer group border-l-2 border-secondary/30">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-secondary/10 rounded-lg text-secondary">
+<span class="material-symbols-outlined text-3xl active-icon">hub</span>
+</div>
+<span class="text-[10px] font-bold uppercase tracking-widest text-neutral-500">Secure</span>
+</div>
+<h3 class="text-xl font-bold mb-1">Developer Node</h3>
+<p class="text-neutral-400 text-sm mb-6">Collaborative environment for system architects.</p>
+<div class="flex justify-between items-end">
+<div>
+<span class="block text-xl font-extrabold tracking-tight">3,412</span>
+<span class="text-[9px] font-bold uppercase text-neutral-500 tracking-widest">Online Now</span>
+</div>
+<span class="material-symbols-outlined text-neutral-500 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+<!-- Node 3: GitHub -->
+<div class="glass-card rounded-xl p-8 hover:bg-white/10 transition-all duration-500 cursor-pointer group">
+<div class="flex justify-between items-start mb-6">
+<div class="p-3 bg-white/5 rounded-lg text-neutral-300">
+<span class="material-symbols-outlined text-3xl">code_blocks</span>
+</div>
+</div>
+<h3 class="text-xl font-bold mb-1">Open Source Core</h3>
+<p class="text-neutral-400 text-sm mb-6">Direct access to the Liquid Glass repository.</p>
+<div class="flex justify-between items-end">
+<div>
+<span class="block text-xl font-extrabold tracking-tight">1.2k</span>
+<span class="text-[9px] font-bold uppercase text-neutral-500 tracking-widest">Commits This Cycle</span>
+</div>
+<span class="material-symbols-outlined text-neutral-500 group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</div>
+</div>
+</section>
+</div>
+<!-- Lower Editorial Section -->
+<section class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-white/5 pt-16">
+<div>
+<h4 class="font-bold text-lg mb-4">Refracted Vision</h4>
+<p class="text-neutral-500 text-sm leading-relaxed font-light">Liquid Crystal is not just a UI; it's a sensory experience built for those who operate on the edge of the digital frontier.</p>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-4">Neural Feedback</h4>
+<p class="text-neutral-500 text-sm leading-relaxed font-light">Every transmission is signed with a unique cryptographic hash, ensuring that the signals you receive are untainted by the static.</p>
+</div>
+<div>
+<h4 class="font-bold text-lg mb-4">Node Sovereignty</h4>
+<p class="text-neutral-500 text-sm leading-relaxed font-light">You are not a user; you are a node. Your participation strengthens the mesh of our expanding digital organism.</p>
+</div>
+</section>
+</main>
+<!-- Navigation Shell Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-6 pt-2 bg-neutral-900/40 backdrop-blur-2xl rounded-t-[2.5rem] border-t border-white/10">
+<div class="flex flex-col items-center justify-center text-neutral-500 p-3">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-plus-jakarta text-[10px] font-bold uppercase tracking-[0.1em] mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-cyan-500/20 text-cyan-400 rounded-full p-3 shadow-[0_0_20px_rgba(105,218,255,0.3)] scale-110 duration-200">
+<span class="material-symbols-outlined active-icon" data-icon="hub">hub</span>
+<span class="font-plus-jakarta text-[10px] font-bold uppercase tracking-[0.1em] mt-1">Sync</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500 p-3">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+<span class="font-plus-jakarta text-[10px] font-bold uppercase tracking-[0.1em] mt-1">Alerts</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500 p-3">
+<span class="material-symbols-outlined" data-icon="account_circle">account_circle</span>
+<span class="font-plus-jakarta text-[10px] font-bold uppercase tracking-[0.1em] mt-1">Profile</span>
+</div>
+</nav>
+</body></html>

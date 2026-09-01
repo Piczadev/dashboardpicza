@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>LIQUID CRYSTAL | Web3 Portfolio</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#fe00d5",
+              "surface-container-high": "#201f1f",
+              "surface-container-lowest": "#000000",
+              "surface-container-low": "#131313",
+              "tertiary-fixed": "#ff87db",
+              "error": "#ff716c",
+              "surface-tint": "#69daff",
+              "surface": "#0e0e0e",
+              "primary-fixed-dim": "#00c0ea",
+              "secondary-fixed": "#dac9ff",
+              "on-background": "#ffffff",
+              "tertiary-dim": "#ff5dd7",
+              "primary-fixed": "#00cffc",
+              "outline-variant": "#494847",
+              "secondary-fixed-dim": "#ceb9ff",
+              "primary-dim": "#00c0ea",
+              "on-tertiary": "#430036",
+              "on-primary-container": "#004050",
+              "on-primary-fixed-variant": "#004a5c",
+              "on-tertiary-fixed": "#34002a",
+              "error-container": "#9f0519",
+              "surface-container": "#1a1919",
+              "tertiary": "#ff5dd7",
+              "surface-dim": "#0e0e0e",
+              "on-surface-variant": "#adaaaa",
+              "inverse-on-surface": "#565554",
+              "background": "#0e0e0e",
+              "on-secondary-fixed": "#41009a",
+              "on-tertiary-container": "#0e000a",
+              "on-error": "#490006",
+              "surface-variant": "#262626",
+              "outline": "#777575",
+              "on-tertiary-fixed-variant": "#6f005c",
+              "tertiary-fixed-dim": "#ff6ad8",
+              "on-primary-fixed": "#002a35",
+              "on-secondary-container": "#f8f1ff",
+              "surface-bright": "#2c2c2c",
+              "on-secondary-fixed-variant": "#6300e2",
+              "on-primary": "#004a5d",
+              "secondary-container": "#7000ff",
+              "on-surface": "#ffffff",
+              "inverse-surface": "#fcf8f8",
+              "secondary": "#ac89ff",
+              "inverse-primary": "#006880",
+              "secondary-dim": "#874cff",
+              "error-dim": "#d7383b",
+              "surface-container-highest": "#262626",
+              "primary-container": "#00cffc",
+              "on-error-container": "#ffa8a3",
+              "primary": "#69daff",
+              "on-secondary": "#290067"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0e0e0e; color: white; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset -10px -10px 50px rgba(0, 0, 0, 0.5), 
+                        inset 10px 10px 50px rgba(255, 255, 255, 0.05),
+                        0 0 80px rgba(105, 218, 255, 0.05);
+        }
+        .text-gradient-primary {
+            background: linear-gradient(to right, #69daff, #ac89ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .aura-primary {
+            background: radial-gradient(circle, rgba(105, 218, 255, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+        .aura-secondary {
+            background: radial-gradient(circle, rgba(172, 137, 255, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface selection:bg-primary/30">
+<!-- TopAppBar -->
+<nav class="fixed top-0 w-full z-50 bg-neutral-900/40 backdrop-blur-3xl border-b border-white/10 flex justify-between items-center px-6 py-4 w-full shadow-[0_0_80px_rgba(105,218,255,0.15)]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-cyan-400" data-icon="diamond">diamond</span>
+<span class="text-xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500">LIQUID CRYSTAL</span>
+</div>
+<div class="hidden md:flex items-center gap-8 text-[11px] font-bold uppercase tracking-[0.1em]">
+<a class="text-cyan-400 font-bold hover:text-white transition-all duration-300" href="#">Home</a>
+<a class="text-neutral-400 hover:text-white transition-all duration-300" href="#">Identity</a>
+<a class="text-neutral-400 hover:text-white transition-all duration-300" href="#">Work</a>
+<a class="text-neutral-400 hover:text-white transition-all duration-300" href="#">Stack</a>
+</div>
+<button class="bg-gradient-to-br from-cyan-400 to-violet-500 text-white px-5 py-2 rounded-full font-bold text-xs tracking-wider active:scale-95 duration-200 shadow-[0_0_20px_rgba(105,218,255,0.3)]">
+            CONNECT
+        </button>
+</nav>
+<main class="relative min-h-screen pt-24 pb-32 overflow-hidden">
+<!-- Background Auras -->
+<div class="absolute top-[-10%] left-[-10%] w-[60%] h-[60%] aura-primary pointer-events-none"></div>
+<div class="absolute bottom-[0%] right-[-10%] w-[50%] h-[50%] aura-secondary pointer-events-none"></div>
+<!-- Hero Section -->
+<section class="container mx-auto px-6 flex flex-col items-center text-center py-16 lg:py-24">
+<div class="relative group">
+<div class="absolute inset-0 bg-primary/20 blur-[60px] rounded-full scale-110"></div>
+<div class="relative w-32 h-32 lg:w-44 lg:h-44 rounded-full p-1 bg-gradient-to-br from-primary to-secondary">
+<img alt="Avatar" class="w-full h-full object-cover rounded-full border-4 border-surface" data-alt="Vibrant glowing digital 3D avatar portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCWeXHo9h6YxfdNYHe5zLdxuhM74o1BN0kZe4N_Q8VQU2UYFR747f__CSyfFLqDAPiBjuNIofHk7Y8yRJ1aIhyh_aLhrVmjChI0ayw1kSi-Rs7z3t5zZ3FkGlP9MxvHG7X0OyEbXcpiuP5KC-YGi7QqfQ9x6fR3k0gBdjV5EgISWwy-fBh52plWfnROhm8Zux2MmoB5DHz0sxSmkWLJpd5KvEWDvdwL66iYJSFJ2myoenCWkhO5YBw3uY1MeEIlSi-RMdxTANXjPU4"/>
+</div>
+</div>
+<h1 class="mt-8 text-5xl lg:text-8xl font-black tracking-tighter font-headline leading-[0.9] text-on-surface">
+                CRAFTING THE <br/>
+<span class="text-gradient-primary">LIQUID FUTURE</span>
+</h1>
+<p class="mt-8 text-on-surface-variant max-w-2xl text-lg lg:text-xl font-light tracking-wide leading-relaxed">
+                Visual Architect &amp; Web3 Creator. Merging high-fidelity motion with decentralized identities to build the next generation of digital artifacts.
+            </p>
+<div class="mt-12 flex gap-4">
+<button class="px-8 py-4 rounded-full bg-gradient-to-br from-primary to-secondary text-on-primary-container font-bold text-sm tracking-widest uppercase hover:scale-105 transition-transform shadow-[0_0_40px_rgba(105,218,255,0.2)]">
+                    VIEW ARCHIVE
+                </button>
+<button class="px-8 py-4 rounded-full glass-card text-on-surface font-bold text-sm tracking-widest uppercase hover:bg-white/10 transition-colors">
+                    CONTACT
+                </button>
+</div>
+</section>
+<!-- Bento Grid: Identity & Work -->
+<section class="container mx-auto px-6 py-12">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Web3 Identity Card -->
+<div class="md:col-span-8 glass-card rounded-xl p-8 flex flex-col justify-between group overflow-hidden">
+<div class="flex justify-between items-start">
+<div>
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-primary">Web3 Identity</span>
+<h2 class="text-3xl font-bold mt-2">Crystal.eth</h2>
+</div>
+<div class="bg-primary/10 p-3 rounded-full">
+<span class="material-symbols-outlined text-primary" data-icon="verified">verified</span>
+</div>
+</div>
+<div class="mt-12 flex items-end justify-between">
+<div class="space-y-4">
+<div class="flex gap-2">
+<span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase font-bold tracking-wider">0x71C...4E2</span>
+<span class="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] uppercase font-bold tracking-wider">Lens Protcol</span>
+</div>
+<p class="text-on-surface-variant text-sm max-w-md">Governance contributor at LiquidDAO and lead visual strategist for refraction-based NFT primitives.</p>
+</div>
+<div class="hidden lg:block relative w-48 h-32 opacity-50 group-hover:opacity-100 transition-opacity">
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/20 to-secondary/20 blur-xl"></div>
+<div class="h-full w-full glass-card rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl" data-icon="token" style="font-variation-settings: 'FILL' 1;">token</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Latest Work Card -->
+<div class="md:col-span-4 glass-card rounded-xl p-8 relative overflow-hidden group">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-secondary">Latest Work</span>
+<h2 class="text-3xl font-bold mt-2 mb-6">Prism UI</h2>
+<div class="relative aspect-square rounded-lg overflow-hidden border border-white/10">
+<img alt="Work" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" data-alt="Abstract translucent glass structure with prismatic light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDFapgssmGrFY1161jrafJ-osRN-X1Usdk5nsNfCj6BrjDjlU-Udce3TzHjx2_lQN7LRlSnhN41syt59u3sTJ9armBYxk6x7ntK5JcK_sPhLOkokVbKSLccopKM6R-Jhvx2i4N_oHVIP62VP7vhUXAw5RCbdD7E0nH2conKPcWThEjoQJkmg9wlYwX0uccubWvDbxju-phH7bMyXFvOcQgkARKOOiiTVvuoZEQocv6szQbiaLHcQ7WaYRwJOlIZEODmtLvbzm_USOQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+<div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+<span class="text-xs font-bold">Project Genesis</span>
+<span class="material-symbols-outlined text-sm" data-icon="arrow_outward">arrow_outward</span>
+</div>
+</div>
+</div>
+<!-- My Stack -->
+<div class="md:col-span-5 glass-card rounded-xl p-8">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-on-surface-variant">My Stack</span>
+<h2 class="text-3xl font-bold mt-2 mb-8">The Forge</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="p-4 rounded-xl bg-surface-container border border-white/5 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="layers">layers</span>
+<span class="text-sm font-bold">Solidity</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container border border-white/5 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="category">category</span>
+<span class="text-sm font-bold">React.js</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container border border-white/5 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="brush">brush</span>
+<span class="text-sm font-bold">Figma Pro</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container border border-white/5 flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="animation">animation</span>
+<span class="text-sm font-bold">Three.js</span>
+</div>
+</div>
+</div>
+<!-- Stats/Archive -->
+<div class="md:col-span-7 glass-card rounded-xl p-8 flex flex-col lg:flex-row gap-8 items-center justify-between">
+<div class="text-center lg:text-left">
+<div class="text-5xl font-black text-gradient-primary">24+</div>
+<div class="text-[10px] font-bold uppercase tracking-[0.2em] mt-2 text-on-surface-variant">Ecosystems Launched</div>
+</div>
+<div class="h-px lg:h-12 w-12 lg:w-px bg-white/10"></div>
+<div class="text-center lg:text-left">
+<div class="text-5xl font-black text-on-surface">1.2k</div>
+<div class="text-[10px] font-bold uppercase tracking-[0.2em] mt-2 text-on-surface-variant">Active Minters</div>
+</div>
+<div class="h-px lg:h-12 w-12 lg:w-px bg-white/10"></div>
+<div class="text-center lg:text-left">
+<div class="text-5xl font-black text-secondary">$2M+</div>
+<div class="text-[10px] font-bold uppercase tracking-[0.2em] mt-2 text-on-surface-variant">Volume Transacted</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="container mx-auto px-6 py-20">
+<div class="relative w-full rounded-xl overflow-hidden glass-card p-12 text-center">
+<div class="absolute inset-0 aura-primary opacity-30"></div>
+<h3 class="relative text-3xl lg:text-5xl font-bold tracking-tight mb-6">READY TO LIQUEFY?</h3>
+<p class="relative text-on-surface-variant max-w-xl mx-auto mb-10">Available for select collaborations and strategic design advisory for next-gen protocols.</p>
+<button class="relative px-12 py-4 rounded-full bg-white text-surface font-black tracking-widest uppercase hover:bg-primary transition-colors">
+                    HIRE ME
+                </button>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex justify-around items-center px-4 py-2 bg-neutral-900/40 backdrop-blur-2xl w-[90%] max-w-md rounded-full border-[0.5px] border-white/10 shadow-[0_0_80px_rgba(105,218,255,0.15)]">
+<a class="flex items-center justify-center bg-gradient-to-br from-cyan-400 to-violet-500 text-white rounded-full p-3 shadow-[0_0_20px_rgba(105,218,255,0.5)] active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+</a>
+<a class="flex items-center justify-center text-neutral-400 p-3 hover:scale-110 hover:text-cyan-300 transition-transform active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+</a>
+<a class="flex items-center justify-center text-neutral-400 p-3 hover:scale-110 hover:text-cyan-300 transition-transform active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</a>
+<a class="flex items-center justify-center text-neutral-400 p-3 hover:scale-110 hover:text-cyan-300 transition-transform active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</nav>
+</body></html>

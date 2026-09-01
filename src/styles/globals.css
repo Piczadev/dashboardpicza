@@ -4,27 +4,29 @@
 
 @theme {
   /* ═══════════════════════════════════════════════════════
-     LIQUID GLASS — Color System
+     LIQUID GLASS — Color System & Tokens (AGENTS.md)
      Deep void blacks with vibrant blue-violet-cyan accents
   ═══════════════════════════════════════════════════════ */
 
   /* Surface Hierarchy (void-like depth) */
-  --color-surface: #0a0a0f;
+  --color-background: #09090b;
+  --color-surface: #09090b;
   --color-surface-container-lowest: #0d0d14;
-  --color-surface-container-low: #12121c;
-  --color-surface-container: #181826;
-  --color-surface-container-high: #1e1e30;
+  --color-surface-container-low: #121216;
+  --color-surface-container: #18181f;
+  --color-surface-container-high: #20202a;
   --color-surface-container-highest: #28283e;
 
   /* Primary Palette — Vibrant Blue-Violet-Cyan */
-  --color-primary: #a78bfa;
-  --color-primary-bright: #c4b5fd;
+  --color-primary: #8b5cf6;
+  --color-primary-bright: #a78bfa;
   --color-secondary: #818cf8;
   --color-secondary-container: #6d28d9;
   --color-accent-cyan: #22d3ee;
   --color-accent-blue: #3b82f6;
   --color-accent-violet: #8b5cf6;
-  --color-accent-magenta: #d946ef;
+  --color-accent-magenta: #ec4899;
+  --color-accent-green: #14f195;
 
   /* Gradient Anchors */
   --color-gradient-start: #4f46e5;
@@ -39,7 +41,8 @@
   /* Animation values */
   --animate-float: float 6s ease-in-out infinite;
   --animate-glow-pulse: glow-pulse 4s ease-in-out infinite;
-  --animate-shimmer: shimmer 8s linear infinite;
+  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-shimmer: shimmer 3s linear infinite;
   --animate-orb-drift: orb-drift 20s ease-in-out infinite;
 }
 

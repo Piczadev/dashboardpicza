@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { GlassCard } from "./GlassCard";
+import { SpotlightCard } from "./ui/SpotlightCard";
 
 interface Post {
   slug: string;
@@ -8,6 +8,7 @@ interface Post {
   category: string;
   excerpt: string;
   date: string;
+  readingTime?: string;
   gradient?: string;
   [key: string]: any;
 }
@@ -16,29 +17,52 @@ interface BlogFeedProps {
   posts?: Post[];
 }
 
+const CATEGORIES = ["All", "Web3", "AI", "Design"];
+
 export function BlogFeed({ posts = [] }: BlogFeedProps) {
+  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+
+  const filteredPosts =
+    selectedCategory === "All"
+      ? posts
+      : posts.filter(
+          (post) =>
+            post.category?.toLowerCase().includes(selectedCategory.toLowerCase())
+        );
+
   return (
-    <section id="blog" className="w-full py-28 px-6 lg:px-12 relative">
+    <section id="research" className="w-full py-24 px-4 sm:px-6 lg:px-12 relative overflow-hidden">
+      {/* Subtle ambient lighting */}
+      <div className="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-violet-600/10 rounded-full blur-[160px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* ── Section Header ── */}
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-14 gap-6">
           <div>
-            <span className="font-mono text-xs uppercase tracking-[0.3em] text-accent-cyan/60 block mb-3">
-              Research Lab
-            </span>
-            <h2 className="font-serif text-4xl md:text-5xl font-bold leading-tight">
-              Research &<br />
-              <span className="italic font-light text-gradient">Artifacts</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] backdrop-blur-md mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
+              <span className="font-mono text-xs uppercase tracking-[0.25em] text-violet-300">
+                Technical Knowledge Vault
+              </span>
+            </div>
+            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-white tracking-tight">
+              Research & <span className="text-gradient">Transmissions</span>
             </h2>
+            <p className="font-sans text-sm text-zinc-400 mt-2 max-w-lg leading-relaxed">
+              Deep dives into high-trust interface architecture, local LLM orchestration, and smart contract protocol design.
+            </p>
           </div>
-          <div className="flex gap-3 overflow-x-auto pb-2 w-full md:w-auto hide-scrollbars">
-            {["All", "Web3", "AI", "Design"].map((cat, i) => (
+
+          {/* Category Pills */}
+          <div className="flex gap-2 overflow-x-auto pb-2 w-full md:w-auto hide-scrollbars bg-zinc-900/80 p-1.5 rounded-2xl border border-white/[0.08] backdrop-blur-md">
+            {CATEGORIES.map((cat) => (
               <button
                 key={cat}
-                className={`px-4 py-2 rounded-full text-xs font-mono uppercase tracking-widest whitespace-nowrap transition-all duration-300 ${
-                  i === 0
-                    ? "bg-accent-violet/20 text-accent-violet border border-accent-violet/20"
-                    : "bg-surface-container-high/40 text-gray-500 hover:text-primary hover:bg-surface-container-highest/60 border border-white/[0.04]"
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-4 py-1.5 rounded-xl text-xs font-mono uppercase tracking-wider whitespace-nowrap transition-all duration-300 ${
+                  selectedCategory === cat
+                    ? "bg-zinc-800 text-cyan-300 border border-cyan-400/30 shadow-[0_0_12px_rgba(34,211,238,0.2)] font-semibold"
+                    : "text-zinc-400 hover:text-white hover:bg-white/[0.04]"
                 }`}
               >
                 {cat}
@@ -47,51 +71,42 @@ export function BlogFeed({ posts = [] }: BlogFeedProps) {
           </div>
         </div>
 
-        {/* ── Cards Grid ── */}
+        {/* Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {posts.map((post, idx) => (
-            <Link key={post.slug} href={`/blog/${post.slug}`} className="block h-full cursor-pointer focus:outline-none focus:ring-2 focus:ring-primary rounded-3xl">
-              <GlassCard
-                variant="elevated"
-                interactive
-                as="article"
-                className={`p-8 flex flex-col h-full animate-fade-in-up animate-delay-${(idx + 1) * 100}`}
+          {filteredPosts.map((post) => (
+            <Link
+              key={post.slug}
+              href={`/blog/${post.slug}`}
+              className="block h-full focus:outline-none group"
+            >
+              <SpotlightCard
+                className="p-7 flex flex-col justify-between h-full"
+                glowColor="rgba(139, 92, 246, 0.15)"
               >
-                {/* Top gradient accent line */}
-                <div className={`absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r ${post.gradient || 'from-accent-violet to-accent-cyan'} opacity-40`} />
+                <div>
+                  <div className="mb-4 flex justify-between items-center">
+                    <span className="text-[10px] font-mono uppercase tracking-widest px-2.5 py-1 bg-violet-500/10 text-violet-300 rounded-md border border-violet-500/20">
+                      {post.category}
+                    </span>
+                    <span className="text-xs font-mono text-zinc-400">{post.date}</span>
+                  </div>
 
-                <div className="mb-6 flex justify-between items-start">
-                  <span className="text-xs font-mono px-3 py-1 bg-accent-violet/10 rounded-full text-accent-violet border border-accent-violet/10">
-                    {post.category}
+                  <h3 className="font-serif text-xl font-bold mb-3 text-white group-hover:text-cyan-200 transition-colors leading-snug">
+                    {post.title}
+                  </h3>
+
+                  <p className="font-sans text-xs sm:text-sm text-zinc-400 flex-grow mb-6 line-clamp-3 leading-relaxed">
+                    {post.excerpt}
+                  </p>
+                </div>
+
+                <div className="pt-4 border-t border-white/[0.06] flex items-center justify-between text-xs font-mono text-cyan-400 group-hover:text-cyan-300 transition-colors">
+                  <span>Read Article</span>
+                  <span className="transform group-hover:translate-x-1.5 transition-transform duration-300">
+                    →
                   </span>
-                  <span className="text-xs font-mono text-gray-600">{post.date}</span>
                 </div>
-
-                <h3 className="font-serif text-xl font-bold mb-4 group-hover:text-accent-cyan transition-colors leading-snug text-white">
-                  {post.title}
-                </h3>
-
-                <p className="font-sans text-gray-500 text-sm flex-grow mb-8 line-clamp-3 leading-relaxed">
-                  {post.excerpt}
-                </p>
-
-                <div className="mt-auto flex items-center gap-2 text-sm font-mono text-gray-500 group-hover:text-accent-cyan transition-colors">
-                  <span>Read Artifact</span>
-                  <svg
-                    className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={1.5}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </div>
-              </GlassCard>
+              </SpotlightCard>
             </Link>
           ))}
         </div>
@@ -99,3 +114,6 @@ export function BlogFeed({ posts = [] }: BlogFeedProps) {
     </section>
   );
 }
+
+export default BlogFeed;
+

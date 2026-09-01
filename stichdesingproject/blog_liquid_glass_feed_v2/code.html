@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "tertiary-container": "#fe00d5",
+              "surface-container-high": "#201f1f",
+              "surface-container-lowest": "#000000",
+              "surface-container-low": "#131313",
+              "tertiary-fixed": "#ff87db",
+              "error": "#ff716c",
+              "surface-tint": "#69daff",
+              "surface": "#0e0e0e",
+              "primary-fixed-dim": "#00c0ea",
+              "secondary-fixed": "#dac9ff",
+              "on-background": "#ffffff",
+              "tertiary-dim": "#ff5dd7",
+              "primary-fixed": "#00cffc",
+              "outline-variant": "#494847",
+              "secondary-fixed-dim": "#ceb9ff",
+              "primary-dim": "#00c0ea",
+              "on-tertiary": "#430036",
+              "on-primary-container": "#004050",
+              "on-primary-fixed-variant": "#004a5c",
+              "on-tertiary-fixed": "#34002a",
+              "error-container": "#9f0519",
+              "surface-container": "#1a1919",
+              "tertiary": "#ff5dd7",
+              "surface-dim": "#0e0e0e",
+              "on-surface-variant": "#adaaaa",
+              "inverse-on-surface": "#565554",
+              "background": "#0e0e0e",
+              "on-secondary-fixed": "#41009a",
+              "on-tertiary-container": "#0e000a",
+              "on-error": "#490006",
+              "surface-variant": "#262626",
+              "outline": "#777575",
+              "on-tertiary-fixed-variant": "#6f005c",
+              "tertiary-fixed-dim": "#ff6ad8",
+              "on-primary-fixed": "#002a35",
+              "on-secondary-container": "#f8f1ff",
+              "surface-bright": "#2c2c2c",
+              "on-secondary-fixed-variant": "#6300e2",
+              "on-primary": "#004a5d",
+              "secondary-container": "#7000ff",
+              "on-surface": "#ffffff",
+              "inverse-surface": "#fcf8f8",
+              "secondary": "#ac89ff",
+              "inverse-primary": "#006880",
+              "secondary-dim": "#874cff",
+              "error-dim": "#d7383b",
+              "surface-container-highest": "#262626",
+              "primary-container": "#00cffc",
+              "on-error-container": "#ffa8a3",
+              "primary": "#69daff",
+              "on-secondary": "#290067"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset -10px -10px 50px rgba(0, 0, 0, 0.5), 
+                        inset 10px 10px 50px rgba(255, 255, 255, 0.1),
+                        0 0 80px rgba(105, 218, 255, 0.05);
+        }
+        .aura-primary {
+            background: radial-gradient(circle at center, rgba(105, 218, 255, 0.15) 0%, transparent 70%);
+        }
+        .text-gradient-primary {
+            background: linear-gradient(to right, #69daff, #ac89ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30 min-h-screen">
+<!-- Top Navigation -->
+<header class="fixed top-0 w-full z-50 bg-neutral-900/40 backdrop-blur-3xl border-b border-white/10 flex justify-between items-center px-6 py-4 w-full shadow-[0_0_80px_rgba(105,218,255,0.15)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-cyan-400" data-icon="diamond">diamond</span>
+<span class="text-xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500 font-['Plus_Jakarta_Sans']">LIQUID CRYSTAL</span>
+</div>
+<nav class="hidden md:flex gap-8">
+<a class="text-cyan-400 font-bold hover:text-white transition-all duration-300" href="#">Feed</a>
+<a class="text-neutral-400 hover:text-white transition-all duration-300" href="#">Explore</a>
+<a class="text-neutral-400 hover:text-white transition-all duration-300" href="#">Library</a>
+</nav>
+<button class="bg-gradient-to-br from-cyan-400 to-violet-500 text-white rounded-full px-5 py-2 text-sm font-bold shadow-[0_0_20px_rgba(105,218,255,0.4)] active:scale-95 duration-200">
+            Subscribe
+        </button>
+</header>
+<main class="pt-32 pb-40 px-6 max-w-7xl mx-auto relative">
+<!-- Background Aura Effects -->
+<div class="fixed top-[-10%] left-[-10%] w-[50%] h-[50%] aura-primary pointer-events-none z-0"></div>
+<div class="fixed bottom-[-10%] right-[-10%] w-[50%] h-[50%] aura-primary pointer-events-none z-0 rotate-180"></div>
+<!-- Hero Editorial Section -->
+<section class="mb-20 relative z-10">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<div class="inline-block px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-[10px] font-bold uppercase tracking-[0.1em] text-primary mb-4">
+                        Curated Journal
+                    </div>
+<h1 class="text-4xl md:text-7xl font-extrabold tracking-tighter leading-[0.9] mb-4">
+                        LIQUID <span class="text-gradient-primary">GLASS</span> FEED
+                    </h1>
+<p class="text-on-surface-variant max-w-xl text-lg md:text-xl font-light leading-relaxed">
+                        Synthesizing the future of digital artifacts, refractive interfaces, and ethereal technology.
+                    </p>
+</div>
+<div class="flex gap-4">
+<div class="flex -space-x-3">
+<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="User profile avatar close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8pp5IUijEvkhNAy2ptzicKDPAvtYJx87TgpZsSFL70Aif0fV6r8gSQXA6Y-AmGjjcCJWKHfq6XIwRbshnMUUb3v2uWmiDkpAaJsMkTg8bGFb3POzggQeUvaEU7G70wKnzrSHztQyoHS2I_wF2e2B4g90nezdxhBpG0WzdY0WI94vs8fi0hSE0CPLVRrUm8SPmmYc9DNLsBvsJSbyqkGBdcVBjbBBJQFdDuj3bmrOLqIRjPm3eGayW7dWThksRI_xZtQ4UEc0Enfg"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="Portrait of a young creator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1phcR52uxD4UXVQasN4aCSIcDmmcjmpEU2jdbtOXySg5ZsP8vuR7vPZVB5w1JK8gZ3t3E-ONtiT_gz85_aPqpe1ZLv-zfhJmfYzCt4TQYMkil8cWmNTZ_PvlxuUQvw2yY5q6wLfFFzv0yscPTjS_q-zad9_09YrR0cBJxmnEur4QLmBOK14VmPM4i8K5irUUoWmz5b3v0I7JpqIDoIki15N6hCDBc6LN-cPhxjBwrYTuVjdpw1XKX-ioVUzWfHW9Tl6hXNxbWF0o"/>
+<img class="w-10 h-10 rounded-full border-2 border-surface object-cover" data-alt="Modern professional headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDRS0eaE7uIYhs5dFu_yLcas8fRPqF0lFmnucGEeBybVbwpAXKnm8CAWMLIX54-NxlyClvZHnLHXKhx6OFH1yThwtEjvks47hirSxfx_HQebpbR-htdSxWROLBwhrcJVMJdZvLLa2sufUVsK8yWLac1BgZPruSS4O1W-Ull5Egp14GbgFUDwPeqlzuiItr5t1tWvYopfCibjcQ6EvMN-n6hKAuMcVj4oBS1RvCuQhFCtGkkwIhtQ-2M5lSHWJZCzfKCHE_WxnjpWGc"/>
+</div>
+<div class="text-xs self-center">
+<span class="block font-bold">12.4k Readers</span>
+<span class="text-on-surface-variant">Active this week</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bento Grid Feed -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 relative z-10">
+<!-- Featured Large Post -->
+<article class="md:col-span-8 glass-card rounded-xl overflow-hidden group hover:scale-[1.01] transition-all duration-500">
+<div class="relative h-[400px] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000" data-alt="Abstract blue 3D glass rendering" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7hmGkvi4U4k89gMC50ZnhHCkd10FqFtef4eRZTrdLJkD0X00nDzUJgunc1axAfDwkGroXzt1uCDlOuINFJqoDEfJ8T_opnSW7vMTjnS-cj-JLl29zSVP_cJApLQ-Fk_mWcdh0E8ePXIoe1K7i3ArjwclLu8LlKXZh1iiMG20G3mJS9xHqadldSX4sNXOaxIF6j-F1oEuhOOIwuQ7ivshhYIN-0lWJZgzak5F6izBjIvPWpTbhaArRdjEAUFLFEzajelfww9EHki4"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+<div class="absolute top-6 left-6 flex gap-2">
+<span class="px-4 py-1.5 rounded-full bg-cyan-500 text-white text-[10px] font-bold uppercase tracking-widest shadow-lg shadow-cyan-500/30">Web3</span>
+</div>
+</div>
+<div class="p-8">
+<h2 class="text-3xl font-bold mb-4 tracking-tight group-hover:text-primary transition-colors">Refractive Consensus: The Aesthetics of Decentralized Proof</h2>
+<p class="text-on-surface-variant line-clamp-2 mb-6 font-light">How the visual language of cryptography is evolving from terminal greens to translucent crystalline structures that represent transparency and flow.</p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary" data-icon="edit_note">edit_note</span>
+<span class="text-sm font-medium">8 min read</span>
+</div>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</article>
+<!-- Side Card 1 -->
+<article class="md:col-span-4 glass-card rounded-xl p-6 flex flex-col justify-between group hover:scale-[1.01] transition-all duration-500">
+<div>
+<div class="mb-6 h-48 rounded-lg overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Generative AI glowing neural pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNRf0E2uKgGvby55kxKneONaLMqC5F9qAaFiEVuZyePZkjdqm35JtU5exug1Qeo_qaiyCk25qwbdVBMAtZI6lnDQs2acNGFG67d6hu4Jh0Cz4xtQXL22P6Cel4XVVoDJPP97I_il23o5g0uEmid0Hq-AHmV6UPB-jRKt91dpzcT8mCtwZXudf6pZe6b0ON2Nf7cZi6_eDXzyYnrhLQ9ebeZTRu7B2mmezMctmkt3iUyjOcWgFMzYNcB4jMAmNmeSgSU_Hrqp0mpzs"/>
+</div>
+<span class="px-3 py-1 rounded-full bg-violet-500 text-white text-[10px] font-bold uppercase tracking-widest mb-4 inline-block">AI</span>
+<h3 class="text-xl font-bold mb-3 tracking-tight">Latent Space Geometries</h3>
+<p class="text-sm text-on-surface-variant font-light mb-4">Navigating the invisible dimensions of generative model architectures through data-driven visualizers.</p>
+</div>
+<div class="flex items-center gap-2 text-xs text-on-surface-variant">
+<span>Oct 24</span>
+<span class="w-1 h-1 rounded-full bg-outline"></span>
+<span>14k views</span>
+</div>
+</article>
+<!-- Small Bento Items Row 1 -->
+<article class="md:col-span-4 glass-card rounded-xl p-6 group hover:scale-[1.01] transition-all duration-500">
+<span class="px-3 py-1 rounded-full bg-tertiary text-white text-[10px] font-bold uppercase tracking-widest mb-6 inline-block">Design</span>
+<h3 class="text-lg font-bold mb-3 tracking-tight leading-snug">The "No-Line" Rule in Modern UI</h3>
+<p class="text-sm text-on-surface-variant font-light mb-4">Why depth and contrast are replacing the traditional border-based layout system.</p>
+<div class="h-1 w-12 bg-primary rounded-full group-hover:w-full transition-all duration-500"></div>
+</article>
+<article class="md:col-span-4 glass-card rounded-xl p-6 group hover:scale-[1.01] transition-all duration-500">
+<span class="px-3 py-1 rounded-full bg-cyan-400 text-on-primary-container text-[10px] font-bold uppercase tracking-widest mb-6 inline-block">Web3</span>
+<h3 class="text-lg font-bold mb-3 tracking-tight leading-snug">On-Chain Identity Symbols</h3>
+<p class="text-sm text-on-surface-variant font-light mb-4">Personalization in the age of persistent digital avatars and wallet-native profiles.</p>
+<div class="h-1 w-12 bg-secondary rounded-full group-hover:w-full transition-all duration-500"></div>
+</article>
+<article class="md:col-span-4 glass-card rounded-xl p-6 group hover:scale-[1.01] transition-all duration-500">
+<span class="px-3 py-1 rounded-full bg-violet-400 text-white text-[10px] font-bold uppercase tracking-widest mb-6 inline-block">AI</span>
+<h3 class="text-lg font-bold mb-3 tracking-tight leading-snug">Neural Glass Textures</h3>
+<p class="text-sm text-on-surface-variant font-light mb-4">How to render realistic refraction using modern CSS and SVG filter techniques.</p>
+<div class="h-1 w-12 bg-tertiary rounded-full group-hover:w-full transition-all duration-500"></div>
+</article>
+<!-- Large Horizontal Article -->
+<article class="md:col-span-12 glass-card rounded-xl p-8 flex flex-col md:flex-row gap-8 items-center group hover:scale-[1.01] transition-all duration-500">
+<div class="w-full md:w-1/3 h-64 rounded-xl overflow-hidden shrink-0">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Ethereal liquid flowing shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy0Ei3PysQY1GyxVOzwbqsAwFdSkAFD7hX9lGvHbHIrAbzK5zZvAdiG9oEF-d_WNLeqKY8RjtHjVPY3NXB6vJbsRrsStM99HldHI6Vs8M0n4fU4BOOFDnpYjsgZQ7bIGVix2wOYobgtkibsEa5JJPy7kk1DhYYBOA9UhCgevkC0k8KRCDLQdnuEwpbchUSqa69XQQSGr-uV9ocf04RUXuY4A8nGJ6vH3_ZvT-VGczm_UroTEIu8OkZnWQlctrP2y3w1jNvwkZHRvE"/>
+</div>
+<div class="flex-1">
+<div class="flex gap-2 mb-4">
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px] font-bold uppercase tracking-widest">Future Focus</span>
+<span class="px-3 py-1 rounded-full bg-surface-container-highest text-on-surface-variant text-[10px] font-bold uppercase tracking-widest">Hardware</span>
+</div>
+<h2 class="text-3xl font-bold mb-4 tracking-tight group-hover:text-primary transition-colors">Beyond the Rectangular Slab</h2>
+<p class="text-on-surface-variant mb-6 font-light leading-relaxed">Spatial computing and the dissolution of the hardware bezel. How interfaces are bleeding into the physical environment through glass-native rendering engines.</p>
+<div class="flex items-center gap-6">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-primary" data-icon="person">person</span>
+<span class="text-xs font-bold uppercase tracking-wider">Aria Vance</span>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span>
+<span class="text-xs uppercase tracking-wider">Oct 20, 2024</span>
+</div>
+</div>
+</div>
+</article>
+</div>
+<!-- Newsletter Section -->
+<section class="mt-24 glass-card rounded-xl p-12 text-center relative overflow-hidden">
+<div class="absolute inset-0 aura-primary opacity-50"></div>
+<div class="relative z-10 max-w-2xl mx-auto">
+<span class="material-symbols-outlined text-5xl text-primary mb-6" data-icon="grid_view">grid_view</span>
+<h2 class="text-4xl font-extrabold tracking-tight mb-4">Stay Refracted</h2>
+<p class="text-on-surface-variant mb-10 font-light">Join 12,000+ designers and engineers receiving our weekly synthesis of the digital ethereal.</p>
+<div class="flex flex-col md:flex-row gap-4">
+<input class="flex-1 bg-white/5 border border-white/10 rounded-full px-8 py-4 focus:ring-2 focus:ring-primary focus:outline-none transition-all placeholder:text-neutral-600" placeholder="Enter your email" type="email"/>
+<button class="bg-gradient-to-br from-cyan-400 to-violet-500 text-white rounded-full px-10 py-4 font-bold shadow-xl active:scale-95 duration-200">
+                        Join The Feed
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile Only) -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md rounded-full bg-neutral-900/40 backdrop-blur-2xl border-[0.5px] border-white/10 z-50 flex justify-around items-center px-4 py-2 shadow-[0_0_80px_rgba(105,218,255,0.15)]">
+<a class="flex items-center justify-center bg-gradient-to-br from-cyan-400 to-violet-500 text-white rounded-full p-3 shadow-[0_0_20px_rgba(105,218,255,0.5)] active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+</a>
+<a class="flex items-center justify-center text-neutral-400 p-3 hover:scale-110 hover:text-cyan-300 transition-transform active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+</a>
+<a class="flex items-center justify-center text-neutral-400 p-3 hover:scale-110 hover:text-cyan-300 transition-transform active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="grid_view">grid_view</span>
+</a>
+<a class="flex items-center justify-center text-neutral-400 p-3 hover:scale-110 hover:text-cyan-300 transition-transform active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Fluid Crystal | Ecosystem Overview</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"secondary-dim": "#874cff", "inverse-primary": "#006880", "error-dim": "#d7383b", "inverse-surface": "#fcf8f8", secondary: "#ac89ff", primary: "#69daff", "on-secondary": "#290067", "on-error-container": "#ffa8a3", "primary-container": "#00cffc", "surface-container-highest": "#262626", "surface-bright": "#2c2c2c", "on-secondary-container": "#f8f1ff", "on-primary-fixed": "#002a35", "on-tertiary-fixed-variant": "#6f005c", "tertiary-fixed-dim": "#ff6ad8", "secondary-container": "#7000ff", "on-primary": "#004a5d", "on-surface": "#ffffff", "on-secondary-fixed-variant": "#6300e2", tertiary: "#ff5dd7", "inverse-on-surface": "#565554", "surface-dim": "#0e0e0e", "on-surface-variant": "#adaaaa", "on-primary-fixed-variant": "#004a5c", "on-tertiary": "#430036", "on-primary-container": "#004050", "primary-dim": "#00c0ea", "surface-container": "#1a1919", "on-tertiary-fixed": "#34002a", "error-container": "#9f0519", "on-error": "#490006", "on-tertiary-container": "#0e000a", outline: "#777575", "surface-variant": "#262626", background: "#0e0e0e", "on-secondary-fixed": "#41009a", "surface-container-high": "#201f1f", "surface-container-lowest": "#000000", "tertiary-container": "#fe00d5", "tertiary-dim": "#ff5dd7", "primary-fixed": "#00cffc", "outline-variant": "#494847", "on-background": "#ffffff", "secondary-fixed": "#dac9ff", "secondary-fixed-dim": "#ceb9ff", "surface-container-low": "#131313", surface: "#0e0e0e", "primary-fixed-dim": "#00c0ea", "surface-tint": "#69daff", error: "#ff716c", "tertiary-fixed": "#ff87db"}, fontFamily: {headline: ["Plus Jakarta Sans"], body: ["Plus Jakarta Sans"], label: ["Plus Jakarta Sans"], display: ["Plus Jakarta Sans"]}, borderRadius: {DEFAULT: "1rem", lg: "2rem", xl: "3rem", full: "9999px"}, fontSize: {}}}};</script>
+<style>
+        body {
+            background-color: #0e0e0e;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+        .glass-pane {
+            background: rgba(38, 38, 38, 0.4);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .aura-glow {
+            filter: blur(80px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+        .text-gradient-primary {
+            background: linear-gradient(to right, #69daff, #ac89ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="selection:bg-primary/30">
+<!-- TopNavBar Shell -->
+<header class="bg-neutral-950/80 backdrop-blur-xl border-b border-white/10 sticky top-0 z-50 shadow-[0_0_40px_-15px_rgba(105,218,255,0.1)]">
+<div class="flex justify-between items-center w-full px-8 py-4 max-w-screen-2xl mx-auto font-plus-jakarta-sans tracking-tight">
+<div class="text-2xl font-bold bg-gradient-to-r from-sky-400 to-indigo-500 bg-clip-text text-transparent">
+                Fluid Crystal
+            </div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-sky-400 font-semibold border-b-2 border-sky-400 pb-1" href="#">Ecosystem</a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="#">Governance</a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="#">Docs</a>
+<a class="text-neutral-400 hover:text-white transition-colors" href="#">Staking</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="bg-primary-container text-on-primary-container font-bold px-6 py-2.5 rounded-full scale-95 active:scale-90 transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,207,252,0.4)]">
+                    Connect Wallet
+                </button>
+</div>
+</div>
+</header>
+<main class="relative">
+<!-- Background Auras -->
+<div class="absolute top-20 -left-20 w-96 h-96 bg-primary aura-glow rounded-full"></div>
+<div class="absolute top-1/2 -right-20 w-[500px] h-[500px] bg-secondary aura-glow rounded-full"></div>
+<div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] bg-tertiary aura-glow rounded-full"></div>
+<!-- Hero Section -->
+<section class="max-w-screen-2xl mx-auto px-8 py-24 md:py-32">
+<div class="max-w-3xl">
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter mb-6">
+                    The Liquid <span class="text-gradient-primary">Frontier</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant font-medium leading-relaxed max-w-2xl mb-12">
+                    Experience the next generation of decentralized infrastructure. Engineered with high-refractive glass logic for unparalleled liquidity and speed.
+                </p>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-4 rounded-full bg-gradient-to-r from-primary to-primary-dim text-on-primary font-bold shadow-lg transition-transform active:scale-95">Explore Protocol</button>
+<button class="px-8 py-4 rounded-full glass-pane text-white font-bold transition-all hover:bg-white/10 active:scale-95">Read Whitepaper</button>
+</div>
+</div>
+</section>
+<!-- Section 1: Protocol Features -->
+<section class="max-w-screen-2xl mx-auto px-8 py-20">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+<div>
+<span class="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-2 block">Protocol Modules</span>
+<h2 class="text-4xl font-bold tracking-tight">Core Infrastructure</h2>
+</div>
+<p class="text-on-surface-variant max-w-sm text-sm">Modular components designed for maximum composability and transparent settlement.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Liquidity Card -->
+<div class="glass-pane p-8 rounded-2xl group transition-all duration-500 hover:translate-y-[-8px] hover:shadow-[0_20px_40px_-15px_rgba(105,218,255,0.15)]">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 border border-primary/20">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="waves">waves</span>
+</div>
+<h3 class="text-2xl font-bold mb-4 text-gradient-primary">Deep Liquidity</h3>
+<p class="text-on-surface-variant leading-relaxed text-sm">Automated market makers refined through liquid-crystal algorithms for zero-slippage execution on major pairs.</p>
+</div>
+<!-- Speed Card -->
+<div class="glass-pane p-8 rounded-2xl group transition-all duration-500 hover:translate-y-[-8px] hover:shadow-[0_20px_40px_-15px_rgba(172,137,255,0.15)]">
+<div class="w-12 h-12 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 border border-secondary/20">
+<span class="material-symbols-outlined text-secondary text-2xl" data-icon="bolt">bolt</span>
+</div>
+<h3 class="text-2xl font-bold mb-4 text-gradient-primary">Crystal Velocity</h3>
+<p class="text-on-surface-variant leading-relaxed text-sm">Sub-second finality powered by a parallel execution layer that scales horizontally with network demand.</p>
+</div>
+<!-- Security Card -->
+<div class="glass-pane p-8 rounded-2xl group transition-all duration-500 hover:translate-y-[-8px] hover:shadow-[0_20px_40px_-15px_rgba(255,93,215,0.15)]">
+<div class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center mb-6 border border-tertiary/20">
+<span class="material-symbols-outlined text-tertiary text-2xl" data-icon="shield_lock">shield_lock</span>
+</div>
+<h3 class="text-2xl font-bold mb-4 text-gradient-primary">Prismatic Security</h3>
+<p class="text-on-surface-variant leading-relaxed text-sm">Multi-layer cryptographic verification ensuring that every state transition is immutable and audit-ready.</p>
+</div>
+</div>
+</section>
+<!-- Section 2: Key Technologies (Diagram) -->
+<section class="max-w-screen-2xl mx-auto px-8 py-20">
+<div class="glass-pane rounded-3xl p-12 overflow-hidden relative border border-white/5">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div>
+<span class="text-secondary font-bold tracking-[0.2em] uppercase text-xs mb-2 block">Technical Stack</span>
+<h2 class="text-4xl font-bold mb-6">Liquid Glass Engine</h2>
+<p class="text-on-surface-variant mb-8 leading-relaxed">
+                            Our proprietary engine utilizes refractive data structures to process transactions in a non-linear state, allowing for instantaneous validation without the bottlenecks of traditional sequential chains.
+                        </p>
+<ul class="space-y-4">
+<li class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-medium">Refractive Sharding Protocols</span>
+</li>
+<li class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-medium">Asynchronous Consensus Mechanism</span>
+</li>
+<li class="flex items-start space-x-3">
+<span class="material-symbols-outlined text-primary text-sm mt-1" data-icon="check_circle">check_circle</span>
+<span class="text-sm font-medium">Transparent Zero-Knowledge Proofs</span>
+</li>
+</ul>
+</div>
+<!-- Diagram Placeholder -->
+<div class="relative flex justify-center items-center">
+<div class="absolute inset-0 bg-primary/20 blur-[100px] rounded-full scale-75"></div>
+<svg class="w-full max-w-md drop-shadow-2xl" viewbox="0 0 400 400">
+<!-- Central Core -->
+<rect fill="none" height="100" rx="12" stroke="#69daff" stroke-dasharray="4 4" stroke-width="2" width="100" x="150" y="150"></rect>
+<circle cx="200" cy="200" fill="url(#grad1)" r="40"></circle>
+<!-- Connecting Nodes -->
+<path d="M200 150 V100" opacity="0.5" stroke="#69daff" stroke-width="1.5"></path>
+<path d="M200 250 V300" opacity="0.5" stroke="#69daff" stroke-width="1.5"></path>
+<path d="M150 200 H100" opacity="0.5" stroke="#69daff" stroke-width="1.5"></path>
+<path d="M250 200 H300" opacity="0.5" stroke="#69daff" stroke-width="1.5"></path>
+<!-- Peripheral Circles -->
+<circle cx="200" cy="80" fill="#1a1919" r="15" stroke="#ac89ff" stroke-width="1.5"></circle>
+<circle cx="200" cy="320" fill="#1a1919" r="15" stroke="#ac89ff" stroke-width="1.5"></circle>
+<circle cx="80" cy="200" fill="#1a1919" r="15" stroke="#ac89ff" stroke-width="1.5"></circle>
+<circle cx="320" cy="200" fill="#1a1919" r="15" stroke="#ac89ff" stroke-width="1.5"></circle>
+<defs>
+<lineargradient id="grad1" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#69daff;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#ac89ff;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+</svg>
+<div class="absolute top-0 right-0 glass-pane px-4 py-2 rounded-full border border-primary/20 text-[10px] font-bold tracking-widest uppercase">Live Engine Status</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Community Impact -->
+<section class="max-w-screen-2xl mx-auto px-8 py-20 pb-40">
+<div class="text-center mb-16">
+<h2 class="text-4xl font-extrabold mb-4">Ecosystem <span class="text-gradient-primary">Vitality</span></h2>
+<p class="text-on-surface-variant max-w-xl mx-auto">Real-time snapshots of our growing decentralized landscape.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+<!-- Stat 1 -->
+<div class="glass-pane p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-4xl font-black text-white mb-2">$4.2B+</span>
+<span class="text-label-sm font-bold tracking-widest text-primary uppercase">Total Value Locked</span>
+</div>
+<!-- Stat 2 -->
+<div class="glass-pane p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-4xl font-black text-white mb-2">12M+</span>
+<span class="text-label-sm font-bold tracking-widest text-secondary uppercase">Transactions</span>
+</div>
+<!-- Stat 3 -->
+<div class="glass-pane p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-4xl font-black text-white mb-2">840K+</span>
+<span class="text-label-sm font-bold tracking-widest text-tertiary uppercase">Active Users</span>
+</div>
+<!-- Stat 4 -->
+<div class="glass-pane p-8 rounded-2xl flex flex-col items-center justify-center text-center">
+<span class="text-4xl font-black text-white mb-2">99.9%</span>
+<span class="text-label-sm font-bold tracking-widest text-primary-dim uppercase">Uptime</span>
+</div>
+</div>
+<!-- News Snippets - Bento Style -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6 mt-12">
+<div class="md:col-span-8 glass-pane rounded-3xl overflow-hidden group">
+<div class="flex flex-col md:flex-row h-full">
+<div class="md:w-1/2 p-8 flex flex-col justify-center">
+<span class="text-[10px] font-bold text-primary mb-4 bg-primary/10 px-3 py-1 rounded-full self-start">FEATURED PARTNERSHIP</span>
+<h4 class="text-2xl font-bold mb-4">Expanding to the Cosmos Ecosystem</h4>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Fluid Crystal is bridging to the Interchain, bringing deep liquidity to over 50+ sovereign chains through IBC.</p>
+<a class="text-primary font-bold text-sm flex items-center group-hover:underline" href="#">
+                                Read more <span class="material-symbols-outlined ml-2 text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="md:w-1/2 relative bg-neutral-900 min-h-[200px]">
+<img class="absolute inset-0 w-full h-full object-cover opacity-60 mix-blend-luminosity hover:opacity-100 transition-opacity duration-700" data-alt="Abstract digital network connections with glowing nodes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtKP5g0pLJ8A6-t7LRN0qlRUWdtMBk7c8blERi6nrIPgfpXQv_bZYoWS168kRKY1wl1NltXIeWJqq-a9EyUvHsDjTzun70g61k58z6INbA6fTkcpTQdc2IPPwbgIZpXYmV5mb9tiNBDit0FIWqPATmw8cxXUtPzxQ4EKh5EthFjY-qD3QXJxxhuOw9Cm_zXqHO886JmeFlbl6_mm0lPFjWaagpNQiEpLT3NDMka7yUG1SShdQfgeF6xDp_n8KSEMc4FhEshOwx6l8"/>
+</div>
+</div>
+</div>
+<div class="md:col-span-4 glass-pane rounded-3xl p-8 flex flex-col justify-between">
+<div>
+<span class="text-[10px] font-bold text-secondary mb-4 bg-secondary/10 px-3 py-1 rounded-full inline-block">GOVERNANCE</span>
+<h4 class="text-xl font-bold mt-2">FCP-042 Passed</h4>
+<p class="text-sm text-on-surface-variant mt-4">New staking rewards structure approved by the community with 92% consensus.</p>
+</div>
+<div class="mt-8 pt-8 border-t border-white/5">
+<div class="flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-background object-cover" data-alt="User avatar 1" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-hsEbJyK7661xKA3VIHEP2B9jvegQfZm37yYZ6orxnwJPf6s_X0wHBZqDpOx0t35Pl0zun_4azVZktcndRFz4hOWE7u4eLhJ_8gB5AokLnEwCfoBcpGuDBAxWNl3BnqvMX4Ma_J-ivirUoV9P7iI33OM4bz3bBsaF2npIzhh22BBimx_Lc8nld_9YBcw5IamsyDbnM1k8TkyOn5oBtzIiqiTyONvVMM9W7tIiSZeUYwLrb_xHWrhOtMIKViQ-PJO6BG2Z3wA7ITE"/>
+<img class="w-8 h-8 rounded-full border-2 border-background object-cover" data-alt="User avatar 2" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6uVkgSdxJ-MW6sM6lhMP1MW0m6lR9TPWUWro51ZA0Yatq46Uim5K-qpgv2MLk5mZr_xM-FMPpyO-weJ_ZkzM2hhPPdf0aXSyzklQGr6WeKkMiTqplVl47Qw9CYZeh2L4OEQv2P3foy5E26-csXnCfBUD2T8DiTI0LTICwyM4X0CpeVnO4mD6IT06_zrVygM4nIk-7AJfzNvjrouqA7qK8nwsZ_HoDkYvMRod-12m5rp1_5q8chsupTuo3kv59NgZy3HfzTIW1Eyc"/>
+<img class="w-8 h-8 rounded-full border-2 border-background object-cover" data-alt="User avatar 3" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTI3a7SbrvBttrJkCpJS1eIz7PiIarOGFCGZ4vAyVuJXEH5EORJlOkhLjHHr3D1qlADNLAwBESGzJwS4r04bDL1d11GG69CBPsi8GHTjH_HDiyOtKbv6PMCisIuC2ILrfHpslXsDZbxc8Wm3d9i0YZtpybhkf8UU8ywKjM_L8A-2DV3Ey79-Kh5u8dYzqdXGTZPHeG6MqF9Vdfksei7YHRel_Qbc3RRdJXBE5eTcxWhjkKtN_kIqhPu_udUXxldwz8ucwGpsVeQ78"/>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border-2 border-background flex items-center justify-center text-[10px] font-bold">+12k</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 border-t border-white/5 py-12 relative z-10">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 px-8 max-w-screen-2xl mx-auto">
+<div>
+<div class="text-lg font-black text-white mb-4 uppercase tracking-wider">Fluid Crystal</div>
+<p class="text-neutral-500 text-sm max-w-md leading-relaxed">
+                    Building the liquid infrastructure for the next billion users. High performance, zero compromise.
+                </p>
+</div>
+<div class="flex flex-col md:items-end justify-between gap-6">
+<div class="flex flex-wrap gap-6">
+<a class="text-[11px] font-medium tracking-[0.05em] uppercase text-neutral-500 hover:text-sky-400 transition-colors" href="#">Twitter</a>
+<a class="text-[11px] font-medium tracking-[0.05em] uppercase text-neutral-500 hover:text-sky-400 transition-colors" href="#">Discord</a>
+<a class="text-[11px] font-medium tracking-[0.05em] uppercase text-neutral-500 hover:text-sky-400 transition-colors" href="#">Github</a>
+<a class="text-[11px] font-medium tracking-[0.05em] uppercase text-neutral-500 hover:text-sky-400 transition-colors" href="#">Medium</a>
+</div>
+<div class="text-[11px] font-medium tracking-[0.05em] uppercase text-neutral-500">
+                    © 2024 Fluid Crystal Protocol. Engineered for the Liquid Frontier.
+                </div>
+</div>
+</div>
+</footer>
+<!-- FAB Suppression Rule Active: No FAB on this detailed overview screen -->
+</body></html>

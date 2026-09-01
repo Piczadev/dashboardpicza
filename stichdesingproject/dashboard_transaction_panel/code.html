@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>PiczaDev Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0e0e0e;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+        }
+        .aura-glow {
+            filter: blur(120px);
+            opacity: 0.15;
+        }
+        .refraction-shadow {
+            box-shadow: inset -10px -10px 50px rgba(0, 0, 0, 0.5),
+                        inset 10px 10px 50px rgba(255, 255, 255, 0.1),
+                        0 0 80px rgba(105, 218, 255, 0.05);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-tertiary": "#430036",
+                        "secondary-dim": "#874cff",
+                        "on-tertiary-fixed": "#34002a",
+                        "on-surface": "#ffffff",
+                        "tertiary": "#ff5dd7",
+                        "surface-container-high": "#201f1f",
+                        "inverse-on-surface": "#565554",
+                        "surface": "#0e0e0e",
+                        "inverse-surface": "#fcf8f8",
+                        "tertiary-dim": "#ff5dd7",
+                        "on-primary-fixed": "#002a35",
+                        "surface-container-low": "#131313",
+                        "background": "#0e0e0e",
+                        "on-tertiary-fixed-variant": "#6f005c",
+                        "tertiary-container": "#fe00d5",
+                        "surface-container": "#1a1919",
+                        "secondary": "#ac89ff",
+                        "primary-fixed-dim": "#00c0ea",
+                        "on-secondary-fixed": "#41009a",
+                        "secondary-fixed": "#dac9ff",
+                        "surface-container-highest": "#262626",
+                        "secondary-fixed-dim": "#ceb9ff",
+                        "on-secondary-container": "#f8f1ff",
+                        "secondary-container": "#7000ff",
+                        "on-tertiary-container": "#0e000a",
+                        "surface-tint": "#69daff",
+                        "surface-variant": "#262626",
+                        "primary-container": "#00cffc",
+                        "error-dim": "#d7383b",
+                        "surface-dim": "#0e0e0e",
+                        "on-surface-variant": "#adaaaa",
+                        "primary": "#69daff",
+                        "outline": "#777575",
+                        "on-secondary": "#290067",
+                        "primary-dim": "#00c0ea",
+                        "error": "#ff716c",
+                        "on-primary": "#004a5d",
+                        "outline-variant": "#494847",
+                        "surface-bright": "#2c2c2c",
+                        "error-container": "#9f0519",
+                        "on-background": "#ffffff",
+                        "inverse-primary": "#006880",
+                        "primary-fixed": "#00cffc",
+                        "on-error-container": "#ffa8a3",
+                        "tertiary-fixed": "#ff87db",
+                        "on-error": "#490006",
+                        "on-primary-fixed-variant": "#004a5c",
+                        "on-primary-container": "#004050",
+                        "tertiary-fixed-dim": "#ff6ad8",
+                        "on-secondary-fixed-variant": "#6300e2",
+                        "surface-container-lowest": "#000000"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen pb-32">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-zinc-950/40 backdrop-blur-3xl border-b border-white/10 shadow-[0_0_80px_rgba(105,218,255,0.05)] flex justify-between items-center px-6 h-16">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full overflow-hidden border border-primary/30">
+<img alt="User Profile Avatar" class="w-full h-full object-cover" data-alt="Close up portrait of a young male software developer" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHxRzf7MDaJzccfya1Lx0huWf4SdZOCqKJpWFVRhAScx9_ILfuSw4dbyQfiErCppcqcAyp843yrquk88ojhUKI9q5Z5mqMNV3do7uPnsaxY1uUWXFAGYLLxUkq9e1qLE39OCTRYmljgFYU5O-_bwIUCk5RjVyjAGO9b_XsXl8fwHkk9H7YliycoHnbPcBVEa8mQOA3irjmlyAqZ0bj-sePsljhyINnVV2CynVQiRuWhfxkVyaS9KmZVSOWFRTRdFefzGJsH8fnezA"/>
+</div>
+<h1 class="font-['Plus_Jakarta_Sans'] font-bold tracking-tight text-xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500">Dashboard</h1>
+</div>
+<button class="text-zinc-400 hover:opacity-80 transition-opacity active:scale-95 transition-transform">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</header>
+<main class="pt-24 px-6 space-y-8 relative overflow-hidden">
+<!-- Background Auras -->
+<div class="absolute top-20 -left-20 w-64 h-64 bg-primary aura-glow rounded-full"></div>
+<div class="absolute top-96 -right-20 w-80 h-80 bg-secondary aura-glow rounded-full"></div>
+<!-- Portfolio Overview Card -->
+<section class="relative">
+<div class="glass-card refraction-shadow p-8 rounded-xl flex flex-col items-center justify-center text-center space-y-4">
+<span class="text-[10px] font-bold uppercase tracking-widest text-zinc-400">Total Portfolio Balance</span>
+<div class="space-y-1">
+<h2 class="text-4xl font-extrabold tracking-tighter text-on-surface">$42,894.12</h2>
+<p class="text-primary font-medium text-sm flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+                        +12.4% Today
+                    </p>
+</div>
+<div class="flex gap-4 w-full pt-4">
+<div class="flex-1 bg-white/5 rounded-lg py-3 px-2 border border-white/5">
+<p class="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">Solana</p>
+<p class="font-bold text-lg">142.5 SOL</p>
+</div>
+<div class="flex-1 bg-white/5 rounded-lg py-3 px-2 border border-white/5">
+<p class="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">Ethereum</p>
+<p class="font-bold text-lg">4.82 ETH</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Activity Charts Section -->
+<section class="space-y-4">
+<div class="flex justify-between items-end">
+<h3 class="text-lg font-bold tracking-tight">On-Chain Activity</h3>
+<span class="text-[10px] font-bold text-primary uppercase tracking-widest">Last 30 Days</span>
+</div>
+<div class="glass-card rounded-xl p-6 h-48 relative flex items-end justify-between gap-1 overflow-hidden">
+<!-- Simple SVG minimalist "line chart" -->
+<svg class="absolute inset-0 w-full h-full opacity-40" preserveaspectratio="none" viewbox="0 0 400 100">
+<path d="M0,80 Q50,20 100,60 T200,30 T300,70 T400,10" fill="none" stroke="url(#cyan-gradient)" stroke-width="3"></path>
+<path d="M0,95 Q50,40 100,80 T200,50 T300,90 T400,30" fill="none" stroke="url(#purple-gradient)" stroke-width="2"></path>
+<defs>
+<lineargradient id="cyan-gradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:var(--primary);stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:var(--secondary);stop-opacity:1"></stop>
+</lineargradient>
+<lineargradient id="purple-gradient" x1="0%" x2="100%" y1="0%" y2="0%">
+<stop offset="0%" style="stop-color:var(--secondary);stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:var(--tertiary);stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+</svg>
+<!-- Visual Indicators for x-axis -->
+<div class="flex justify-between w-full absolute bottom-2 px-6 text-[8px] font-bold text-zinc-600 uppercase tracking-widest">
+<span>Oct 01</span>
+<span>Oct 15</span>
+<span>Today</span>
+</div>
+</div>
+</section>
+<!-- Transaction List (On-chain Feed) -->
+<section class="space-y-4">
+<div class="flex justify-between items-center">
+<h3 class="text-lg font-bold tracking-tight">On-chain Feed</h3>
+<button class="text-[10px] font-bold text-zinc-400 uppercase tracking-widest hover:text-primary transition-colors">View All</button>
+</div>
+<div class="space-y-3">
+<!-- Transaction Item 1 -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between group hover:scale-[1.02] transition-transform">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+</div>
+<div>
+<p class="font-bold text-sm">Minted NFT 'Void-01'</p>
+<p class="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">Solana • 2m ago</p>
+</div>
+</div>
+<p class="font-bold text-primary">-1.5 SOL</p>
+</div>
+<!-- Transaction Item 2 -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between group hover:scale-[1.02] transition-transform">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-secondary/10 flex items-center justify-center text-secondary border border-secondary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">code</span>
+</div>
+<div>
+<p class="font-bold text-sm">Pushed to liquid-obsidian</p>
+<p class="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">GitHub • 45m ago</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-zinc-600 text-lg">arrow_forward_ios</span>
+</div>
+<!-- Transaction Item 3 -->
+<div class="glass-card p-4 rounded-xl flex items-center justify-between group hover:scale-[1.02] transition-transform">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-full bg-tertiary/10 flex items-center justify-center text-tertiary border border-tertiary/20">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">currency_exchange</span>
+</div>
+<div>
+<p class="font-bold text-sm">Received Payment</p>
+<p class="text-[10px] text-zinc-500 font-bold uppercase tracking-wider">Ethereum • 3h ago</p>
+</div>
+</div>
+<p class="font-bold text-tertiary">+0.25 ETH</p>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-6 left-0 right-0 z-50 flex justify-around items-center px-4 h-16">
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] h-16 rounded-full bg-zinc-950/40 backdrop-blur-2xl border border-white/10 flex justify-around items-center px-4 shadow-[inset_10px_10px_50px_rgba(255,255,255,0.05)]">
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 hover:scale-110 transition-transform active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-widest mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 hover:scale-110 transition-transform active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">article</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-widest mt-1">Blog</span>
+</a>
+<a class="flex flex-col items-center justify-center text-zinc-500 hover:text-zinc-300 hover:scale-110 transition-transform active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined">mail</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-widest mt-1">Newsletter</span>
+</a>
+<a class="flex flex-col items-center justify-center text-cyan-400 bg-white/5 rounded-full px-4 py-2 hover:scale-110 transition-transform active:scale-90 duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">account_balance_wallet</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-bold uppercase tracking-widest mt-1">Dashboard</span>
+</a>
+</div>
+</nav>
+</body></html>

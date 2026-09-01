@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Liquid Crystal Blog Feed</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "inverse-surface": "#fcf8f8",
+              "on-secondary-fixed": "#41009a",
+              "surface": "#0e0e0e",
+              "outline-variant": "#494847",
+              "tertiary-fixed": "#ff87db",
+              "on-tertiary": "#430036",
+              "on-background": "#ffffff",
+              "on-primary-container": "#004050",
+              "background": "#0e0e0e",
+              "on-secondary-fixed-variant": "#6300e2",
+              "tertiary": "#ff5dd7",
+              "inverse-primary": "#006880",
+              "error-container": "#9f0519",
+              "on-surface": "#ffffff",
+              "on-tertiary-fixed": "#34002a",
+              "on-error": "#490006",
+              "outline": "#777575",
+              "surface-container": "#1a1919",
+              "on-primary-fixed": "#002a35",
+              "tertiary-dim": "#ff5dd7",
+              "primary-dim": "#00c0ea",
+              "secondary-fixed": "#dac9ff",
+              "on-surface-variant": "#adaaaa",
+              "error": "#ff716c",
+              "surface-container-highest": "#262626",
+              "primary": "#69daff",
+              "on-tertiary-fixed-variant": "#6f005c",
+              "inverse-on-surface": "#565554",
+              "on-secondary": "#290067",
+              "primary-fixed-dim": "#00c0ea",
+              "tertiary-container": "#fe00d5",
+              "secondary-dim": "#874cff",
+              "tertiary-fixed-dim": "#ff6ad8",
+              "on-primary-fixed-variant": "#004a5c",
+              "on-primary": "#004a5d",
+              "secondary-container": "#7000ff",
+              "surface-container-low": "#131313",
+              "secondary": "#ac89ff",
+              "on-tertiary-container": "#0e000a",
+              "surface-container-high": "#201f1f",
+              "surface-container-lowest": "#000000",
+              "surface-tint": "#69daff",
+              "surface-variant": "#262626",
+              "on-secondary-container": "#f8f1ff",
+              "secondary-fixed-dim": "#ceb9ff",
+              "surface-bright": "#2c2c2c",
+              "surface-dim": "#0e0e0e",
+              "on-error-container": "#ffa8a3",
+              "error-dim": "#d7383b",
+              "primary-fixed": "#00cffc",
+              "primary-container": "#00cffc"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #0e0e0e;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(40px);
+            border: 0.5px solid rgba(255, 255, 255, 0.1);
+            box-shadow: inset 10px 10px 50px rgba(255, 255, 255, 0.05), 0 20px 40px rgba(0,0,0,0.4);
+        }
+        .aura-primary {
+            background: radial-gradient(circle at center, rgba(105, 218, 255, 0.15) 0%, transparent 70%);
+        }
+        .aura-secondary {
+            background: radial-gradient(circle at center, rgba(172, 137, 255, 0.12) 0%, transparent 70%);
+        }
+        .crystal-refraction {
+            box-shadow: inset -10px -10px 50px rgba(0, 0, 0, 0.5), inset 10px 10px 50px rgba(255, 255, 255, 0.1), 0 0 80px rgba(105, 218, 255, 0.15);
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #69daff, #ac89ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="text-on-background selection:bg-primary/30">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-zinc-950/40 backdrop-blur-3xl border-b border-white/10 shadow-[0_0_80px_rgba(105,218,255,0.15)]">
+<div class="flex justify-between items-center px-6 py-4 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-cyan-400 text-2xl" data-icon="bubble_chart">bubble_chart</span>
+<h1 class="text-xl font-extrabold tracking-tighter text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-violet-500 font-['Plus_Jakarta_Sans'] uppercase">LIQUID CRYSTAL</h1>
+</div>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest border border-white/10 overflow-hidden active:scale-95 duration-200 transition-opacity hover:opacity-80">
+<img class="w-full h-full object-cover" data-alt="User profile avatar close up" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBL-9kATYKxX8XUOi8_Vve5OYArv3eX8uHN04G-HC3cZ1zZkX4yYQgigIEnrT0EcJtmSvayFRJW6Q5WGMhAmMM2E4I1wg2wySdo49KIFnKlis4yAWUdebGNMmEGHjOn6uDAYLIGDqWQXx3HC1gfshseCY-NV5XsoEMD4fkycE83KIeVH1xJF6mhRQVLwafCPMFQeIRkX81FbHgqMUnbBFaMFrWcAcKP-6SV6p4-EW1Y4rt-_hCPfAaVtxPprv-WBrLqfZIq64nMlhk"/>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-32 px-5 min-h-screen relative overflow-hidden">
+<!-- Background Auras -->
+<div class="fixed top-[-10%] left-[-20%] w-[100%] h-[60%] aura-primary pointer-events-none"></div>
+<div class="fixed bottom-[-10%] right-[-20%] w-[100%] h-[60%] aura-secondary pointer-events-none"></div>
+<!-- Featured Section Headline -->
+<div class="mb-8 relative z-10">
+<span class="text-[10px] font-bold uppercase tracking-[0.2em] text-cyan-400 mb-2 block">Curation / Feed</span>
+<h2 class="text-4xl font-extrabold tracking-tight text-on-surface leading-tight">Latest <br/><span class="text-gradient">Insights.</span></h2>
+</div>
+<!-- Article Feed -->
+<div class="flex flex-col gap-6 relative z-10">
+<!-- Article Card 1 -->
+<article class="glass-card rounded-xl p-5 overflow-hidden group">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 rounded-full bg-cyan-400/10 border border-cyan-400/20 text-cyan-400 text-[10px] font-bold uppercase tracking-wider">Design</span>
+<span class="material-symbols-outlined text-zinc-500 text-lg" data-icon="bookmark">bookmark</span>
+</div>
+<h3 class="text-2xl font-bold leading-tight mb-3 text-on-surface group-hover:text-primary transition-colors duration-300">The Fluidity of Glass: Designing for Depth in 2024</h3>
+<p class="text-sm text-zinc-400 leading-relaxed mb-6 line-clamp-2">Exploring how refraction and blur are redefining the digital canvas beyond flat containers.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex items-center gap-2 text-[11px] font-bold text-zinc-500 uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                        6 min read
+                    </div>
+<span class="text-[11px] font-bold text-zinc-600 uppercase tracking-widest">Oct 24, 2024</span>
+</div>
+</article>
+<!-- Article Card 2 (Image Focus) -->
+<article class="glass-card rounded-xl overflow-hidden group">
+<div class="h-48 w-full relative">
+<img class="w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-700" data-alt="Abstract fluid blue and purple shapes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoLX373qKT-fvIdFuTwHQS-wdIzMI6sLoUQtTYlxzgo8Dk_iVXA8-wcgydFiX8iM8drDRRsNE4SJqbsnUEzOrY_T3df_XQMVQ4uyXZ3zC0fuGlu09b5h4YabdhchsLlNV-rW0wPdGzV_XRlnKT6wgWUa7szWHY4b0XEo0zpiOHaHAxlPP7KDlh9-S7zEyVHIyyQdARNhDa0Vt1SFlGGy_rYn6CiTVQRz8Qkq1NVk1iy3nQBP5OO1KkUIVaj6m3H9F3J70he67-vGc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-zinc-950 to-transparent"></div>
+<div class="absolute top-4 left-4">
+<span class="px-3 py-1 rounded-full bg-violet-500/20 border border-violet-500/30 text-violet-300 text-[10px] font-bold uppercase tracking-wider backdrop-blur-md">Web3</span>
+</div>
+</div>
+<div class="p-5">
+<h3 class="text-2xl font-bold leading-tight mb-3 text-on-surface group-hover:text-secondary transition-colors duration-300">Decentralized Identities &amp; The New Visual Language</h3>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex items-center gap-2 text-[11px] font-bold text-zinc-500 uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                            12 min read
+                        </div>
+<span class="text-[11px] font-bold text-zinc-600 uppercase tracking-widest">Oct 22, 2024</span>
+</div>
+</div>
+</article>
+<!-- Article Card 3 -->
+<article class="glass-card rounded-xl p-5 overflow-hidden group">
+<div class="flex justify-between items-start mb-4">
+<span class="px-3 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">AI</span>
+<span class="material-symbols-outlined text-zinc-500 text-lg" data-icon="bookmark">bookmark</span>
+</div>
+<h3 class="text-2xl font-bold leading-tight mb-3 text-on-surface group-hover:text-primary transition-colors duration-300">LLMs as Interface: Beyond the Chatbox</h3>
+<p class="text-sm text-zinc-400 leading-relaxed mb-6 line-clamp-2">How generative intelligence is moving into procedural UI generation and context-aware elements.</p>
+<div class="flex items-center justify-between pt-4 border-t border-white/5">
+<div class="flex items-center gap-2 text-[11px] font-bold text-zinc-500 uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm" data-icon="schedule">schedule</span>
+                        4 min read
+                    </div>
+<span class="text-[11px] font-bold text-zinc-600 uppercase tracking-widest">Oct 20, 2024</span>
+</div>
+</article>
+<!-- Subscribe CTA -->
+<div class="mt-8 mb-4 relative p-8 rounded-[2.5rem] bg-gradient-to-br from-cyan-400/10 to-violet-500/10 border border-white/10 overflow-hidden crystal-refraction">
+<div class="relative z-10 text-center">
+<h4 class="text-2xl font-extrabold text-on-surface mb-3 uppercase tracking-tighter">Stay Liquid.</h4>
+<p class="text-zinc-400 text-sm mb-6 max-w-[240px] mx-auto">Get the most advanced design and tech insights delivered weekly.</p>
+<button class="w-full py-4 px-8 rounded-full bg-gradient-to-r from-primary to-secondary text-on-secondary font-bold uppercase tracking-widest text-xs shadow-[0_0_20px_rgba(105,218,255,0.4)] active:scale-95 transition-transform">
+                        Subscribe Now
+                    </button>
+</div>
+<!-- Decorative background elements -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-primary/20 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl"></div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-6 left-0 right-0 z-50 flex justify-around items-center px-4 py-2 pointer-events-none">
+<div class="bg-zinc-950/40 backdrop-blur-2xl w-[90%] rounded-full border border-white/10 shadow-[inset_10px_10px_50px_rgba(255,255,255,0.1)] flex justify-around items-center px-4 py-2 pointer-events-auto">
+<a class="flex items-center justify-center text-zinc-500 p-3 hover:text-cyan-200 transition-colors active:scale-110 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="grid_view">grid_view</span>
+</a>
+<!-- Active: Explore/Feed -->
+<a class="flex items-center justify-center bg-gradient-to-br from-cyan-400/20 to-violet-500/20 text-cyan-400 rounded-full p-3 shadow-[0_0_20px_rgba(105,218,255,0.3)] active:scale-110 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="explore" style="font-variation-settings: 'FILL' 1;">explore</span>
+</a>
+<a class="flex items-center justify-center text-zinc-500 p-3 hover:text-cyan-200 transition-colors active:scale-110 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="auto_awesome">auto_awesome</span>
+</a>
+<a class="flex items-center justify-center text-zinc-500 p-3 hover:text-cyan-200 transition-colors active:scale-110 duration-300 ease-out" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="account_circle">account_circle</span>
+</a>
+</div>
+</nav>
+</body></html>
